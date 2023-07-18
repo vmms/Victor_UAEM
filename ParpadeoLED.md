@@ -11,7 +11,8 @@ Es importante destacar que, aunque esta práctica pueda parecer simple, sienta l
 
 A medida que los alumnos avancen en la práctica y logren que el LED parpadee exitosamente, se fomentará la experimentación y la creatividad. Se les animará a realizar modificaciones en el código para alterar la velocidad y el patrón de parpadeo del LED, así como a explorar diferentes componentes electrónicos y sus posibles aplicaciones en futuros proyectos.
 
-Objetivo: Familiarizar a los alumnos con el entorno de desarrollo de Arduino, la programación básica y los circuitos electrónicos utilizando un LED.
+### Objetivo 
+Familiarizar a los alumnos con el entorno de desarrollo de Arduino, la programación básica y los circuitos electrónicos utilizando un LED.
 
 ### Materiales
 - Arduino Uno o similar.
@@ -25,7 +26,7 @@ Objetivo: Familiarizar a los alumnos con el entorno de desarrollo de Arduino, la
 1. Conecta el ánodo (patita más larga) del LED al pin digital 13 de Arduino.
 2. Conecta el cátodo (patita más corta) del LED a una fila del protoboard.
 3. Conecta una resistencia de 220 ohmios desde la fila donde está conectado el cátodo del LED a la fila de tierra (-) del protoboard.
-![DDiagrama de conexion](/Images/P1.png)
+![Diagrama de conexion](./Images/P1.png)
 4. Conecta Arduino a tu computadora mediante un cable USB y abre el entorno de desarrollo Arduino.
 5. Abre un nuevo sketch en Arduino.
 6. En el sketch, escribe el siguiente código:
@@ -44,7 +45,7 @@ void loop() {
 ```
 7. Carga el código en Arduino y observa cómo el LED parpadea a intervalos de un segundo.
 
-### Análisis de resultados:
+### Análisis de resultados
 
 Observa el parpadeo del LED y cómo está controlado por el programa que has cargado en Arduino.
 
@@ -53,7 +54,8 @@ Experimenta modificando los valores de los parámetros delay() para acelerar o r
 Realiza cambios en el código para modificar el patrón de encendido y apagado del LED.
 
 ### Cuestionario
-Instrucción: Toma un tiempo para reflexionar sobre las preguntas y proporciona respuestas claras y fundamentadas para cada una de ellas. Puedes basarte en tu experiencia durante la realización de la Práctica 1: Parpadeo de un LED y en los conceptos aprendidos. Si es necesario, realiza investigaciones adicionales para ampliar tus conocimientos sobre los temas relacionados. Escribe tus respuestas de forma clara y concisa, asegurándote de proporcionar una explicación lógica y coherente.
+
+Toma un tiempo para reflexionar sobre las preguntas y proporciona respuestas claras y fundamentadas para cada una de ellas. Puedes basarte en tu experiencia durante la realización de la Práctica 1: Parpadeo de un LED y en los conceptos aprendidos. Si es necesario, realiza investigaciones adicionales para ampliar tus conocimientos sobre los temas relacionados. Escribe tus respuestas de forma clara y concisa, asegurándote de proporcionar una explicación lógica y coherente.
 
 Recuerda que el objetivo de responder a estas preguntas es profundizar en tu comprensión de los conceptos involucrados en la práctica y reflexionar sobre su aplicación práctica. No dudes en compartir tus ideas, sugerencias y cualquier dificultad que hayas enfrentado durante el proceso. ¡Exprésate de manera clara y detallada para demostrar tu comprensión del tema!
 

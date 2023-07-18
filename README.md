@@ -22,4 +22,8 @@ Con este manual, los alumnos no solo desarrollarán habilidades prácticas y te�
 ## Contenido
 
 
-[Practica 1](ParpadeoLED.md)
+1. [Practica 1. Parpade de un led](ParpadeoLED.md)
+2. [Practica 2. Motor DC](MotorDC.md)
+3. [Practica 3. Encoder](Encoder.md)
+4. [Practica 4. Limites](Limite.md)
+5. [Practica 5. Conexión](Conexion.md)
