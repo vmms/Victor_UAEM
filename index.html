@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+  <title>Victor</title>
+</head>
+
+<body>
+    <header>
+        <div id="language-selector">
+            <button class="image-button" onclick="changeLanguage('es')" >
+                <img src="Images/web/mex_48.png" alt="Imagen del botón">
+            </button>
+            <button class="image-button" onclick="changeLanguage('en')">
+                <img src="Images/web/usa_48.png" alt="Imagen del botón">
+            </button>
+        </div>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Acerca</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about" class="aboutme">
+        <div class="container information">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 photo">
+                    <div class="circle-container">
+                        <div class="circle">
+                            <img src="Images/web/vic.png" alt="Imagen en el círculo">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 info">
+                    <h2> M en C. I. Victor M. Montaño Serrano</h2>
+                    <br>
+                    <h4 id="greeting"></h4>
+                    <p id="content"></p>
+                    <br>
+                    <p id="description"></p>
+                    <p id="work"></p>
+                    <p id="develop"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clase" class="clases">
+        <div class="container  clases_div">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="class-container">
+                        <div class="img-clase-robotica">
+                            <a href="clases.html">
+                                <img src="Images/web/robotica.png" alt="Imagen en el círculo">
+                            </a>
+                        </div>
+                    </div>
+                    Robótica
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="class-container">
+                        <div class="img-clase">
+                            <img src="Images/web/tecemer.png" alt="Imagen en el círculo">
+                        </div>
+                    </div>
+                    Tecnologias emergentes
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="class-container">
+                        <div class="img-clase">
+                            <img src="Images/web/control.png" alt="Imagen en el círculo">
+                        </div>
+                    </div>
+                    Control no Lineal
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <script src="script.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

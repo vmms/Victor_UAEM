@@ -1,0 +1,181 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 40px;
+}
+
+h1 {
+  margin: 0;
+}
+
+#language-selector {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #424242;
+  padding: 5px 25px 5px 0;
+  width: 100%;
+  margin: 0;
+}
+
+button {
+  margin: 0px;
+}
+
+.image-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.image-button img {
+  width: 24px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  height: 24px;
+  margin-right: 5px; /* Espacio entre la imagen y el texto */
+}
+
+nav.navbar {
+  position: sticky;
+  top: 40px; 
+  left: 0;
+  width: 100%;
+  background-color: #424242;
+  color: #fff;
+  display: flex;
+  justify-content: end;  
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+li {
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.informaton{
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  height: 90vh;
+  background-color: #ececec;
+  width: 100%;
+}
+
+.photo{
+  display: flex;
+  align-items: center; /* Alinea verticalmente el contenido en el centro */
+  justify-content: center;
+}
+
+.circle-container {
+  width: 350px; /* Tamaño del círculo */
+  height: 450px;
+  border-radius: 50%; /* Hace que el div sea un círculo */
+  background-image: linear-gradient(to bottom, #c6c6c6, #4f4f4f); /* Degradado de color gris */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Asegura que la imagen no se desborde del círculo */
+}
+
+.circle img {
+  width: 100%; /* Ajusta la imagen al tamaño del círculo */
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen al círculo sin distorsión */
+}
+
+.info{
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+.clases {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.clases_div{
+  align-items: center;
+  justify-content: center;
+}
+
+.class-container {
+  width: 350px; 
+  height: 450px;
+  border-radius: 5%; /* Hace que el div sea un círculo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Asegura que la imagen no se desborde del círculo */
+}
+
+.img-clase img {
+  width: 200%; 
+  height: 200%;
+  object-fit: cover; /* Ajusta la imagen al círculo sin distorsión */
+  transform: translate(-20%); 
+}
+
+.img-clase-robotica img {
+  width: 250%; 
+  height: 250%;
+  object-fit: cover; /* Ajusta la imagen al círculo sin distorsión */
+  transform: translate(-30% );
+}
+
+@media (max-width: 768px) {
+  .photo, .info, .col-lg-4, .col-md-4 {
+    width: 100%;
+  }
+}

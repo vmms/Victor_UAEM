@@ -24,7 +24,7 @@ En particular, los objetivos específicos de esta práctica son los siguientes:
 
 Al alcanzar estos objetivos, obtendrás una sólida base de conocimientos y habilidades en el control de motores de corriente continua utilizando encoders y puentes H. Estarás preparado para aplicar estos conceptos en proyectos más avanzados de mecatrónica, robótica y automatización.
 
-### Materiales necesarios:
+### Materiales necesarios
 
 - Arduino UNO o compatible
 - Motor de corriente continua (DC)
@@ -39,6 +39,7 @@ Al alcanzar estos objetivos, obtendrás una sólida base de conocimientos y habi
 Conecta el pin de salida del encoder a un pin con interrupción del Arduino (por ejemplo, canal A del encoder al Pin 2 del Arduino).
 2. Abre el software de Arduino IDE y crea un nuevo proyecto.
 Configura los pines de entrada y salida necesarios para el encoder y el puente H de la siguiente manera:
+
 ```cpp
 //Este código utiliza la interrupción del Arduino para detectar los cambios en el estado del canal A del encoder. La función updatePosition() se ejecuta cada vez que hay una transición en el estado del canal A, lo que permite contar los pulsos y determinar la posición actual del encoder.
 

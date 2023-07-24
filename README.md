@@ -17,13 +17,3 @@ Al finalizar este manual, los estudiantes deberán tener una comprensión profun
 Este manual sienta las bases para que los estudiantes puedan expandir sus conocimientos más allá de Arduino y explorar otros microcontroladores y plataformas en el campo de la robótica. A medida que los estudiantes adquieran una comprensión sólida de los sensores y su aplicación, estarán preparados para enfrentar nuevos desafíos y explorar diferentes tecnologías en el ámbito de la ingeniería robótica. Esto les brindará la flexibilidad y el conocimiento necesario para adaptarse a los avances tecnológicos y utilizar otros microcontroladores que se ajusten mejor a las necesidades específicas de sus proyectos.
 
 Con este manual, los alumnos no solo desarrollarán habilidades prácticas y teóricas en el uso de sensores con Arduino, sino que también se abrirán las puertas a un mundo de posibilidades y exploración más allá de la plataforma inicial. Al adquirir una base sólida en los fundamentos de los sensores y su integración con microcontroladores, los estudiantes estarán preparados para llevar sus conocimientos a un nivel superior y continuar su viaje en la emocionante disciplina de la robótica.
-
-
-## Contenido
-
-
-1. [Practica 1. Parpade de un led](ParpadeoLED.md)
-2. [Practica 2. Motor DC](MotorDC.md)
-3. [Practica 3. Encoder](Encoder.md)
-4. [Practica 4. Limites](Limite.md)
-5. [Practica 5. Conexión](Conexion.md)
