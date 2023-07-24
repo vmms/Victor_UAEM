@@ -36,23 +36,12 @@ collapsePracticas.addEventListener("click", function() {
 });
 
 // Función para cargar y renderizar el archivo Markdown
-document.addEventListener('DOMContentLoaded', () => {
-    // Cargar el contenido del archivo Markdown y aplicar el resaltado de sintaxis
-    function loadMarkdown(mdFile) {
+function loadMarkdown(mdFile) {
     fetch(mdFile)
-        .then(response => response.text())
-        .then(data => {
+    .then(response => response.text())
+    .then(data => {
         const contentDiv = document.getElementById('content');
-        contentDiv.innerHTML = marked(data, { langPrefix: 'hljs ' }); // Agrega langPrefix para las clases de resaltado
-
-        // Resaltar la sintaxis de código C++
-        contentDiv.querySelectorAll('pre code.cpp').forEach((block) => {
-            hljs.highlightBlock(block);
-        });
-        })
-        .catch(error => console.log('Error al cargar el archivo: ' + error));
-    }
-
-    // Carga un archivo Markdown inicial al cargar la página (puedes ajustar el archivo según tus necesidades)
-    loadMarkdown('README.md');
-});
+        contentDiv.innerHTML = marked(data);
+    })
+    .catch(error => console.log('Error al cargar el archivo: ' + error));
+}
