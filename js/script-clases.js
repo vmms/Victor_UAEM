@@ -41,7 +41,8 @@ function loadMarkdown(mdFile) {
     .then(response => response.text())
     .then(data => {
         const contentDiv = document.getElementById('content');
-        contentDiv.innerHTML = marked(data);
+        contentDiv.innerHTML = marked(data, { langPrefix: 'hljs language' });
+        hljs.highlightAll(); // Aplica el resaltado de sintaxis a todos los bloques de código.
     })
     .catch(error => console.log('Error al cargar el archivo: ' + error));
 }
