@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/styles-clases.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.2.0/styles/monokai.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.2.0/lib/highlight.min.js"></script>
   <title>Victor</title>
 </head>
 
@@ -22,16 +21,20 @@
       <div class="container-fluid">
         <!-- Toggle button -->
         <button
-          class="navbar-toggler d-lg-none"
+          id="menuToggleButton"
+          class="navbar-toggler d-lg-none collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#sidebarMenu"
           aria-controls="sidebarMenu"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          style="top: -20px;"
         >
-          <i class="fas fa-bars"></i>
+          <i class="fas fa-bars" style="color: #ffffff;"></i>
         </button>  
+      </div>
+    </nav>
     <!-- Navbar -->
     
     <!-- Sidebar -->
@@ -94,7 +97,7 @@
             <!-- Collapsed content -->
             <ul id="collapseExample2" class="collapse list-group list-group-flush">
               <li class="list-group-item py-1">
-                <a href="" class="text-reset">Link 1</a>
+                <a href="#" class="text-reset">Link 1</a>
               </li>
             </ul>
             <!-- Collapse 2 -->
@@ -102,21 +105,27 @@
         </div>
       </nav>
       <!-- Sidebar -->
+      <div class="container-fluid d-flex justify-content-end mt-4 mb-4">
+        <button class="btn btn-sm btn-link text-white btn-sm my-2" onclick="goToHome()" style="font-size: 20px;">
+          <i class="fas fa-home me-2"></i>
+        </button>
+      </div>
   </header>
   
   <!-- Main layout -->
-  <main style="margin-top: 58px">
+  <main style="margin-top: 50px">
     <div class="container pt-4" id="content">
       <!-- El contenido Markdown se cargará aquí -->
     </div>
   </main>
 
-  <script src="js/script.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
+  <script src="node_modules/highlight.js/lib/highlight.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
   <script src="js/script-clases.js"></script>
 </body>
 </html>

@@ -37,6 +37,8 @@ Al alcanzar estos objetivos, adquiriremos los conocimientos y habilidades necesa
 
 1. Realiza la conexión física:
 
+![Diagrama de conexion](./Images/P2.png)
+
 2. Carga el código en el Arduino:
 
 ```cpp

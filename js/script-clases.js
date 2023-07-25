@@ -1,18 +1,3 @@
-const dropdownItems = document.querySelectorAll('.dropdown');
-
-dropdownItems.forEach(item => {
-  item.addEventListener('click', () => {
-    dropdownItems.forEach(dropdown => {
-      if (dropdown !== item) {
-        dropdown.querySelector('.submenu').style.display = 'none';
-      }
-    });
-
-    const submenu = item.querySelector('.submenu');
-    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-  });
-});
-
 // Obtener el enlace "Collapsed menu" por su id
 const collapseLink = document.getElementById("collapseLink");
 // Obtener el elemento <ul> con el id "collapseExample2"
@@ -35,14 +20,50 @@ collapsePracticas.addEventListener("click", function() {
   collapseExample1.classList.toggle("show");
 });
 
+
+// Función para contraer el menú principal
+function collapseMainMenu() {
+  const sidebarMenu = document.getElementById("sidebarMenu");
+  if (sidebarMenu.classList.contains("show")) {
+    sidebarMenu.classList.remove("show");
+  }
+}
+
+// Agregar evento click a cada enlace dentro del menú
+const linksInMenu = document.querySelectorAll("#sidebarMenu a");
+linksInMenu.forEach((link) => {
+  // Verificar si el enlace es un elemento <a> que colapsa el <ul>
+  if (link.hasAttribute("data-mdb-toggle")) {
+    link.addEventListener("click", (e) => {
+      e.stopPropagation(); // Detener la propagación del evento click
+    });
+  } else {
+    link.addEventListener("click", () => {
+      collapseMainMenu(); // Contraer el menú principal
+    });
+  }
+});
+
+
+
 // Función para cargar y renderizar el archivo Markdown
+let markdownLoaded = false; // Variable para controlar si se cargó el Markdown
+
 function loadMarkdown(mdFile) {
+  if (!markdownLoaded) {
     fetch(mdFile)
-    .then(response => response.text())
-    .then(data => {
+      .then(response => response.text())
+      .then(data => {
         const contentDiv = document.getElementById('content');
-        contentDiv.innerHTML = marked(data, { langPrefix: 'hljs language' });
+        contentDiv.innerHTML = marked(data, { langPrefix: 'hljs language-' });
         hljs.highlightAll(); // Aplica el resaltado de sintaxis a todos los bloques de código.
-    })
-    .catch(error => console.log('Error al cargar el archivo: ' + error));
+        markdownLoaded = true; // Marcar que el Markdown se ha cargado
+      })
+      .catch(error => console.log('Error al cargar el archivo: ' + error));
+  }
+}
+
+function goToHome() {
+  // Redirige a tu archivo index.html
+  window.location.href = "index.html";
 }

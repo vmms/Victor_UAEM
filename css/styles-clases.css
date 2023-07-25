@@ -1,10 +1,10 @@
 body {
-    background-color: #fbfbfb;
+    background-color: #ffffff;
 }
 
 @media (min-width: 991.98px) {
     main {
-        padding-left: 240px;
+        padding-left: 250px;
     }
 
     .navbar-toggler {
@@ -19,9 +19,9 @@ body {
     bottom: 0;
     left: 0;
     padding: 0; /* Height of navbar */
-    margin: 58px 0 0 0;
+    margin: 50px 0 0 0;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-    width: 240px;
+    width: 250px;
     z-index: 600;
 }
 
@@ -53,4 +53,13 @@ body {
 
 .navbar-brand {
     margin-left: 50px; /* Ajusta el margen izquierdo según tus necesidades */
+}
+
+#collapseExample1 a,
+#collapseExample2 a {
+    text-decoration: none;
+}
+
+p {
+    text-align: justify;
 }
