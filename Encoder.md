@@ -17,10 +17,10 @@ El objetivo de esta práctica es brindarte una comprensión profunda del control
 
 En particular, los objetivos específicos de esta práctica son los siguientes:
 
-1. Familiarizarse con el uso del encoder: Comprender el funcionamiento del encoder de un canal y cómo se utiliza para medir la posición y velocidad del motor. Aprenderás a realizar las conexiones físicas necesarias para obtener la retroalimentación del encoder y cómo interpretar los datos que proporciona.
-2. Adquirir habilidades de programación en Arduino: Aprender a utilizar el Arduino para leer y procesar los datos provenientes del encoder. Programarás el Arduino para interpretar los datos de posición y velocidad y utilizar esta información para controlar de manera precisa la dirección y velocidad del motor a través del puente H.
-3. Practicar el control del motor: Realizar pruebas y experimentos prácticos para controlar la dirección y velocidad del motor de manera efectiva. Aprenderás a ajustar y afinar los parámetros del control para lograr un movimiento suave y preciso del motor.
-4. Comprender la importancia de la retroalimentación: Apreciar el valor de la retroalimentación de posición y velocidad proporcionada por el encoder. Entender cómo esta información permite un control más preciso y una mayor capacidad de respuesta del motor en diversas aplicaciones.
+- Familiarizarse con el uso del encoder: Comprender el funcionamiento del encoder de un canal y cómo se utiliza para medir la posición y velocidad del motor. Aprenderás a realizar las conexiones físicas necesarias para obtener la retroalimentación del encoder y cómo interpretar los datos que proporciona.
+- Adquirir habilidades de programación en Arduino: Aprender a utilizar el Arduino para leer y procesar los datos provenientes del encoder. Programarás el Arduino para interpretar los datos de posición y velocidad y utilizar esta información para controlar de manera precisa la dirección y velocidad del motor a través del puente H.
+- Practicar el control del motor: Realizar pruebas y experimentos prácticos para controlar la dirección y velocidad del motor de manera efectiva. Aprenderás a ajustar y afinar los parámetros del control para lograr un movimiento suave y preciso del motor.
+- Comprender la importancia de la retroalimentación: Apreciar el valor de la retroalimentación de posición y velocidad proporcionada por el encoder. Entender cómo esta información permite un control más preciso y una mayor capacidad de respuesta del motor en diversas aplicaciones.
 
 Al alcanzar estos objetivos, obtendrás una sólida base de conocimientos y habilidades en el control de motores de corriente continua utilizando encoders y puentes H. Estarás preparado para aplicar estos conceptos en proyectos más avanzados de mecatrónica, robótica y automatización.
 
@@ -37,6 +37,9 @@ Al alcanzar estos objetivos, obtendrás una sólida base de conocimientos y habi
 
 1. Realiza la siguiente conexión física: 
 Conecta el pin de salida del encoder a un pin con interrupción del Arduino (por ejemplo, canal A del encoder al Pin 2 del Arduino).
+
+![Diagrama de conexion](./Images/P3.png)
+
 2. Abre el software de Arduino IDE y crea un nuevo proyecto.
 Configura los pines de entrada y salida necesarios para el encoder y el puente H de la siguiente manera:
 

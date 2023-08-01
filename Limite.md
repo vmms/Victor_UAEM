@@ -15,14 +15,14 @@ El objetivo de esta práctica es familiarizar a los estudiantes con el uso de se
 
 Objetivos Específicos:
 
-1. Comprender la importancia de los sensores de inicio y fin de carrera en el control del movimiento en los sistemas robóticos.
-2. Familiarizarse con los diferentes tipos de sensores de límite y su funcionamiento.
-3. Aprender a implementar y configurar sensores de inicio y fin de carrera en un sistema robótico utilizando una plataforma de desarrollo como Arduino.
-4. Desarrollar habilidades de programación para interpretar las señales de los sensores de límite y tomar decisiones en función de ellas.
-5. Realizar pruebas y ajustes para asegurar un funcionamiento preciso y confiable de los sensores de límite en el control del movimiento.
-6. Reconocer las aplicaciones prácticas de los sensores de inicio y fin de carrera en diversos tipos de robots y sistemas automatizados.
-7. Fomentar el pensamiento crítico y la resolución de problemas al enfrentar desafíos relacionados con la implementación y configuración de los sensores de límite.
-8. Promover la conciencia de la importancia de la seguridad y la precisión en el control del movimiento en entornos robóticos mediante el uso de sensores de límite.
+- Comprender la importancia de los sensores de inicio y fin de carrera en el control del movimiento en los sistemas robóticos.
+- Familiarizarse con los diferentes tipos de sensores de límite y su funcionamiento.
+- Aprender a implementar y configurar sensores de inicio y fin de carrera en un sistema robótico utilizando una plataforma de desarrollo como Arduino.
+- Desarrollar habilidades de programación para interpretar las señales de los sensores de límite y tomar decisiones en función de ellas.
+- Realizar pruebas y ajustes para asegurar un funcionamiento preciso y confiable de los sensores de límite en el control del movimiento.
+- Reconocer las aplicaciones prácticas de los sensores de inicio y fin de carrera en diversos tipos de robots y sistemas automatizados.
+- Fomentar el pensamiento crítico y la resolución de problemas al enfrentar desafíos relacionados con la implementación y configuración de los sensores de límite.
+- Promover la conciencia de la importancia de la seguridad y la precisión en el control del movimiento en entornos robóticos mediante el uso de sensores de límite.
 
 ### Materiales
 
@@ -35,6 +35,8 @@ Objetivos Específicos:
 
 **Procedimiento:**
 1. Realiza la siguiente conexion fisica:
+
+![Diagrama de conexion](./Images/P4.png)
 
 2. Abre el software de Arduino IDE y crea un nuevo proyecto.
 Copia el siguiente código:

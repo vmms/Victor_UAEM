@@ -4,7 +4,7 @@ body {
 
 @media (min-width: 991.98px) {
     main {
-        padding-left: 250px;
+        padding-left: 265px;
     }
 
     .navbar-toggler {
@@ -62,4 +62,14 @@ body {
 
 p {
     text-align: justify;
+}
+
+main #content img {
+    width: 100%;
+    height: auto;
+}
+
+#collapseExample1 li,
+#collapseExample2 li {
+    color: #444444; /* Puedes cambiar "red" por el color deseado */
 }

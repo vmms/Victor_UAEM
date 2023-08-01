@@ -63,7 +63,7 @@ nav.navbar {
   margin: 0;
 }
 
-.navbar-menu ul {
+.navbar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -71,7 +71,7 @@ nav.navbar {
   justify-content: flex-end;
 }
 
-.navbar-menu li {
+.navbar li {
   margin-right: 10px;
 }
 
@@ -116,6 +116,7 @@ a {
   width: 100%; /* Ajusta la imagen al tamaño del círculo */
   height: 100%;
   object-fit: cover; /* Ajusta la imagen al círculo sin distorsión */
+  object-position: -10px -8px; 
 }
 
 .info{
@@ -180,3 +181,58 @@ p {
     width: 100%;
   }
 }
+
+section.scheduler {
+  margin: 0px;
+  height: 95vh; /* La sección ocupa el 90% del alto de la pantalla (viewport height) */
+  background-color: #9d9d9d; /* Color de fondo azul */
+  color: white; /* Color de texto blanco para mayor contraste */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.horario {
+  display: grid;
+  grid-template-columns: 250px repeat(5, 150px); /* 5 columnas para los días de la semana */
+  gap: 1px;
+  font-size: 13px;
+}
+
+.hora {
+  border: 1px solid #ccc;
+  background-color: #dbdbdb;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bloque {
+  border: 1px solid #ccc;
+  padding: 3px;
+  text-align: center;
+}
+
+.bloque.combined {
+  color: #424242; /* Color de la fuente en negro */
+  font-weight: bold;
+  border: 1px solid #424242;
+  background-color: #ccc; /* Cambiar el color de fondo del bloque combinado */
+  grid-row: span 4; /* Ocupar dos filas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloque.combined_2 {
+  color: #424242; /* Color de la fuente en negro */
+  font-weight: bold;
+  border: 1px solid #424242;
+  background-color: #ccc; /* Cambiar el color de fondo del bloque combinado */
+  grid-row: span 2; /* Ocupar dos filas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
