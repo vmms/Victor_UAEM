@@ -19,3 +19,51 @@ function changeLanguage(language) {
 
 // Establecer el idioma inicial
 changeLanguage("es");
+
+// // Establecer el idioma inicial
+// changeLanguage("es");
+
+// let isScrolling = false;
+
+// // Función para el desplazamiento suave al hacer clic en un enlace del navbar
+// function smoothScroll(target, offset, duration) {
+//   if (isScrolling) return;
+//   isScrolling = true;
+
+//   const targetElement = document.querySelector(target);
+//   const targetPosition = targetElement.getBoundingClientRect().top;
+//   const startPosition = window.scrollY;
+//   const distance = targetPosition - startPosition + offset;
+//   let startTime = null;
+
+//   function animation(currentTime) {
+//     if (startTime === null) startTime = currentTime;
+//     const timeElapsed = currentTime - startTime;
+//     const progress = timeElapsed / duration;
+//     const ease = easeOutCubic(progress);
+//     window.scrollTo(0, startPosition + distance * ease);
+
+//     if (timeElapsed < duration) requestAnimationFrame(animation);
+//     else {
+//       isScrolling = false;
+//       setTimeout(() => {
+//         isScrolling = false;
+//       }, 200);
+//     }
+//   }
+
+//   function easeOutCubic(t) {
+//     return (t = t - 1) * t * t + 1;
+//   }
+
+//   requestAnimationFrame(animation);
+// }
+
+// // Agregar el evento de clic a los enlaces del navbar
+// document.querySelectorAll('.navbar a').forEach(link => {
+//   link.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     const target = link.getAttribute('href');
+//     smoothScroll(target, 40, 1000); // Desplazamiento de 40 píxeles hacia abajo y 1000 ms de duración
+//   });
+// });
