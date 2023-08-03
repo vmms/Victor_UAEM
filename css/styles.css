@@ -280,6 +280,17 @@ section.scheduler {
   justify-content: center;
 }
 
+.bloque.combined_c {
+  color: #ffffff; /* Color de la fuente en negro */
+  font-weight: bold;
+  border: 1px solid #424242;
+  background-color: #3e3e3e; /* Cambiar el color de fondo del bloque combinado */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .contact-info{
   display: flex;
   align-items: center;
