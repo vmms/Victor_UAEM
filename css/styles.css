@@ -179,6 +179,31 @@ nav.navbar {
     background-color: #ececec;
     width: 100%;
     padding: 20px;
+    height: auto;
+  }
+
+  .photo{
+    display: flex;
+    align-items: center; /* Alinea verticalmente el contenido en el centro */
+    justify-content: center;
+  }
+  
+  .circle-container {
+    width: 180px; /* Tamaño del círculo */
+    height: 260px;
+    border-radius: 50%; /* Hace que el div sea un círculo */
+    background-image: linear-gradient(to bottom, #c6c6c6, #4f4f4f); /* Degradado de color gris */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Asegura que la imagen no se desborde del círculo */
+  }
+  
+  .circle img {
+    width: 110%; /* Ajusta la imagen al tamaño del círculo */
+    height: 110%;
+    object-fit: cover; /* Ajusta la imagen al círculo sin distorsión */
+    object-position: -20px 8px; 
   }
 }
 
@@ -238,10 +263,6 @@ p {
 }
 
 @media (max-width: 768px) {
-  .photo, .info, .col-lg-4, .col-md-4 {
-    width: 20%;
-  }
-
   .clases {
     display: flex;
     align-items: center;
@@ -254,8 +275,8 @@ p {
   }
   
   .class-container {
-    width: 400px; 
-    height: 200px;
+    width: 300px; 
+    height: 150px;
     border-radius: 5%; /* Hace que el div sea un círculo */
     display: flex;
     justify-content: center;
@@ -337,7 +358,6 @@ section.scheduler {
   font-weight: bold;
   border: 1px solid #424242;
   background-color: #3e3e3e; /* Cambiar el color de fondo del bloque combinado */
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,12 +372,14 @@ section.scheduler {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    height: auto;
   }
   
   .horario {
     display: grid;
-    grid-template-columns: 120px repeat(5, 90px); /* 5 columnas para los días de la semana */
+    grid-template-columns: 50px repeat(5, 60px); /* 5 columnas para los días de la semana */
     gap: 1px;
     font-size: 9px;
   }
@@ -405,7 +427,6 @@ section.scheduler {
     font-weight: bold;
     border: 1px solid #424242;
     background-color: #3e3e3e; /* Cambiar el color de fondo del bloque combinado */
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -473,7 +494,8 @@ iframe {
     margin: 0px;
     background-color: #303030;
     width: 100%;
-    padding: 10px;
+    padding: 20px;
+    height: auto;
   }
   
   .contact-info.container {
