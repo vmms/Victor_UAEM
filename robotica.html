@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.2.0/styles/monokai.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
   <title>Victor</title>
 </head>
 
@@ -52,6 +52,7 @@
               id="collapsePracticas"
             >
             <i class="fas fa-atom fa-fw me-3" style="color: #444444;"></i><span>Prácticas</span>
+            <i class="fas fa-chevron-down" style="color: #444444; float: right;"></i>
             </a>
             <!-- Collapsed content -->
             <ul id="collapseExample1" class="collapse list-group list-group-flush">
@@ -91,8 +92,9 @@
               aria-expanded="true"
               aria-controls="collapseExample2"
               id="collapseLink"
-            >  
+            > 
             <i class="fas fa-regular fa-clipboard fa-fw me-3" style="color: #444444;"></i><span>Ejercicios</span>
+            <i class="fas fa-chevron-down" style="color: #444444; float: right;"></i>
             </a>
             <!-- Collapsed content -->
             <ul id="collapseExample2" class="collapse list-group list-group-flush">
@@ -101,6 +103,28 @@
               </li>
             </ul>
             <!-- Collapse 2 -->
+
+            <!-- Collapse 3 -->
+            <a
+              class="list-group-item list-group-item-action py-2 ripple"
+              aria-current="true"
+              data-mdb-toggle="collapse"
+              href="#collapseExample3"
+              aria-expanded="true"
+              aria-controls="collapseExample3"
+              id="collapseSlicer"
+            > 
+            <i class="fab fa-slideshare fa-fw me-3" style="color: #444444;"></i><span>Diapositivas</span>
+            <i class="fas fa-chevron-down" style="color: #444444; float: right;"></i>
+            </a>
+            <!-- Collapsed content -->
+            <ul id="collapseExample3" class="collapse list-group list-group-flush">
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadPDF('Press/Rob/PresentacionCurso.pdf')">Presentación PDF</a>
+              </li>
+            </ul>
+            <!-- Collapse 3 -->
+
           </div>
         </div>
       </nav>
@@ -115,14 +139,25 @@
   <!-- Main layout -->
   <main style="margin-top: 50px">
     <div class="container pt-4" id="content">
-      <!-- El contenido Markdown se cargará aquí -->
+        <!-- El contenido Markdown se cargará aquí -->
+    </div>
+    <div id="pdfViewerContainer">
+      <!-- El visor de PDF se cargará aquí -->      
+    </div>
+    <div id="pdfControls" style="display: none;">
+      <button id="homeButton"><i class="fas fa-home"></i> Inicio</button>
+      <button id="prevPageButton"><i class="fas fa-chevron-left"></i> Anterior</button>
+      <button id="nextPageButton">Siguiente <i class="fas fa-chevron-right"></i></button>
+      <a id="downloadButton" href="#" download><i class="fas fa-download"></i> Descargar</a>
+    </div>
     </div>
   </main>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
-  <script src="node_modules/highlight.js/lib/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/3.0.7/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>

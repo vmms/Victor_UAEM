@@ -123,6 +123,90 @@ nav.navbar {
   transform: translateY(-3px); /* Mover el texto hacia arriba */
 }
 
+@media (min-width: 992px) {
+  /* Atributos para el menú en la versión de escritorio */
+  #principalMenu {
+    display: block !important; /* Asegura que el menú esté visible */
+  }
+}
+
+/* Estilos para la versión móvil */
+@media (max-width: 991.98px) {
+  header {
+    display: flex;
+    align-items: center; /* Centrar verticalmente los elementos */
+    height: 45px;
+  }
+
+  .navbar {
+    display: flex;
+  }
+
+  nav.navbar {
+    position: sticky;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #424242;
+    color: #fff;
+    display: flex;
+    justify-content: end;
+    padding: 0;
+    margin: 0;
+    z-index: 998; /* Asegura que la navbar esté por encima de otros elementos */
+  }
+
+  /* Estilo para el botón de menú en versión móvil */
+  #menuToggleButton {
+    margin: 1px 2px;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  /* Estilos para el menú desplegable en versión móvil */
+  #principalMenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    background-color: #424242;
+    z-index: 999;
+  }
+
+  #principalMenu.show ul {
+    display: block;
+  }
+
+  #principalMenu ul li {
+    margin-right: 0;
+    margin-bottom: 0px;
+  }
+
+  #principalMenu ul li a {
+    color: #ffffff;
+    font-size: 13px;
+    text-align: left;
+    display: block;
+    padding: 5px 20px;
+  }
+
+  #principalMenu ul li a.active {
+    font-weight: normal;
+  }
+
+  #principalMenu ul li a:hover::after {
+    content: none;
+    transform: none;
+  }
+}
+
 .informaton{
   align-items: center;
   justify-content: center;
@@ -273,6 +357,17 @@ p {
     z-index: 1; /* Valor de z-index menor para que la sección "clases" esté detrás del header */
     padding: 20px;
   }
+
+  .clases_div {
+    width: 100%; /* Asegurarse de que la clase "clases_div" ocupe todo el ancho */
+  }
+
+  .col-lg-4.col-md-4.col-sm-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Aplicar dirección de columna para centrar contenido verticalmente */
+  }
   
   .class-container {
     width: 300px; 
@@ -358,6 +453,7 @@ section.scheduler {
   font-weight: bold;
   border: 1px solid #424242;
   background-color: #3e3e3e; /* Cambiar el color de fondo del bloque combinado */
+  grid-row: span 4; /* Ocupar dos filas */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -431,6 +527,24 @@ section.scheduler {
     align-items: center;
     justify-content: center;
   }
+}
+
+section.schedulerRob {
+  margin: 0px;
+  height: 100vh; /* La sección ocupa el 90% del alto de la pantalla (viewport height) */
+  background-color: #ececec; /* Color de fondo azul */
+  color: rgb(47, 47, 47); /* Color de texto blanco para mayor contraste */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.labrob {
+  display: grid;
+  grid-template-columns: 250px repeat(5, 150px); /* 5 columnas para los días de la semana */
+  gap: 1px;
+  font-size: 13px;
 }
 
 .contact-info{
