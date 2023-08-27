@@ -89,6 +89,7 @@ linksInMenu.forEach((link) => {
 });
 
 function goToHome() {
+  console.log('Home')
   // Aquí puedes agregar el código para redirigir a la página de inicio
   // Por ejemplo, si quieres redirigir a index.html, puedes usar:
   window.location.href = "index.html";
