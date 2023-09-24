@@ -92,6 +92,13 @@ header {
     text-decoration: none;
 }
 
+#collapseMatlab a,
+#collapsePython a {
+    text-decoration: none;
+    border: none;
+    border-width: 0px;
+}
+
 p {
     text-align: justify;
 }
@@ -105,6 +112,13 @@ main #content img {
 #collapseExample2 li,
 #collapseExample3 li  {
     color: #444444; /* Puedes cambiar "red" por el color deseado */
+}
+
+#collapseMatlab li,
+#collapsePython li{
+    color: #444444; /* Puedes cambiar "red" por el color deseado */
+    border: none;
+    border-width: 0px;
 }
 
 /* Estilos para el visor de PDF */

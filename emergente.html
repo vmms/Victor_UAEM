@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles-clases.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+  <title>Victor</title>
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light fixed-top" style="margin: 5px 0px 0px 20px;">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          id="menuToggleButton"
+          class="navbar-toggler d-lg-none collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          style="top: 3px;"
+        >
+          <i class="fas fa-bars" style="color: #ffffff;"></i>
+        </button>  
+      </div>
+    </nav>
+    <!-- Navbar -->
+    
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4 custom-margin">
+            <!-- Collapse 1 -->
+            <a
+              class="list-group-item list-group-item-action py-2 ripple"
+              aria-current="true"
+              data-mdb-toggle="collapse"
+              href="#collapseExample1"
+              aria-expanded="true"
+              aria-controls="collapseExample1"
+              id="collapsePracticas"
+            >
+            <i class="fas fa-atom fa-fw me-3" style="color: #444444;"></i><span>Prácticas</span>
+            <i class="fas fa-chevron-down" style="color: #444444; float: right;"></i>
+            </a>
+            <!-- Collapsed content -->
+            <ul id="collapseExample1" class="collapse list-group list-group-flush">
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/README.md')">Introducción</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/ParpadeoLED.md')">Encendido de un led</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/MotorDC.md')">Motor DC</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Encoder.md')">Encoders</a>
+              </li>
+              <!-- <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Encoder2.md')">Encoder dual</a>
+              </li> -->
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Limite.md')">Limites</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/USB.md')">Comunicación USB</a>
+              </li>
+              <!-- <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Bluetooth.md')">Bluetooth</a>
+              </li> -->
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Servo.md')">Servomotores</a>
+              </li>
+              <!-- <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Steper.md')">Motores a pasos</a>
+              </li> -->
+            </ul>
+            <!-- Collapse 1 -->
+
+            <!-- Collapse 2 -->
+            <a
+              class="list-group-item list-group-item-action py-2 ripple"
+              aria-current="true"
+              data-mdb-toggle="collapse"
+              href="#collapseExample2"
+              aria-expanded="true"
+              aria-controls="collapseExample2"
+              id="collapseLink"
+            > 
+            <i class="fas fa-regular fa-clipboard fa-fw me-3" style="color: #444444;"></i><span>Ejercicios</span>
+            <i class="fas fa-chevron-down" style="color: #444444; float: right;"></i>
+            </a>
+            <!-- Collapsed content -->
+            <ul id="collapseExample2" class="collapse list-group list-group-flush">
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset">Robot 2DOF</a>
+              </li>
+            </ul>
+            <!-- Collapse 2 -->
+
+            <!-- Collapse 3 -->
+            <a
+              class="list-group-item list-group-item-action py-2 ripple"
+              aria-current="true"
+              data-mdb-toggle="collapse"
+              href="#collapseExample3"
+              aria-expanded="true"
+              aria-controls="collapseExample3"
+              id="collapseSlicer"
+            > 
+            <i class="fab fa-slideshare fa-fw me-3" style="color: #444444;"></i><span>Diapositivas</span>
+            <i class="fas fa-chevron-down" style="color: #444444; float: right;"></i>
+            </a>
+            <!-- Collapsed content -->
+            <ul id="collapseExample3" class="collapse list-group list-group-flush">
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadPDF('Press/Rob/PresentacionCurso.pdf')">Presentación de cursp</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadPDF('Press/Rob/Conceptos.pdf')">Conceptos fundamentales</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadPDF('Press/Rob/Componentes.pdf')">Componentes de Robots</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadPDF('Press/Rob/FundamentosMatematicos.pdf')">Fundamentos Matemático</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadPDF('Press/Rob/Cinematica.pdf')">Cinemática</a>
+              </li>
+            </ul>
+            <!-- Collapse 3 -->
+
+          </div>
+        </div>
+      </nav>
+      <!-- Sidebar -->
+  </header>
+
+  <div class="container-fluid d-flex justify-content-end mt-4 mb-4 custom-button-container">
+    <button class="btn btn-sm btn-link text-white custom-button" onclick="goToHome()" style="font-size: 22px; margin-top: 10px;">
+      <i class="fas fa-home me-2"></i>
+    </button>
+  </div>
+  
+  <!-- Main layout -->
+  <main style="margin-top: 50px">
+    <div class="container pt-4" id="content">
+        <!-- El contenido Markdown se cargará aquí -->
+    </div>
+    <div id="pdfViewerContainer">
+      <!-- El visor de PDF se cargará aquí -->      
+    </div>
+    <div id="pdfControls" style="display: none;">
+      <button id="homeButton"><i class="fas fa-home"></i> Inicio</button>
+      <button id="prevPageButton"><i class="fas fa-chevron-left"></i> Anterior</button>
+      <button id="nextPageButton">Siguiente <i class="fas fa-chevron-right"></i></button>
+      <a id="downloadButton" href="#" download><i class="fas fa-download"></i> Descargar</a>
+    </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/3.0.7/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/script-clases.js"></script>
+</body>
+</html>

@@ -58,17 +58,17 @@ void setup() {
 
 void loop() {
   // Verificar el estado del sensor de límite derecho
-  if (digitalRead(limitSensorRightPin) == LOW) {
+  if (digitalRead(limitSensorRightPin) == HIGH) {
     // Detener el motor si se alcanza el límite derecho
-    digitalWrite(motorPin1, LOW);
+    digitalWrite(motorPin1, HIGH);
     digitalWrite(motorPin2, LOW);
-  } else if (digitalRead(limitSensorLeftPin) == LOW) {
+  } else if (digitalRead(limitSensorLeftPin) == HIGH) {
     // Detener el motor si se alcanza el límite izquierdo
     digitalWrite(motorPin1, LOW);
-    digitalWrite(motorPin2, LOW);
-  } else {
+    digitalWrite(motorPin2, HIGH);
+  } else if (digitalRead(limitSensorLeftPin) == HIGH) && (digitalRead(limitSensorRightPin) == HIGH) {
     // Continuar el giro en sentido horario
-    digitalWrite(motorPin1, HIGH);
+    digitalWrite(motorPin1, LOW);
     digitalWrite(motorPin2, LOW);
   }
 }
