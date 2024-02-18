@@ -1,5 +1,5 @@
-## Motor DC
-### Introducción
+# Motor DC
+## Introducción
 
 La práctica que vamos a realizar tiene como objetivo el control de un motor de corriente continua (DC) utilizando un puente H y Arduino. El puente H es un circuito que nos permite controlar la dirección y velocidad de un motor DC, lo cual resulta fundamental en diversas aplicaciones de robótica y automatización.
 
@@ -9,7 +9,7 @@ A lo largo de la práctica, aprenderemos cómo conectar y configurar el puente H
 
 Al finalizar esta práctica, tendrás los conocimientos necesarios para controlar un motor de DC mediante el uso de un puente H y Arduino, lo cual te abrirá las puertas a un mundo de posibilidades en el ámbito de la robótica y la automatización.
 
-### Objetivo 
+## Objetivo 
 
 El objetivo de esta práctica es familiarizarnos con el control de un motor de corriente continua (DC) utilizando un puente H y Arduino. A través de esta práctica, aprenderemos a realizar la conexión física entre el motor, el puente H y Arduino, así como a programar el Arduino para enviar las señales de control adecuadas al puente H.
 
@@ -23,22 +23,53 @@ Al finalizar la práctica, se espera lograr los siguientes objetivos:
 
 Al alcanzar estos objetivos, adquiriremos los conocimientos y habilidades necesarios para controlar eficientemente un motor de DC utilizando un puente H y Arduino, lo cual nos brinda una base sólida para futuros proyectos y exploraciones en el campo de la robótica y la automatización.
 
-### Materiales
+## Materiales
 
-- Arduino UNO o compatible
-- Motor de DC 9v
-- Puente H (por ejemplo, L298N)
-- Batería o fuente de alimentación para el motor
-- Cables de conexión
-- Fuente de voltaje de 9v
+- Arduino UNO [Tienda en linea](https://uelectronics.com/producto/arduino-uno-r3-smd/) o compatible, como sugerencia se puede usar la ESP32 [Tienda en linea](https://uelectronics.com/producto/esp32-38-pines-esp-wroom-32/).
+<div style="display: inline-block;">
+  <img src="./Images/Componentes/Arduino_Uno.jpg" alt="Diagrama de conexión" style="width: 150px;">
+</div>
+- Motor de DC 9v [Tienda en linea](https://uelectronics.com/producto/motorreductor-amarillo-para-carrito/).
+<div style="display: inline-block;">
+  <img src="./Images/Componentes/motordc.jpg" alt="Diagrama de conexión" style="width: 150px;">
+</div>
+- Puente H, puede ser el <a href="https://uelectronics.com/producto/puente-h-l293-dip-16/">L293D</a> <img src="./Images/Componentes/L293.jpg" alt="Diagrama de conexión" style="width: 150px;"> o <a href="https://uelectronics.com/producto/l298n-modulo-driver-motor-a-pasos/">L298N</a> <img src="./Images/Componentes/L298.jpg" alt="Diagrama de conexión" style="width: 150px;">. No se recomienda la shield para motores.
+- Batería o fuente de alimentación externa de 9v [Tienda en linea](https://uelectronics.com/producto/fuente-de-alimentacion-9v-1a-con-plug/).
+<div style="display: inline-block;">
+  <img src="./Images/Componentes/Fuente_9v.jpg" alt="Diagrama de conexión" style="width: 150px;">
+</div>
+- Protoboard, se sugiere para esta práctica usar una de 400 puntos [Tienda en linea](https://uelectronics.com/producto/protoboard-400-pts/).
+<div style="display: inline-block;">
+  <img src="./Images/Componentes/Protoboard_400.jpg" alt="Diagrama de conexión" style="width: 150px;">
+</div>
+- Cables tipo dupont M-M y M-H[Tienda en linea](https://uelectronics.com/producto/cables-dupont-extra-largos-30cm-hh-mh-mm/).
+<div style="display: inline-block;">
+  <img src="./Images/Componentes/cable_dupont.jpg" alt="Diagrama de conexión" style="width: 150px;">
+</div>
+- Computadora con el software Arduino IDE instalado
+- Cable USB para conectar la placa Arduino a la computadora
 
-### Procedimiento 
+Opciones de compra en tiendas físicas
+- [Orvasa Toluca Electrónica en general](https://maps.app.goo.gl/WfXovhGmsa6bvw3A8)
+- Aelectronics 
+  - [Toluca](https://maps.app.goo.gl/2dBnsdb4rg1Kh8qeA)
+  - [Metepec](https://maps.app.goo.gl/QzJUeCJrsBDh4xaH8)
+- [Mega Audio y Electrónica](https://maps.app.goo.gl/LrWqTBnz7GEuf38YA)
+- [Electronica Gomi](https://maps.app.goo.gl/3WTRr7YPy6c65gF89)
+
+## Procedimiento 
 
 1. Realiza la conexión física:
 
-![Diagrama de conexion](./Images/P2.png)
+### Conexión para driver L923D
 
-2. Carga el código en el Arduino:
+![Diagrama de conexion](./Images/P2_293.pdf)
+
+### Conexión para driver L298N
+
+![Diagrama de conexion](./Images/P2_298.pdf)
+
+2. Carga el código en el Arduino, Sin importar cual es el driver que usaste puedes cargar el siguiente código:
 
 ```cpp
 // Definición de pines
@@ -78,7 +109,7 @@ void loop() {
 4. Observa el movimiento del motor: Una vez que el Arduino esté encendido y el código esté cargado, el motor de DC comenzará a moverse en la dirección y a la velocidad establecidas en el código. Observa el movimiento del motor y asegúrate de que se comporte según lo esperado.
 5. Experimenta con diferentes configuraciones: Una vez que el motor esté en funcionamiento, puedes experimentar con diferentes configuraciones en el código, como cambiar la dirección de giro, ajustar la velocidad del motor modificando los valores en la función analogWrite(), y explorar otras funcionalidades del puente H y Arduino para controlar el motor de DC de diferentes maneras.
 
-### Análisis de resultados
+## Análisis de resultados
 
 Una vez completada la práctica de control de un motor de corriente continua (DC) utilizando un puente H y Arduino, es importante realizar un análisis de los resultados obtenidos. En esta sección, evaluaremos el funcionamiento del motor y la precisión del control logrado mediante el uso del puente H y Arduino.
 
@@ -88,7 +119,7 @@ Una vez completada la práctica de control de un motor de corriente continua (DC
 4. Exploración de diferentes configuraciones: Experimenta con diferentes configuraciones en el código para modificar la dirección de giro y la velocidad del motor. Observa cómo estas configuraciones afectan el comportamiento del motor y evalúa la capacidad de control del sistema.
 5. Precisión del control y ajustes necesarios: Evalúa la precisión del control logrado con el puente H y Arduino. Si notas desviaciones significativas en el movimiento o en la velocidad del motor, identifica posibles causas y realiza ajustes en el código, las conexiones o la configuración del puente H para mejorar la precisión del control.
 
-### Cuestionario
+## Cuestionario
 
 Este cuestionario tiene como objetivo evaluar tus conocimientos adquiridos en la práctica de control de un motor de corriente continua (DC) utilizando un puente H y Arduino. Durante la práctica, exploraste los conceptos fundamentales de conexión, programación y control de motores de DC, utilizando un puente H como interfaz entre el Arduino y el motor.
 

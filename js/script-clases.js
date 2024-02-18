@@ -1,69 +1,91 @@
-// Obtener el enlace "Collapsed menu" por su id
-const collapseLink = document.getElementById("collapseLink");
-// Obtener el elemento <ul> con el id "collapseExample2"
-const collapseExample2 = document.getElementById("collapseExample2");
-// Obtener el ícono en el enlace
-const icon1 = collapseLink.querySelector(".fas.fa-chevron-down");
-
-// Agregar un escuchador de eventos al enlace
-collapseLink.addEventListener("click", function() {
-  // Toggle de la clase "show" en el elemento <ul>
-  collapseExample2.classList.toggle("show");
-
-  // Cambiar dinámicamente el ícono
-  if (icon1.classList.contains("fa-chevron-down")) {
-    icon1.classList.remove("fa-chevron-down");
-    icon1.classList.add("fa-chevron-up");
-  } else {
-    icon1.classList.remove("fa-chevron-up");
-    icon1.classList.add("fa-chevron-down");
+// Objeto para almacenar el estado de cada menú colapsable
+const menuFlags = {
+  collapseExample1: {
+    name: "collapseExample1",
+    state: false,
+    id: "collapsePracticas",
+  },
+  collapseExample2:  {
+    name: "collapseExample2",
+    state:false,
+    id: "collapseLink",
+  },
+  collapseExample3:  {
+    name: "collapseExample3",
+    state:false,
+    id:"collapseSlicer",
   }
+};
+
+// Función para cambiar dinámicamente el ícono del enlace
+function cambiarIcono(){
+  for (const menuId in menuFlags) {
+    console.log("menuID: " + menuId + ", " + menuFlags[menuId].state);
+    const menu = document.getElementById(menuFlags[menuId].id);
+    const iconoDown = menu.querySelector(".fas.fa-chevron-down");
+    const iconoUp = menu.querySelector(".fas.fa-chevron-up");
+
+    if (iconoDown) {
+      console.log("iconoDown")
+      if (menuFlags[menuId].state == true) {
+        // Si está expandido, cambiar el ícono a "fa-chevron-up"
+        iconoDown.classList.remove("fa-chevron-down");
+        iconoDown.classList.add("fa-chevron-up"); 
+      } 
+    } 
+    if (iconoUp) {
+      console.log("iconoUp")
+      if (menuFlags[menuId].state == false)  {
+        // Si está contraído, cambiar el ícono a "fa-chevron-down"
+        iconoUp.classList.remove("fa-chevron-up");
+        iconoUp.classList.add("fa-chevron-down");
+      }
+    }
+  }
+}
+
+
+
+// Función para contraer todos los menús colapsables excepto el que se está expandiendo
+function contraerYexpandir() {
+  for (const menuId in menuFlags) {
+    const menu = document.getElementById(menuFlags[menuId].name);
+    if (menuFlags[menuId].state == true) {
+      menu.classList.add('show');
+    } else {
+      menu.classList.remove('show');
+    }
+  }
+}
+
+function contraerOtrosMenus(exceptoEsteId) {
+  for (const menuId in menuFlags) {
+    if (menuId !== exceptoEsteId) {
+      menuFlags[menuId].state = false;
+    }
+  }
+}
+
+// Obtener todos los enlaces "Collapsed menu" y agregarles un evento click
+const collapseLinks = document.querySelectorAll('[data-mdb-toggle="collapse"]');
+collapseLinks.forEach(collapseLink => {
+  collapseLink.addEventListener("click", function() {
+    const targetId = this.getAttribute('href').replace('#', '');
+    const targetMenu = document.getElementById(targetId);
+    console.log(targetId);
+    // Si el menú actual está expandido, lo contraemos y cambiamos su bandera a false
+    if (menuFlags[targetId].state) {
+      menuFlags[targetId].state = false;
+    } else {
+      // Si el menú actual está contraído, lo expandimos, contraemos los demás y actualizamos las banderas
+      menuFlags[targetId].state = true;
+      contraerOtrosMenus(targetId);
+    }
+    contraerYexpandir();
+    cambiarIcono();
+  });
 });
 
-// Obtener el enlace "Collapsed menu" por su id
-const collapsePracticas = document.getElementById("collapsePracticas");
-// Obtener el elemento <ul> con el id "collapseExample2"
-const collapseExample1 = document.getElementById("collapseExample1");
-// Obtener el ícono en el enlace
-const icon2 = collapsePracticas.querySelector(".fas.fa-chevron-down");
-
-// Agregar un escuchador de eventos al enlace
-collapsePracticas.addEventListener("click", function() {
-  // Toggle de la clase "show" en el elemento <ul>
-  collapseExample1.classList.toggle("show");
-
-  // Cambiar dinámicamente el ícono
-  if (icon2.classList.contains("fa-chevron-down")) {
-    icon2.classList.remove("fa-chevron-down");
-    icon2.classList.add("fa-chevron-up");
-  } else {
-    icon2.classList.remove("fa-chevron-up");
-    icon2.classList.add("fa-chevron-down");
-  }
-});
-
-// Obtener el enlace "Collapsed menu" por su id
-const collapseSlicer = document.getElementById("collapseSlicer");
-// Obtener el elemento <ul> con el id "collapseExample2"
-const collapseExample3 = document.getElementById("collapseExample3");
-// Obtener el ícono en el enlace
-const icon3 = collapseSlicer.querySelector(".fas.fa-chevron-down");
-
-
-// Agregar un escuchador de eventos al enlace
-collapseSlicer.addEventListener("click", function() {
-  // Toggle de la clase "show" en el elemento <ul>
-  collapseExample3.classList.toggle("show");
-
-  // Cambiar dinámicamente el ícono
-  if (icon3.classList.contains("fa-chevron-down")) {
-    icon3.classList.remove("fa-chevron-down");
-    icon3.classList.add("fa-chevron-up");
-  } else {
-    icon3.classList.remove("fa-chevron-up");
-    icon3.classList.add("fa-chevron-down");
-  }
-});
 
 // Función para contraer el menú principal
 function collapseMainMenu() {
@@ -87,6 +109,8 @@ linksInMenu.forEach((link) => {
     });
   }
 });
+
+// ------------
 
 function goToHome() {
   console.log('Home')

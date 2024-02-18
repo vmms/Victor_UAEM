@@ -1,5 +1,5 @@
-## Comunicación por USB
-### Introducción
+# Comunicación por USB
+## Introducción
 
 El intercambio de datos es fundamental en el mundo de la electrónica, la programación, y la robótica. Una de las formas más comunes de lograr esta comunicación es a través de los puertos seriales. En esta práctica, exploraremos cómo enviar información desde un Arduino a una computadora mediante el puerto serial. Este proceso no solo es esencial para el monitoreo y la depuración de proyectos, sino que también sienta las bases para la comunicación entre dispositivos en una amplia gama de aplicaciones.
 
@@ -7,7 +7,7 @@ Durante esta práctica, aprenderemos los conceptos básicos de la comunicación 
 
 El conocimiento adquirido en esta práctica sentará las bases para la construcción de proyectos más complejos que involucren comunicación entre dispositivos, adquisición de datos y control en tiempo real. 
 
-### Objetivo
+## Objetivo
 Adquirir un entendimiento sólido sobre la comunicación serial y cómo enviar información desde un Arduino a una computadora a través del puerto serial, sentando las bases para futuros proyectos de intercambio de datos y control.
 
 Objetivos Específicos:
@@ -23,13 +23,15 @@ Objetivos Específicos:
 - Documentar de manera detallada los pasos seguidos, los desafíos enfrentados y las soluciones aplicadas durante la práctica.
 - Sintetizar los resultados y las lecciones aprendidas para crear una referencia útil de cara a futuros proyectos de comunicación serial y desarrollo de sistemas embebidos.
 
-### Materiales
+## Materiales
 
 Para Arduino:
 
 - Arduino Uno u otro modelo compatible.
 - Cable USB para conectar el Arduino a la computadora.
 - Computadora con el entorno de desarrollo Arduino IDE instalado.
+- Computadora con el software Arduino IDE instalado
+- Cable USB para conectar la placa Arduino a la computadora
 
 Para la computadora:
 
@@ -47,7 +49,7 @@ pip install pyserial
 
  Una vez que hayas instalado pySerial, podrás utilizarla en tus scripts de Python para establecer la comunicación serial con el Arduino de manera fácil y eficiente.
 
- ### Procedimiento
+## Procedimiento
 
 1. Carga el siguiente programa en tu Arduino utilizando el Arduino IDE:
 
@@ -114,7 +116,7 @@ ser.close()
 4. Ejecuta el script de Python en tu computadora para enviar los números flotantes al Arduino.
 5. Abre el monitor serial en el Arduino IDE para ver los números flotantes recibidos y mostrados por el Arduino.
 
-### Análisis de resultados
+## Análisis de resultados
 
 En esta práctica, se llevó a cabo la comunicación de tres datos flotantes desde un script de Python hacia un Arduino utilizando el puerto serial. El objetivo principal fue establecer una comunicación bidireccional entre ambos dispositivos, permitiendo el envío y la recepción de datos a través de este canal. A continuación, se presenta un análisis de los resultados obtenidos durante la ejecución de la práctica:
 
@@ -132,7 +134,7 @@ En esta práctica, se llevó a cabo la comunicación de tres datos flotantes des
 
 En resumen, la práctica de enviar tres datos flotantes desde Python hasta Arduino mediante el uso del puerto serial resultó en una comunicación exitosa y precisa. Esta experiencia proporcionó una comprensión sólida de cómo establecer una comunicación serial bidireccional entre dispositivos y cómo transmitir datos de manera efectiva. Los resultados obtenidos abren la puerta a futuros proyectos que requieran la interconexión y el intercambio de información entre dispositivos electrónicos.
 
-### Cuestionario
+## Cuestionario
 
 Este cuestionario tiene como objetivo evaluar tu comprensión de la práctica realizada, donde se estableció una comunicación bidireccional entre Python y Arduino a través del puerto serial. La práctica involucró el envío y recepción de tres números flotantes y su interpretación en ambos extremos. A través de este cuestionario, podrás demostrar tu conocimiento sobre los conceptos clave y los procesos involucrados en esta forma de comunicación entre dispositivos.
 

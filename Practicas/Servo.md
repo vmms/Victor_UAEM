@@ -1,5 +1,5 @@
-## Servomotores
-### Introducción
+# Servomotores
+## Introducción
 
 En el campo de la robótica, los microcontroladores Arduino han transformado la manera en que los estudiantes y profesionales de la electrónica pueden interactuar con el mundo físico. Una de las aplicaciones fundamentales en la robótica es el control de servomotores, que permite la precisión en el movimiento de componentes mecánicos. En esta práctica nos enfocaremos en cómo controlar servomotores con Arduino y cómo este conocimiento puede ser aplicado en diversas áreas de la robótica, la automatización y otros campos relacionados.
 
@@ -11,7 +11,7 @@ A lo largo de esta experiencia de aprendizaje, también se abordarán conceptos 
 
 Al final de la práctica, los estudiantes habrán adquirido un entendimiento profundo de cómo controlar servomotores utilizando Arduino y cómo aplicar esta habilidad en diversos proyectos de robótica. Esta experiencia sentará las bases para futuras exploraciones en la intersección de la electrónica y la mecánica, fomentando la creatividad y habilidades en el mundo de la automatización y la robótica en un contexto universitario.
 
-### Objetivo General
+## Objetivo General
 Familiarizar a los estudiantes con el control de servomotores utilizando la plataforma Arduino, en el contexto de la robótica universitaria. Los estudiantes adquirirán conocimientos esenciales sobre cómo conectar, programar y controlar servomotores, aplicando estos conceptos en proyectos de automatización y robótica.
 
 Durante esta práctica, los estudiantes deberán lograr:
@@ -28,20 +28,28 @@ Durante esta práctica, los estudiantes deberán lograr:
 - Identificar posibles desafíos y problemas que puedan surgir durante el control del servomotor.
 - Realizar ajustes en el código y la conexión para optimizar el rendimiento y la precisión del control.
 
-### Materiales
+## Materiales
 
-- Placa Arduino compatible (por ejemplo, Arduino Uno)
-- Servomotor de 180 grados (SG90 o MG995)
-- Cables de conexión jumper macho-macho y macho-hembra
+- Arduino UNO [Tienda en linea](https://uelectronics.com/producto/arduino-uno-r3-smd/) o compatible, como sugerencia se puede usar la ESP32 [Tienda en linea](https://uelectronics.com/producto/esp32-38-pines-esp-wroom-32/).
+<div style="display: inline-block;">
+  <img src="./Images/Componentes/Arduino_Uno.jpg" alt="Diagrama de conexión" style="width: 150px;">
+</div>
+- Servomotor de 180 grados (MG995  <a href="https://uelectronics.com/producto/servomotor-mg995-mg996r-digital-engranes-de-metal/"> Tienda en linea </a> <img src="./Images/Componentes/servo_MG996.jpg" alt="Diagrama de conexión" style="width: 150px;"> o SG90)  <a href="https://uelectronics.com/producto/servomotor-sg90-rc-9g/"> Tienda en linea </a> <img src="./Images/Componentes/servo_SG90.jpg" alt="Diagrama de conexión" style="width: 150px;">
+- Cables tipo dupont M-M y M-H[Tienda en linea](https://uelectronics.com/producto/cables-dupont-extra-largos-30cm-hh-mh-mm/).
+<div style="display: inline-block;">
+  <img src="./Images/Componentes/cable_dupont.jpg" alt="Diagrama de conexión" style="width: 150px;">
+</div>
 - Computadora con el software Arduino IDE instalado
 - Cable USB para conectar la placa Arduino a la computadora
 
-### Procedimiento
+## Procedimiento
 
 1. Realiza la conexión física:
 - Conecta el cable de alimentación (rojo) del servomotor al pin 5V de la placa Arduino.
 - Conecta el cable de tierra (negro o marrón) del servomotor al pin GND de la placa Arduino.
 - Conecta el cable de señal (amarillo, naranja o blanco) del servomotor al pin digital 9 de la placa Arduino.
+
+![Diagrama de conexion](./Images/P_servo.pdf)
 
 2. Escribe el siguiente programa en Arduino para manipular un servo motor
 
@@ -81,7 +89,7 @@ Al utilizar myservo.write(90);, estás indicando al Arduino que envíe una seña
 
 3. Carga el sketch del programa de Arduino en tu placa Arduino utilizando el Arduino IDE.
 
-### Análisis de resultados
+## Análisis de resultados
 
 En esta práctica, llevamos a cabo el control de un servomotor utilizando la plataforma Arduino. A través de la implementación de código y conexiones físicas adecuadas, logramos manipular la posición angular del servomotor y observar su respuesta en tiempo real. A continuación, se presenta un análisis detallado de los resultados obtenidos durante la ejecución de la práctica:
 
@@ -94,7 +102,7 @@ En esta práctica, llevamos a cabo el control de un servomotor utilizando la pla
 
 En resumen, la práctica de control de servomotor con Arduino brindó una sólida introducción a los fundamentos de la electrónica, la programación y la mecánica en el contexto de la robótica. Esta experiencia sentó las bases para futuras exploraciones en proyectos más complejos y permitió a los estudiantes comprender cómo el control preciso de los movimientos es esencial en la construcción de sistemas robóticos y automatizados.
 
-### Cuestionario
+## Cuestionario
 
 El cuestionario que sigue está diseñado para evaluar tu comprensión de los conceptos clave relacionados con la práctica de control de servomotores con Arduino en el contexto de la robótica y la automatización. Las preguntas abarcan temas que van desde los fundamentos de los servomotores y la modulación por ancho de pulso (PWM), hasta la programación en Arduino y la aplicación de los conocimientos adquiridos en proyectos más avanzados.
 
