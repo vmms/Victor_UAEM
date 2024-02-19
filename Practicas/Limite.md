@@ -176,14 +176,6 @@ void stopMotor() {
 
 ### Análisis de Resultados
 
-Una vez completada la práctica de detener el giro de un motor DC utilizando dos sensores de límite, es importante realizar un análisis de los resultados obtenidos. A continuación, se presentan algunos aspectos a considerar en el análisis:
-
-Entendido, aquí está la sección de análisis sin el cuestionario, incluyendo la importancia del uso de una protoboard:
-
----
-
-### Análisis de Resultados
-
 Al combinar el uso de sensores de límite y un encoder para controlar el movimiento de un motor DC en un proyecto robótico, es esencial realizar un análisis exhaustivo de los resultados obtenidos. A continuación, se presentan algunos aspectos clave a considerar en este análisis:
 
 1. Funcionamiento de los sensores de límite:
