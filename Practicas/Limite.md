@@ -58,7 +58,9 @@ Objetivos Específicos:
 **Procedimiento:**
 1. Realiza la siguiente conexion fisica:
 
-![Diagrama de conexion](./Images/P_switch.pdf)
+<div style="width: 100%; height: 600px">
+  <object data="./Images/P_switch.pdf" type="application/pdf" style="width: 100%; height: 550px;"></object>
+</div>
 
 2. Abre el software de Arduino IDE y crea un nuevo proyecto.
 Copia el siguiente código:
@@ -173,6 +175,14 @@ void stopMotor() {
   digitalWrite(motorDirectionPin2, LOW);
 }
 ```
+
+### Análisis de Resultados
+
+Una vez completada la práctica de detener el giro de un motor DC utilizando dos sensores de límite, es importante realizar un análisis de los resultados obtenidos. A continuación, se presentan algunos aspectos a considerar en el análisis:
+
+Entendido, aquí está la sección de análisis sin el cuestionario, incluyendo la importancia del uso de una protoboard:
+
+---
 
 ### Análisis de Resultados
 

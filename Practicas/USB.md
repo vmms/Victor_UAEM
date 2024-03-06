@@ -63,24 +63,28 @@ void setup() {
 float receivedFloats[3]; // Almacena los números flotantes recibidos
 
 void setup() {
+  pinMode(3, OUTPUT);
   Serial.begin(9600); // Iniciar comunicación serial con la velocidad correcta
 }
 
 void loop() {
-  if (Serial.available() >= sizeof(receivedFloats)) {
-    Serial.readBytes((char*)receivedFloats, sizeof(receivedFloats));
-    
-    Serial.print("Números recibidos: ");
-    Serial.print(receivedFloats[0], 2);
-    Serial.print(", ");
-    Serial.print(receivedFloats[1], 2);
-    Serial.print(", ");
-    Serial.println(receivedFloats[2], 2);
-    
-    // Enviar una confirmación de vuelta a Python
-    float response = 42.0;
-    Serial.write((byte*)&response, sizeof(response));
+  digitalWrite(3, HIGH);
+  
+  // Espera hasta que haya datos disponibles en el puerto serial
+  while (Serial.available() < 0) {
+    // Espera
   }
+
+  digitalWrite(3, LOW);
+  
+  // Lee los datos recibidos del puerto serial
+  Serial.readBytes((char*)receivedFloats, sizeof(receivedFloats));
+  
+  // Calcula la suma de los números recibidos
+  float response = receivedFloats[0] + receivedFloats[1] + receivedFloats[2];
+  
+  // Enviar la suma de vuelta a Python
+  Serial.write((byte*)&response, sizeof(response));
 }
 ```
 
@@ -89,27 +93,42 @@ void loop() {
 ```python
 import serial
 import struct
+import time
+import random
 
 # Configura la conexión serial
-arduino_port = "COMX"  # Reemplaza con el puerto correcto
+arduino_port = '/dev/cu.usbmodem141101'  # Reemplaza con el puerto correcto
 baud_rate = 9600       # Mismo valor que en el Arduino
 
+# Inicia la conexión serial
 ser = serial.Serial(arduino_port, baud_rate)
 
-# Envía los números flotantes
-num1 = 3.14
-num2 = 2.71
-num3 = 1.618
+while True:
+    # Genera tres números flotantes aleatorios entre 0 y 10 con 2 decimales
+    num1 = round(random.uniform(0, 10), 2)
+    num2 = round(random.uniform(0, 10), 2)
+    num3 = round(random.uniform(0, 10), 2)
+    
+    # Imprime los tres números en una sola línea
+    print(f"Los números enviados a Arduino son: num1 = {num1}, num2 = {num2}, num3 = {num3}")
 
-data = struct.pack('fff', num1, num2, num3)
-ser.write(data)
+    # Empaqueta los números flotantes en formato binario
+    data = struct.pack('fff', num1, num2, num3)
+    ser.write(data)
 
-# Espera a recibir una confirmación de vuelta
-response = ser.read(sizeof(float))
-print(f"Respuesta recibida desde Arduino: {struct.unpack('f', response)[0]}")
+    # Espera a recibir la respuesta de Arduino
+    while ser.in_waiting < struct.calcsize('f'):
+        # Espera
+        pass
+
+    # Lee la respuesta de Arduino
+    response_bytes = ser.read(struct.calcsize('f'))
+    response_float = struct.unpack('f', response_bytes)[0]
+    print(f"Respuesta recibida desde Arduino: {response_float}")
 
 # Cierra la conexión serial
 ser.close()
+
 ```
 
 3. Carga el sketch del programa de Arduino en tu placa Arduino utilizando el Arduino IDE.

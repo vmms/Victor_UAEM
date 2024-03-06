@@ -62,12 +62,14 @@ Opciones de compra en tiendas físicas
 1. Realiza la conexión física:
 
 ### Conexión para driver L923D
-
-![Diagrama de conexion](./Images/P2_293.pdf)
+<div style="width: 100%; height: 600px">
+  <object data="./Images/P2_293.pdf" type="application/pdf" style="width: 100%; height: 550px;"></object>
+</div>
 
 ### Conexión para driver L298N
-
-![Diagrama de conexion](./Images/P2_298.pdf)
+<div style="width: 100%; height: 600px">
+  <object data="./Images/P2_298.pdf" type="application/pdf" style="width: 100%; height: 600px;"></object>
+</div>
 
 2. Carga el código en el Arduino, Sin importar cual es el driver que usaste puedes cargar el siguiente código:
 

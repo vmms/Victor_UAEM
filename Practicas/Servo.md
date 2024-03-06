@@ -49,7 +49,9 @@ Durante esta práctica, los estudiantes deberán lograr:
 - Conecta el cable de tierra (negro o marrón) del servomotor al pin GND de la placa Arduino.
 - Conecta el cable de señal (amarillo, naranja o blanco) del servomotor al pin digital 9 de la placa Arduino.
 
-![Diagrama de conexion](./Images/P_servo.pdf)
+<div style="width: 100%; height: 600px">
+  <object data="./Images/P_servo.pdf" type="application/pdf" style="width: 100%; height: 550px;"></object>
+</div>
 
 2. Escribe el siguiente programa en Arduino para manipular un servo motor
 

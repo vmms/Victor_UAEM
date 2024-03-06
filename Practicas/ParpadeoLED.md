@@ -51,10 +51,16 @@ Opciones de compra en tiendas físicas
 1. Conecta el ánodo (patita más larga) del LED al pin digital 13 de Arduino.
 2. Conecta el cátodo (patita más corta) del LED a una fila del protoboard.
 3. Conecta una resistencia de 220 ohmios desde la fila donde está conectado el cátodo del LED a la fila de tierra (-) del protoboard.
-![Diagrama de conexion](./Images/P1.pdf)
+<div style="width: 100%; height: 600px">
+  <object data="./Images/P1.pdf" type="application/pdf" style="width: 100%; height: 600px;"></object>
+</div>
+
 4. Conecta Arduino a tu computadora mediante un cable USB y abre el entorno de desarrollo Arduino.
 5. Abre el IDE Arduino para que muestre un nuevo sketch. Identifica los siguientes botones para poder trabajar en el IDE.
-![Diagrama de conexion](./Images/arduinoIDE.pdf)
+<object data="./Images/arduinoIDE.pdf" type="application/pdf" width="100%" height="700px">
+    <p>Lo sentimos, tu navegador no soporta la visualización de PDFs. Puedes descargar el archivo <a href="./Images/arduinoIDE.pdf">aquí</a>.</p>
+</object>
+
 - Compilar: La función de compilar en el IDE de Arduino verifica sintácticamente el código escrito en el sketch para detectar posibles errores de programación. Durante este proceso, el IDE convierte el código escrito en lenguaje de programación C/C++ en instrucciones binarias que el microcontrolador de la placa Arduino puede entender. Si no se encuentran errores, el código se compila con éxito y se genera un archivo binario listo para ser cargado en la placa.
 - Cargar el programa: Una vez que el código se ha compilado correctamente, la función de carga (upload) del IDE de Arduino se encarga de transferir el archivo binario generado al microcontrolador de la placa Arduino. Esto se realiza a través del puerto USB conectado entre la computadora y la placa Arduino. Una vez que el programa se ha cargado en la placa, el microcontrolador comienza a ejecutar las instrucciones del programa, permitiendo que el proyecto se vuelva funcional.
 - Seleccionar tarjeta: Antes de compilar y cargar el programa en la placa Arduino, es necesario seleccionar el tipo de placa que se está utilizando. Esta opción permite al IDE conocer las especificaciones de hardware de la placa, como el tipo de microcontrolador y la configuración de pines, para garantizar que el código se compile y cargue correctamente. El IDE ofrece una lista desplegable con una variedad de opciones de placas Arduino populares, como Arduino Uno, Arduino Nano, Arduino Mega, entre otras.

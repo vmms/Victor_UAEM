@@ -45,7 +45,9 @@ Al alcanzar estos objetivos, los participantes estarán en condiciones de utiliz
     - Conecta el sensor ultrasónico al Arduino utilizando el esquema de conexión proporcionado.
     - Asegúrate de que el sensor esté conectado correctamente y que no haya conexiones sueltas o incorrectas.
 
-![Diagrama de conexion](./Images/P_us.pdf)
+<div style="width: 100%; height: 600px">
+  <object data="./Images/P_us.pdf" type="application/pdf" style="width: 100%; height: 550px;"></object>
+</div>
 
 2. Copia el código en tu IDE.
 

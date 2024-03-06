@@ -63,12 +63,14 @@ Opciones de compra en tiendas físicas
 Revisa cuales son los pines que permiten programar interrupciones en placa arduino. Por ejemplo, Arduino uno tiene dos interrupciones en los pines 2 y 3. En caso de que quieras programar más interrupciones deberas usar otra tarjeta.
 
 ### Diagrama de un motor con encoder de un canal
-
-![Diagrama de conexion](./Images/P_ch1.pdf)
+<div style="width: 100%; height: 600px">
+  <object data="./Images/P_ch1.pdf" type="application/pdf" style="width: 100%; height: 470px;"></object>
+</div>
 
 ### Diagrama de un motor con enconder de dos canales
-
-![Diagrama de conexion](./Images/P3.pdf)
+<div style="width: 100%; height: 600px">
+  <object data="./Images/P3.pdf" type="application/pdf" style="width: 100%; height: 450px;"></object>
+</div>
 
 2. Abre el software de Arduino IDE y crea un nuevo proyecto.
 Configura los pines de entrada y salida necesarios para el encoder y el puente H de la siguiente manera:
