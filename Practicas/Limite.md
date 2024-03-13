@@ -97,8 +97,9 @@ void loop() {
 ### Utiliza los sensores como inicio y fin de carrera.  
 
 4. Agrega un motor con encoder y conectalo como se muestra en el diagrama:
-
-![Diagrama de conexion](./Images/P_ls_enc.pdf)
+<div style="width: 100%; height: 600px">
+  <object data="./Images/P_ls_enc.pdf" type="application/pdf" style="width: 100%; height: 550px;"></object>
+</div>
 
 5. Carga el siguiente programa para ponerlo a funcionar 
 
