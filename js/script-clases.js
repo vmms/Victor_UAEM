@@ -150,6 +150,22 @@ function loadMarkdown(mdFile) {
     .catch(error => console.log('Error al cargar el archivo Markdown: ' + error));
 }
 
+// Función para cargar un HTML
+function loadHTML(htmlFile) {
+  pdfViewerContainer.style.display = 'none';
+  pdfControls.style.display = 'none';
+  contentDiv.style.display = 'block';
+
+  fetch(htmlFile)
+    .then(response => response.text())
+    .then(data => {
+      contentDiv.innerHTML = data;
+      Prism.highlightAll();
+    })
+    .catch(error => console.log('Error al cargar el archivo HTML: ' + error));
+}
+
+
 // Función para cargar un PDF
 function loadPDF(pdfUrl) {
   console.log('loadPdf:' + pdfUrl);

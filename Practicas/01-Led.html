@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
+    <title>Parpadeo de un LED</title>
+</head>
+<body>
+
+<h1>Parpadeo de un LED</h1>
+
+<h2>Introducción</h2>
+
+<p>Parpadeo de un LED es la primera actividad diseñada para familiarizar a los alumnos con el entorno de desarrollo de Arduino, la programación básica y los circuitos electrónicos. Esta práctica es el punto de partida ideal para aquellos que no tienen experiencia previa en electrónica ni programación, ya que proporcionará una introducción práctica y accesible a los conceptos fundamentales.</p>
+
+<p>El objetivo principal de esta práctica es lograr que los alumnos comprendan el proceso de creación, carga y ejecución de un programa en Arduino, mientras controlan un componente básico como un LED. El LED servirá como un indicador visual que parpadeará a intervalos regulares, lo que permitirá a los alumnos experimentar directamente la interacción entre el programa y el circuito electrónico.</p>
+
+<p>Durante esta práctica, los alumnos se familiarizarán con el entorno de desarrollo de Arduino, donde podrán escribir, compilar y cargar programas en el microcontrolador. Además, aprenderán a conectar componentes electrónicos básicos, como el LED, y utilizarán instrucciones de programación sencillas para controlar su encendido y apagado.</p>
+
+<p>Es importante destacar que, aunque esta práctica pueda parecer simple, sienta las bases para el aprendizaje futuro en el campo de la robótica y la electrónica. Al comprender los conceptos básicos de programación y los circuitos electrónicos utilizando Arduino, los alumnos estarán preparados para abordar desafíos más complejos, como el control de motores, la lectura de sensores y el desarrollo de proyectos robóticos interactivos.</p>
+
+<p>A medida que los alumnos avancen en la práctica y logren que el LED parpadee exitosamente, se fomentará la experimentación y la creatividad. Se les animará a realizar modificaciones en el código para alterar la velocidad y el patrón de parpadeo del LED, así como a explorar diferentes componentes electrónicos y sus posibles aplicaciones en futuros proyectos.</p>
+
+
+<h2>Materiales</h2>
+
+<ul>
+  <li>
+    Arduino UNO <a href="https://uelectronics.com/producto/arduino-uno-r3-smd/">Tienda en línea</a>
+    <div style="display: inline-block;">
+      <img src="./Images/Componentes/Arduino_Uno.jpg" alt="Arduino UNO" style="width: 150px;">
+    </div>
+    o compatible, como sugerencia se puede usar la ESP32 <a href="https://uelectronics.com/producto/esp32-38-pines-esp-wroom-32/">Tienda en línea</a>.
+    <div style="display: inline-block;">
+      <img src="./Images/Componentes/ESP32.jpg" alt="Arduino UNO" style="width: 150px;">
+    </div>
+  </li>
+  <li>
+    LED de 5mm cualquier color <a href="https://uelectronics.com/producto/led-5mm-difuso-rojo-amarillo-verde-azul-blanco/">Tienda en línea</a>.
+    <div style="display: inline-block;">
+      <img src="./Images/Componentes/Leds_5mm.jpg" alt="LED de 5mm" style="width: 150px;">
+    </div>
+  </li>
+  <li>
+    Resistencia de 220 ohmios <a href="https://uelectronics.com/producto/resistencia-de-1-ohm-1m-ohms-1-4w/">Tienda en línea</a>.
+    <div style="display: inline-block;">
+      <img src="./Images/Componentes/Resistencias.jpg" alt="Resistencia de 220 ohmios" style="width: 150px;">
+    </div>
+  </li>
+  <li>
+    Protoboard, se sugiere para esta práctica usar una de 400 puntos <a href="https://uelectronics.com/producto/protoboard-400-pts/">Tienda en línea</a>.
+    <div style="display: inline-block;">
+      <img src="./Images/Componentes/Protoboard_400.jpg" alt="Protoboard de 400 puntos" style="width: 150px;">
+    </div>
+  </li>
+  <li>
+    Cables tipo dupont M-M y M-H <a href="https://uelectronics.com/producto/cables-dupont-extra-largos-30cm-hh-mh-mm/">Tienda en línea</a>.
+    <div style="display: inline-block;">
+      <img src="./Images/Componentes/cable_dupont.jpg" alt="Cables tipo dupont" style="width: 150px;">
+    </div>
+  </li>
+  <li>Computadora con el software Arduino IDE instalado</li>
+  <li>Cable USB para conectar la placa Arduino a la computadora</li>
+</ul>
+
+
+<p>Opciones de compra en tiendas físicas:</p>
+
+<ul>
+    <li><a href="https://maps.app.goo.gl/WfXovhGmsa6bvw3A8">Orvasa Toluca Electrónica en general</a></li>
+    <li>Aelectronics 
+        <ul>
+            <li><a href="https://maps.app.goo.gl/2dBnsdb4rg1Kh8qeA">Toluca</a></li>
+            <li><a href="https://maps.app.goo.gl/QzJUeCJrsBDh4xaH8">Metepec</a></li>
+        </ul>
+    </li>
+    <li><a href="https://maps.app.goo.gl/LrWqTBnz7GEuf38YA">Mega Audio y Electrónica</a></li>
+    <li><a href="https://maps.app.goo.gl/3WTRr7YPy6c65gF89">Electronica Gomi</a></li>
+</ul>
+
+<h2>Procedimiento</h2>
+
+<ol>
+    <li>Conecta el ánodo (patita más larga) del LED al pin digital 13 de Arduino.</li>
+    <li>Conecta el cátodo (patita más corta) del LED a una fila del protoboard.</li>
+    <li>Conecta una resistencia de 220 ohmios desde la fila donde está conectado el cátodo del LED a la fila de tierra (-) del protoboard.</li>
+</ol>
+
+<img src="./Images/PracticasRobotica/Led.svg" alt="Imagen SVG">
+
+<ol start="4">
+    <li>Conecta Arduino a tu computadora mediante un cable USB y abre el entorno de desarrollo Arduino.</li>
+    <li>Abre el IDE Arduino para que muestre un nuevo sketch.</li>
+</ol>
+
+<img src="./Images/PracticasRobotica/Arduino.svg" alt="Imagen SVG">
+<h2>Funciones básicas del IDE de Arduino</h2>
+
+<p>El entorno de desarrollo integrado (IDE) de Arduino proporciona varias funciones fundamentales que son esenciales para desarrollar y cargar programas en las placas Arduino. Estas funciones incluyen:</p>
+
+<ul>
+  <li><strong>Compilar:</strong> La función de compilar en el IDE de Arduino verifica sintácticamente el código escrito en el sketch para detectar posibles errores de programación. Durante este proceso, el IDE convierte el código escrito en lenguaje de programación C/C++ en instrucciones binarias que el microcontrolador de la placa Arduino puede entender. Si no se encuentran errores, el código se compila con éxito y se genera un archivo binario listo para ser cargado en la placa.</li>
+  <li><strong>Cargar el programa:</strong> Una vez que el código se ha compilado correctamente, la función de carga (upload) del IDE de Arduino se encarga de transferir el archivo binario generado al microcontrolador de la placa Arduino. Esto se realiza a través del puerto USB conectado entre la computadora y la placa Arduino. Una vez que el programa se ha cargado en la placa, el microcontrolador comienza a ejecutar las instrucciones del programa, permitiendo que el proyecto se vuelva funcional.</li>
+  <li><strong>Seleccionar tarjeta:</strong> Antes de compilar y cargar el programa en la placa Arduino, es necesario seleccionar el tipo de placa que se está utilizando. Esta opción permite al IDE conocer las especificaciones de hardware de la placa, como el tipo de microcontrolador y la configuración de pines, para garantizar que el código se compile y cargue correctamente. El IDE ofrece una lista desplegable con una variedad de opciones de placas Arduino populares, como Arduino Uno, Arduino Nano, Arduino Mega, entre otras.</li>
+  <li><strong>Monitor serie:</strong> El monitor serie es una herramienta de depuración y visualización que permite a los usuarios comunicarse con la placa Arduino a través del puerto serial. Esta función muestra los datos enviados por la placa Arduino a la computadora y viceversa en tiempo real. Es útil para visualizar mensajes de depuración, resultados de sensores, o cualquier otra información que el programa Arduino envíe a través del puerto serial. El monitor serie también permite enviar comandos desde la computadora a la placa Arduino, lo que facilita la interacción y el control del proyecto en ejecución.</li>
+</ul>
+
+<p>También es importante tener en cuenta las siguientes secciones que son fundamentales y no deben faltar en ningún proyecto de Arduino:</p>
+
+<ul>
+  <li><code>void setup() { }</code>: En esta sección, se pueden realizar todas las configuraciones iniciales necesarias para el proyecto. Esto incluye la definición de los pines que se utilizarán y su configuración (entrada o salida), la inicialización de variables, la configuración de comunicaciones, como la velocidad del puerto serie, y cualquier otra configuración que sea necesaria antes de que comience la ejecución del programa principal.</li>
+  <li><code>void loop() { }</code>: Aquí es donde se coloca el programa principal del proyecto, que se ejecutará continuamente en un ciclo infinito mientras la placa Arduino esté encendida. En esta sección, se pueden incluir todas las acciones que se deben realizar de manera repetida, como leer datos de sensores, controlar actuadores, actualizar variables, enviar datos por el puerto serie, y cualquier otra tarea que se requiera para el funcionamiento del proyecto.</li>
+</ul>
+
+<ol start="6"></ol>
+    <li>En el sketch, escribe el siguiente código:</li>
+</ol>
+
+<div class="code-container">
+    <pre class="line-numbers"><code class="language-cpp new-code-block">
+        // Programa de ejemplo para encender y apagar un LED mediante arduino.
+
+        void setup() {
+        pinMode(13, OUTPUT); // Establece el pin 13 como salida, que se utilizará para controlar un LED
+        }
+
+        void loop() {
+        digitalWrite(13, HIGH); // Enciende el LED conectado al pin 13
+        delay(1000); // Espera 1 segundo
+        digitalWrite(13, LOW); // Apaga el LED conectado al pin 13
+        delay(1000); // Espera 1 segundo
+        }
+    </code></pre>
+    <button class="copy-button" onclick="copyCode()" style="float: right;">Copiar código</button>
+    <div style="clear: both;"></div>
+</div>
+
+<ol start="7">
+  <li>Selecciona la versión de la tarjeta Arduino que utilizas.</li>
+  <li>Carga el código en Arduino y observa cómo el LED parpadea a intervalos de un segundo.</li>
+</ol>
+
+<h2>Análisis de resultados</h2>
+
+<p>Observa el parpadeo del LED y cómo está controlado por el programa que has cargado en Arduino.</p>
+
+<p>Experimenta modificando los valores de los parámetros delay() para acelerar o ralentizar el parpadeo del LED.</p>
+
+<p>Realiza cambios en el código para modificar el patrón de encendido y apagado del LED.</p>
+
+<h2>Cuestionario</h2>
+
+<p>Toma un tiempo para reflexionar sobre las preguntas y proporciona respuestas claras y fundamentadas para cada una de ellas. Puedes basarte en tu experiencia durante la realización de la Práctica 1: Parpadeo de un LED y en los conceptos aprendidos. Si es necesario, realiza investigaciones adicionales para ampliar tus conocimientos sobre los temas relacionados. Escribe tus respuestas de forma clara y concisa, asegurándote de proporcionar una explicación lógica y coherente.</p>
+<p>Recuerda que el objetivo de responder a estas preguntas es profundizar en tu comprensión de los conceptos involucrados en la práctica y reflexionar sobre su aplicación práctica. No dudes en compartir tus ideas, sugerencias y cualquier dificultad que hayas enfrentado durante el proceso. ¡Exprésate de manera clara y detallada para demostrar tu comprensión del tema!</p>
+
+
+<ol>
+    <li>¿Cuál es el propósito del LED en esta práctica? ¿Qué función cumple en el circuito electrónico?</li>
+    <li>¿Qué ocurre cuando el pin digital está configurado como OUTPUT y se establece en HIGH? ¿Y cuando se establece en LOW?</li>
+    <li>¿Cómo se logra el efecto de parpadeo del LED en el programa? ¿Qué instrucciones son responsables de encender y apagar el LED?</li>
+    <li>¿Qué sucede si modificas el valor del parámetro delay() en el programa? ¿Cómo afecta al patrón de parpadeo del LED?</li>
+    <li>¿Cuáles son las ventajas de utilizar un microcontrolador como Arduino para controlar un LED en comparación con un interruptor manual?</li>
+    <li>¿Por qué es importante conectar una resistencia en serie con el LED en el circuito? ¿Cuál sería el efecto si no se utilizara la resistencia?</li>
+    <li>¿Qué otros componentes electrónicos podrían controlarse utilizando Arduino y cómo se diferenciaría el código para controlarlos?</li>
+    <li>¿Cómo podrías modificar el programa para que el LED parpadee a una frecuencia más rápida? ¿Y para que parpadee de forma intermitente en lugar de estar siempre encendido y apagado?</li>
+    <li>¿Qué aplicaciones prácticas podrías imaginar para el control de LEDs mediante Arduino?</li>
+    <li>¿Qué desafíos podrían surgir al trabajar con circuitos electrónicos y cómo podrían abordarse?</li>
+</ol>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-cpp.min.js"></script>
+</body>
+</html>

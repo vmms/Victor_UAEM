@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
+    <title>Motores a pasos</title>
+</head>
+<body>
+
+<h1>Motores a pasos</h1>
+<h2>Introducción</h2>
+
+<p>Los motores a pasos son dispositivos electromecánicos ampliamente utilizados en el campo de la robótica y la automatización debido a su capacidad para controlar el movimiento con precisión y repetibilidad. Estos motores son una herramienta fundamental en la construcción de sistemas que requieren posicionamiento preciso, como impresoras 3D, máquinas CNC, robots industriales y más.</p>
+
+<p>En esta práctica, exploraremos los fundamentos de los motores a pasos y aprenderemos a controlar su movimiento utilizando la plataforma Arduino. A lo largo de esta experiencia, los estudiantes serán introducidos a los conceptos clave relacionados con los motores a pasos, incluyendo su funcionamiento, tipos, características y aplicaciones prácticas. Además, se les guiará en la configuración y programación de un motor a pasos utilizando Arduino, permitiéndoles interactuar directamente con el dispositivo y comprender cómo se pueden aplicar estos conocimientos en proyectos reales de robótica y automatización.</p>
+
+<h2>Objetivos</h2>
+
+<p>Durante esta práctica, los estudiantes tendrán como objetivos:</p>
+
+<ul>
+  <li>Comprender los principios de funcionamiento de los motores a pasos y sus aplicaciones en la robótica y la automatización.</li>
+  <li>Identificar los componentes básicos de un motor a pasos y sus características fundamentales.</li>
+  <li>Aprender los diferentes tipos de motores a pasos y sus ventajas y desventajas.</li>
+  <li>Familiarizarse con los conceptos de pasos, pasos por revolución, torque y resolución de un motor a pasos.</li>
+  <li>Conectar un motor a pasos a una placa Arduino siguiendo las pautas de cableado apropiadas.</li>
+  <li>Programar un motor a pasos utilizando el lenguaje de programación de Arduino para controlar su movimiento en dirección y velocidad.</li>
+  <li>Utilizar las bibliotecas y funciones de Arduino específicas para el control de motores a pasos.</li>
+  <li>Realizar pruebas prácticas con el motor a pasos para observar su comportamiento y características de movimiento.</li>
+  <li>Identificar y solucionar problemas comunes relacionados con la conexión y programación de motores a pasos.</li>
+  <li>Reflexionar sobre las aplicaciones prácticas de los motores a pasos y cómo estos pueden ser utilizados en proyectos futuros de robótica y automatización.</li>
+</ul>
+
+<h2>Materiales</h2>
+
+<ul>
+    <li>
+        Arduino UNO <a href="https://uelectronics.com/producto/arduino-uno-r3-smd/">Tienda en línea</a>
+        <div style="display: inline-block;">
+          <img src="./Images/Componentes/Arduino_Uno.jpg" alt="Arduino UNO" style="width: 150px;">
+        </div>
+        o compatible, como sugerencia se puede usar la ESP32 <a href="https://uelectronics.com/producto/esp32-38-pines-esp-wroom-32/">Tienda en línea</a>.
+        <div style="display: inline-block;">
+          <img src="./Images/Componentes/ESP32.jpg" alt="Arduino UNO" style="width: 150px;">
+        </div>
+      </li>
+  <li>
+    Motor a pasos con driver  <a href="https://uelectronics.com/producto/motor-a-pasos-con-controlador/">Tienda en línea</a>
+    <div style="display: inline-block;">
+        <img src="./Images/Componentes/Pasos.jpg" alt="Arduino UNO" style="width: 150px;">
+      </div>.
+  </li>
+  <li>
+    Cables tipo dupont M-M y M-H <a href="https://uelectronics.com/producto/cables-dupont-extra-largos-30cm-hh-mh-mm/">Tienda en línea</a>.
+    <div style="display: inline-block;">
+      <img src="./Images/Componentes/cable_dupont.jpg" alt="Diagrama de conexión" style="width: 150px;">
+    </div>
+  </li>
+  <li>Computadora con el software Arduino IDE instalado</li>
+  <li>Cable USB para conectar la placa Arduino a la computadora</li>
+</ul>
+
+<h2>Procedimiento</h2>
+
+<ol>
+  <li>Realizar la conexión física del motor a pasos al driver y a la placa Arduino como se muestra en la figura</li>
+</ol>
+
+<img src="./Images/PracticasRobotica/Pasos.svg" alt="Imagen SVG">
+
+<ol start="2">
+    <li>Escribe el siguiente código en Arduino para controlar el movimiento del motor a pasos.</li>
+</ol>
+
+<div class="code-container">
+  <pre class="line-numbers"><code class="language-cpp new-code-block">
+        // Incluye la librería Stepper para controlar el motor a pasos
+        #include <Stepper.h>
+
+        // Definiciones de pines para el controlador ULN2003
+        const int in1Pin = 8;  // Conexión IN1 del driver ULN2003 al pin 8 de Arduino
+        const int in2Pin = 9;  // Conexión IN2 del driver ULN2003 al pin 9 de Arduino
+        const int in3Pin = 10; // Conexión IN3 del driver ULN2003 al pin 10 de Arduino
+        const int in4Pin = 11; // Conexión IN4 del driver ULN2003 al pin 11 de Arduino
+
+        // Define los parámetros del motor a pasos
+        const int stepsPerRevolution = 200; // Número de pasos por revolución del motor
+        Stepper myStepper(stepsPerRevolution, in1Pin, in2Pin, in3Pin, in4Pin); // Crea un objeto de tipo Stepper
+
+        void setup() {
+        // Establece el número de pasos por segundo (velocidad)
+        myStepper.setSpeed(60); // Ajusta la velocidad a 60 pasos por segundo
+        }
+
+        void loop() {
+        // Gira el motor en el sentido horario
+        myStepper.step(stepsPerRevolution); // Gira una revolución completa en sentido horario
+
+        delay(1000); // Espera 1 segundo
+
+        // Gira el motor en el sentido antihorario
+        myStepper.step(-stepsPerRevolution); // Gira una revolución completa en sentido antihorario
+
+        delay(1000); // Espera 1 segundo
+        }
+    </code></pre>
+    <button class="copy-button" onclick="copyCode()" style="float: right;">Copiar código</button>
+    <div style="clear: both;"></div>
+</div>
+
+<ol start="3">
+    <li>Realizar pruebas prácticas con el motor a pasos para verificar su correcto funcionamiento y observar su comportamiento en diferentes configuraciones de velocidad y dirección.</li>
+</ol>
+
+<h2>Análisis de resultados</h2>
+
+<p>Después de cargar el código para controlar un motor a pasos, realicemos el siguiente análisis</p>
+
+<ol>
+  <li> Movimiento del Motor:
+    <ul>
+      <li>Observen el comportamiento del motor a pasos y verifiquen que responda al código cargado en Arduino.</li>
+      <li>Verifiquen que el motor gire en los ángulos y direcciones especificadas en el programa.</li>
+      <li>Asegúrense de que la comunicación entre la placa Arduino y el driver ULN2003 sea efectiva.</li>
+    </ul>
+  </li>
+  <li> Precisión del Movimiento:
+    <ul>
+      <li>Evalúen la precisión del movimiento del motor a pasos al observar si se mueve en incrementos discretos.</li>
+      <li>Experimenten con diferentes valores de pasos por revolución y velocidades de rotación para comprender cómo afectan el comportamiento del motor.</li>
+      <li>Comprendan cómo el código controla la posición y la velocidad del motor con precisión.</li>
+    </ul>
+  </li>
+  <li>Consumo de Energía:
+    <ul>
+      <li>Midan el consumo de energía del motor a pasos durante su funcionamiento utilizando un multímetro en modo de medición de corriente.</li>
+      <li>Realicen ajustes en el código para cambiar la velocidad y la carga del motor.</li>
+      <li>Observen cómo varía el consumo de energía y comprendan la importancia de optimizar el rendimiento energético en aplicaciones prácticas.</li>
+    </ul>
+  </li>
+  <li>Aplicaciones Prácticas:
+    <ul>
+      <li>Exploraren aplicaciones prácticas del control de motores a pasos en proyectos de robótica y automatización.</li>
+      <li>Diseñen y desarrollen proyectos que utilicen el motor a pasos para tareas específicas, como la rotación de cámaras, el posicionamiento preciso de herramientas o el movimiento de dispositivos en sistemas de producción automatizados.</li>
+      <li>Comprendan cómo el control de motores a pasos puede contribuir a la funcionalidad global de un proyecto y exploren las posibilidades de aplicación en diversos campos de la ingeniería y la automatización.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2>Cuestionario</h2>
+
+<ol>
+    <li>¿Cuál es el propósito principal del control de motores a pasos en aplicaciones de robótica y automatización?</li>
+    <li>¿Qué es un motor a pasos y cómo difiere de otros tipos de motores?</li>
+    <li>Describe brevemente cómo funciona el driver ULN2003 en relación con el control de motores a pasos.</li>
+    <li>¿Por qué es importante la precisión del movimiento en aplicaciones prácticas de control de motores a pasos?</li>
+    <li>¿Qué factores pueden influir en la precisión del movimiento de un motor a pasos y cómo se pueden mitigar?</li>
+    <li>¿Qué medidas se pueden tomar para optimizar el consumo de energía de un motor a pasos durante su operación?</li>
+    <li>¿Cuál es la función de la librería "Stepper.h" de Arduino en el control de motores a pasos?</li>
+    <li>¿Cómo podrías aplicar los conocimientos adquiridos en esta práctica en proyectos futuros de ingeniería o robótica?</li>
+</ol>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-cpp.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
+    <title>Práctica de Sensores de Límite en Robótica</title>
+</head>
+<body>
+    <h1>Sensor de límite</h1>
+    <h2>Introducción</h2>
+    <p>En el campo de la robótica, el control preciso y seguro del movimiento es esencial para el correcto funcionamiento de los robots. Desde robots industriales hasta robots móviles y brazos robóticos, garantizar que los actuadores se muevan dentro de límites específicos es fundamental tanto para la seguridad como para el rendimiento del robot. Para lograr esto, se utilizan sensores de inicio y fin de carrera, también conocidos como sensores de límite.</p>
+    <p>Los sensores de inicio y fin de carrera desempeñan un papel clave al detectar los puntos de referencia y los límites físicos del movimiento de los actuadores en los robots. Estos sensores permiten conocer cuándo el robot ha alcanzado su posición inicial o final, y también ayudan a prevenir daños a los componentes o al entorno al detener el movimiento en los momentos adecuados. Los sensores de límite se utilizan en una amplia variedad de aplicaciones robóticas, desde robots industriales que realizan tareas repetitivas y precisas, hasta robots móviles que navegan en entornos complejos.</p>
+    <p>En esta práctica, exploraremos el uso de los sensores de inicio y fin de carrera en el control de motores de corriente continua en un entorno robótico. Aprenderemos a utilizar estos sensores para detectar los límites de movimiento del motor y detenerlo de manera precisa y segura. Comprenderemos cómo los sensores de límite contribuyen al control y la programación de los robots, permitiendo un movimiento controlado y confiable en una amplia gama de aplicaciones.</p>
+    <p>Al dominar el uso de los sensores de inicio y fin de carrera en los robots, los estudiantes podrán diseñar y construir sistemas robóticos más seguros y eficientes, garantizando un control preciso del movimiento y evitando situaciones potencialmente peligrosas o dañinas.</p>
+
+    <h2>Objetivo</h2>
+    <p>El objetivo de esta práctica es familiarizar a los estudiantes con el uso de sensores de inicio y fin de carrera en el contexto de los sistemas robóticos. A través de la implementación y configuración de estos sensores, los alumnos adquirirán habilidades prácticas para detectar los límites de movimiento de los actuadores y detenerlos de manera precisa y segura.</p>
+    <h3>Objetivos Específicos:</h3>
+    <ul>
+        <li>Comprender la importancia de los sensores de inicio y fin de carrera en el control del movimiento en los sistemas robóticos.</li>
+        <li>Familiarizarse con los diferentes tipos de sensores de límite y su funcionamiento.</li>
+        <li>Aprender a implementar y configurar sensores de inicio y fin de carrera en un sistema robótico utilizando una plataforma de desarrollo como Arduino.</li>
+        <li>Desarrollar habilidades de programación para interpretar las señales de los sensores de límite y tomar decisiones en función de ellas.</li>
+        <li>Realizar pruebas y ajustes para asegurar un funcionamiento preciso y confiable de los sensores de límite en el control del movimiento.</li>
+        <li>Reconocer las aplicaciones prácticas de los sensores de inicio y fin de carrera en diversos tipos de robots y sistemas automatizados.</li>
+        <li>Fomentar el pensamiento crítico y la resolución de problemas al enfrentar desafíos relacionados con la implementación y configuración de los sensores de límite.</li>
+        <li>Promover la conciencia de la importancia de la seguridad y la precisión en el control del movimiento en entornos robóticos mediante el uso de sensores de límite.</li>
+    </ul>
+
+    <h2>Materiales</h2>
+    <ul>
+        <li>
+            Arduino UNO <a href="https://uelectronics.com/producto/arduino-uno-r3-smd/">Tienda en línea</a>
+            <div style="display: inline-block;">
+              <img src="./Images/Componentes/Arduino_Uno.jpg" alt="Arduino UNO" style="width: 150px;">
+            </div>
+            o compatible, como sugerencia se puede usar la ESP32 <a href="https://uelectronics.com/producto/esp32-38-pines-esp-wroom-32/">Tienda en línea</a>.
+            <div style="display: inline-block;">
+              <img src="./Images/Componentes/ESP32.jpg" alt="Arduino UNO" style="width: 150px;">
+            </div>
+          </li>
+        <li>
+            2 sensores de límite o limit switch <a href="https://uelectronics.com/producto/interruptor-fin-de-carrera-125v-1a-limit-switch/">Tienda en línea</a>
+            <div style="display: inline-block;">
+                <img src="./Images/Componentes/limit.jpg" alt="Arduino UNO" style="width: 150px;">
+              </div>.
+        </li>
+        <li>
+            Resistencia de 220 ohmios <a href="https://uelectronics.com/producto/resistencia-de-1-ohm-1m-ohms-1-4w/">Tienda en línea</a>.
+            <div style="display: inline-block;">
+              <img src="./Images/Componentes/Resistencias.jpg" alt="Resistencia de 220 ohmios" style="width: 150px;">
+            </div>
+          </li>
+          <li>
+            Motor de DC 9v con enconder <a href="https://uelectronics.com/producto/gm-25-370-motor-con-encoder-12v-dc-140rpm-330rpm//">Tienda en línea</a>.
+            <div style="display: inline-block;">
+                <img src="./Images/Componentes/motor_encoder.jpg" alt="Diagrama de conexión" style="width: 150px;">
+              </div> 
+              Como alternativa se puede armar un motor con encoder usando un motor DC con doble eje <a href="https://uelectronics.com/producto/motorreductor-amarillo-para-carrito/">Tienda en línea</a> 
+              <div style="display: inline-block;">
+                <img src="./Images/Componentes/motordc.jpg" alt="Diagrama de conexión" style="width: 150px;">
+              </div>
+              y un sensor de ranura <a href="https://uelectronics.com/producto/hc-020k-modulo-encoder-sensor-de-velocidad-b83609/">Tienda en línea</a>
+              <div style="display: inline-block;">
+                <img src="./Images/Componentes/sensor_ranura.jpg" alt="Diagrama de conexión" style="width: 150px;">
+              </div>
+              .
+        </li>
+        <li>
+            Puente H, puede ser el <a href="https://uelectronics.com/producto/puente-h-l293-dip-16/">L293D</a> <img src="./Images/Componentes/L293.jpg" alt="Puente H L293D" style="width: 150px;"> o <a href="https://uelectronics.com/producto/l298n-modulo-driver-motor-a-pasos/">L298N</a> <img src="./Images/Componentes/L298.jpg" alt="Puente H L298N" style="width: 150px;">. No se recomienda la shield para motores.
+          </li>
+          <li>
+            Batería o fuente de alimentación externa de 9v <a href="https://uelectronics.com/producto/fuente-de-alimentacion-9v-1a-con-plug/">Tienda en línea</a>.
+            <div style="display: inline-block;">
+                <img src="./Images/Componentes/Fuente_9v.jpg" alt="Diagrama de conexión" style="width: 150px;">
+            </div>
+        </li>
+        <li>
+            Protoboard, se sugiere para esta práctica usar una de 400 puntos <a href="https://uelectronics.com/producto/protoboard-400-pts/">Tienda en línea</a>.
+            <div style="display: inline-block;">
+              <img src="./Images/Componentes/Protoboard_400.jpg" alt="Protoboard de 400 puntos" style="width: 150px;">
+            </div>
+          </li>
+          <li>
+            Cables tipo dupont M-M y M-H <a href="https://uelectronics.com/producto/cables-dupont-extra-largos-30cm-hh-mh-mm/">Tienda en línea</a>.
+            <div style="display: inline-block;">
+                <img src="./Images/Componentes/cable_dupont.jpg" alt="Diagrama de conexión" style="width: 150px;">
+            </div>
+        </li>
+        <li>Computadora con el software Arduino IDE instalado.</li>
+        <li>Cable USB para conectar la placa Arduino a la computadora.</li>
+    </ul>
+
+<p>Opciones de compra en tiendas físicas:</p>
+
+<ul>
+  <li><a href="https://maps.app.goo.gl/WfXovhGmsa6bvw3A8">Orvasa Toluca Electrónica en general</a></li>
+  <li>
+    Aelectronics
+    <ul>
+      <li><a href="https://maps.app.goo.gl/2dBnsdb4rg1Kh8qeA">Toluca</a></li>
+      <li><a href="https://maps.app.goo.gl/QzJUeCJrsBDh4xaH8">Metepec</a></li>
+    </ul>
+  </li>
+  <li><a href="https://maps.app.goo.gl/LrWqTBnz7GEuf38YA">Mega Audio y Electrónica</a></li>
+  <li><a href="https://maps.app.goo.gl/3WTRr7YPy6c65gF89">Electronica Gomi</a></li>
+</ul>
+
+    <h2>Procedimiento</h2>
+    <ol>
+        <li>Realiza la siguiente conexión física:</li>
+    </ol>
+    <img src="./Images/PracticasRobotica/Limit.svg" alt="Imagen SVG">
+
+    <ol start="2">
+        <li>Abre el software de Arduino IDE y crea un nuevo proyecto. Copia el siguiente código:</li>
+        
+        <div class="code-container">
+            <pre class="line-numbers"><code class="language-cpp new-code-block">
+        // Definición de pines
+        #define switchPin1 7
+        #define switchPin2 8
+        
+        void setup() {
+            Serial.begin(9600); // Iniciar comunicación serial
+            pinMode(switchPin1, INPUT_PULLUP); // Configurar el pin del primer switch como entrada con resistencia pull-up
+            pinMode(switchPin2, INPUT_PULLUP); // Configurar el pin del segundo switch como entrada con resistencia pull-up
+        }
+        
+        void loop() {
+            // Leer el estado del primer switch
+            int switchState1 = digitalRead(switchPin1);
+            
+            // Leer el estado del segundo switch
+            int switchState2 = digitalRead(switchPin2);
+            
+            // Imprimir el estado de los switches en el monitor serial
+            Serial.print("Estado del Switch 1: ");
+            Serial.println(switchState1);
+            Serial.print("Estado del Switch 2: ");
+            Serial.println(switchState2);
+            
+            delay(500); // Espera medio segundo antes de realizar la siguiente lectura
+        }
+                
+            </code></pre>
+            <button class="copy-button" onclick="copyCode()" style="float: right;">Copiar código</button>
+            <div style="clear: both;"></div>
+        </div>
+        
+        <li>Carga el programa y visualiza lo que se imprimie en la terminal cuando presionas y sueltas los limit switch.</li>
+        <li>Agrega un motor con encoder y conéctalo como se muestra en el diagrama.</li>
+    </ol>
+    <img src="./Images/PracticasRobotica/Limit_motor_encoder.svg" alt="Imagen SVG">
+    <ol start="5">
+        <li>Carga el siguiente programa para ponerlo a funcionar:</li>
+        <div class="code-container">
+            <pre class="line-numbers"><code class="language-cpp new-code-block">
+        // Definición de pines para el motor y el encoder
+        const int motorEnablePin = 9;
+        const int motorDirectionPin1 = 4;
+        const int motorDirectionPin2 = 5;
+        const int encoderPin = 2; // Pin para el encoder
+        const int limitSwitchPin1 = 7; // Pin para el primer sensor de límite
+        const int limitSwitchPin2 = 8; // Pin para el segundo sensor de límite
+        
+        // Variables del encoder y los sensores de límite
+        volatile long encoderPos = 0; // Debe ser "volatile" para la interrupción
+        bool limitSwitch1_triggered = false;
+        bool limitSwitch2_triggered = false;
+        
+        void setup() {
+            pinMode(motorEnablePin, OUTPUT);
+            pinMode(motorDirectionPin1, OUTPUT);
+            pinMode(motorDirectionPin2, OUTPUT);
+            pinMode(limitSwitchPin1, INPUT_PULLUP); // Configurar el pin del primer sensor de límite como entrada con resistencia pull-up
+            pinMode(limitSwitchPin2, INPUT_PULLUP); // Configurar el pin del segundo sensor de límite como entrada con resistencia pull-up
+        
+            // Inicializa el motor
+            analogWrite(motorEnablePin, 0);  // Desactiva el motor inicialmente
+            digitalWrite(motorDirectionPin1, LOW);
+            digitalWrite(motorDirectionPin2, LOW);
+        
+            // Configura la interrupción para el encoder
+            attachInterrupt(digitalPinToInterrupt(encoderPin), updateEncoder, CHANGE);
+        }
+        
+        void loop() {
+            moveMotor(100, true, 1000); // Gira el motor en sentido horario a velocidad 100 durante 1000 pulsos
+            delay(2000); // Espera 2 segundos
+            moveMotor(50, false, 500); // Gira el motor en sentido anti-horario a velocidad 50 durante 500 pulsos
+            delay(2000); // Espera 2 segundos
+        }
+        
+        void moveMotor(int speed, bool clockwise, int pulses) {
+            // Controla el sentido de giro del motor
+            if (clockwise) {
+            digitalWrite(motorDirectionPin1, HIGH);
+            digitalWrite(motorDirectionPin2, LOW);
+            } else {
+            digitalWrite(motorDirectionPin1, LOW);
+            digitalWrite(motorDirectionPin2, HIGH);
+            }
+        
+            // Espera hasta alcanzar el número deseado de pulsos o que se active un sensor de límite
+            while (abs(encoderPos) < pulses && !limitSwitch1_triggered && !limitSwitch2_triggered) {
+            // Verificar si se activa un sensor de límite
+            if (digitalRead(limitSwitchPin1) == LOW || digitalRead(limitSwitchPin2) == LOW) {
+                // Si se activa un sensor de límite, detener el motor
+                stopMotor();
+                return;
+            }
+            analogWrite(motorEnablePin, speed); // Controla la velocidad del motor
+            }
+        
+            // Detiene el motor si se alcanzan los pulsos deseados
+            stopMotor();
+        }
+        
+        void updateEncoder() {
+            encoderPos++;
+            // Serial.println(encoderPos); // Descomenta esta linea para ver en la terminal los pulsos que da el encoder.
+        }
+        
+        void stopMotor() {
+            analogWrite(motorEnablePin, 0);
+            digitalWrite(motorDirectionPin1, LOW);
+            digitalWrite(motorDirectionPin2, LOW);
+        }
+            </code></pre>
+            <button class="copy-button" onclick="copyCode()" style="float: right;">Copiar código</button>
+            <div style="clear: both;"></div>
+    </ol>
+
+    <h2>Análisis de Resultados</h2>
+    <p>Una vez completada la práctica de detener el giro de un motor DC utilizando dos sensores de límite, es importante realizar un análisis de los resultados obtenidos. A continuación, se presentan algunos aspectos a considerar en el análisis:</p>
+    <ol>
+        <li>Funcionamiento de los sensores de límite:
+            <ul>
+                <li>Verificar si los sensores de límite responden adecuadamente cuando se presionan manualmente, simulando el movimiento del motor.</li>
+                <li>Comprobar la consistencia y precisión de los sensores al detectar los puntos de referencia y los límites de movimiento del "robot", garantizando que proporcionen señales confiables en diferentes condiciones.</li>
+            </ul>
+        </li>
+        <li>Precisión y fiabilidad del sistema:
+            <ul>
+                <li>Evaluar la precisión con la que el "robot" se detiene al alcanzar los límites de movimiento, ya sea por la detección de los sensores de límite o del encoder.</li>
+                <li>Analizar si el sistema responde de manera coherente y confiable cuando se utilizan los sensores de límite como inicio y fin de carrera, asegurando que el "robot" se detenga de manera precisa y segura en los puntos deseados.</li>
+            </ul>
+        </li>
+        <li>Comportamiento del "robot":
+            <ul>
+                <li>Observar el comportamiento del "robot" al detenerse tanto por la detección de los sensores de límite como por el encoder.</li>
+                <li>Identificar posibles problemas como vibraciones, oscilaciones o movimientos bruscos durante el proceso de detención, y determinar si estos problemas afectan la estabilidad y precisión del sistema.</li>
+            </ul>
+        </li>
+        <li>Mejoras y ajustes:
+            <ul>
+                <li>Proponer posibles mejoras para optimizar el sistema de control del "robot", considerando la integración de los sensores de límite como parte esencial del funcionamiento del mismo.</li>
+                <li>Identificar ajustes que podrían realizarse para mejorar la precisión, estabilidad y eficiencia en la detención del "robot", tomando en cuenta las limitaciones y características de los sensores de límite utilizados.</li>
+            </ul>
+        </li>
+        <li>Aplicaciones prácticas:
+            <ul>
+                <li>Considerar las posibles aplicaciones prácticas de este sistema de control en entornos robóticos y automatizados, donde los sensores de límite se utilizan como inicio y fin de carrera para garantizar un movimiento controlado y seguro del "robot".</li>
+                <li>Explorar cómo esta funcionalidad de detección precisa podría ser utilizada en diferentes proyectos y situaciones del mundo real, donde se requiere un control preciso del movimiento en sistemas robóticos y mecatrónicos.</li>
+            </ul>
+        </li>
+        <li>Importancia del uso de una protoboard:
+            <ul>
+                <li>Aunque no se tiene un robot físico, la protoboard sigue siendo crucial ya que proporciona un entorno seguro y conveniente para simular y conectar los componentes electrónicos durante el desarrollo y la prueba de la práctica.</li>
+                <li>Permite realizar conexiones rápidas y modificar el circuito de manera temporal, facilitando el proceso de aprendizaje y experimentación para los estudiantes.</li>
+                <li>Al utilizar una protoboard, puedes realizar pruebas iterativas y explorar diferentes configuraciones de circuito, lo que contribuye a una comprensión más profunda de los conceptos involucrados en la práctica.</li>
+                <li>Al tener un número limitado de pines de tierra y voltaje en Arduino, es importante crear líneas con ayuda de la protoboard para distribuir a los diferentes componentes que integran cualquier proyecto.</li>
+                <li>Además, la protoboard simplifica la identificación y solución de problemas al proporcionar una plataforma visual clara para las conexiones y los componentes electrónicos.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Cuestionario</h2>
+    <ol>
+        <li>¿Cuál es el propósito principal de los sensores de inicio y fin de carrera en un sistema robótico?</li>
+        <li>¿Qué función cumplen los sensores de límite durante el movimiento de un actuador en un robot?</li>
+        <li>¿Por qué es importante utilizar resistencias pull-up al conectar los sensores de límite a un microcontrolador?</li>
+        <li>¿Cuál es la diferencia entre un motor con encoder y un motor sin encoder en términos de precisión y control de posición?</li>
+        <li>¿Cómo se utiliza la función attachInterrupt() en Arduino y cuál es su papel en el control del motor en esta práctica?</li>
+        <li>¿Cuál es el propósito de la función updateEncoder() en el código proporcionado?</li>
+        <li>¿Por qué es importante detener el motor cuando se activa un sensor de límite durante su movimiento?</li>
+        <li>¿Cuál es el papel de la protoboard en esta práctica y por qué es esencial su uso?</li>
+        <li>¿Qué aspectos del funcionamiento del sistema deben ser analizados para evaluar su precisión y fiabilidad?</li>
+        <li>¿Qué mejoras o ajustes propondrías para optimizar el sistema de control del motor utilizando sensores de límite?</li>
+    </ol>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-cpp.min.js"></script>
+</body>
+</html>

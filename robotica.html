@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
   <title>Victor</title>
 </head>
 
@@ -56,41 +57,35 @@
             <!-- Collapsed content -->
             <ul id="collapseExample1" class="collapse list-group list-group-flush">
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/README.md')">Introducción</a>
+                <a href="#" class="text-reset" onclick="loadHTML('Practicas/00-Presentacion.html')">Introducción</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/ParpadeoLED.md')">Encendido de un led</a>
+                <a href="#" class="text-reset" onclick="loadHTML('Practicas/01-Led.html')">Encendido de un led</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/MotorDC.md')">Motor DC</a>
+                <a href="#" class="text-reset" onclick="loadHTML('Practicas/02-Infrarojo.html')">Infrarojo</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Encoder.md')">Encoders</a>
+                <a href="#" class="text-reset" onclick="loadHTML('Practicas/03-Ultrasonico.html')">Ultrasonico</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Servo.md')">Servomotores</a>
+                <a href="#" class="text-reset" onclick="loadHTML('Practicas/04-MotorDC.html')">MotorDC</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Pasos.md')">Motor a pasos</a>
+                <a href="#" class="text-reset" onclick="loadHTML('Practicas/05-Encoder.html')">Encoders</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Limite.md')">Limites</a>
+                <a href="#" class="text-reset" onclick="loadHTML('Practicas/06-Limite.html')">Límite</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Ultrasonido.md')">Ultrasonido</a>
+                <a href="#" class="text-reset" onclick="loadHTML('Practicas/07-Pasos.html')">Pasos</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Infrarojo.md')">Infrarojo</a>
+                <a href="#" class="text-reset" onclick="loadHTML('Practicas/08-Servo.html')">Servo</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/USB.md')">Comunicación USB</a>
+                <a href="#" class="text-reset" onclick="loadHTML('Practicas/09-ConexionUSB.html')">Conexión USB</a>
               </li>
-              <!--<li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/USB.md')">Robot manipulador</a>
-              </li>
-              <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/USB.md')">Robot diferencial</a>
-              </li> -->
             </ul>
             <!-- Collapse 1 -->
 
@@ -175,7 +170,7 @@
   <!-- Main layout -->
   <main style="margin-top: 50px">
     <div class="container pt-4" id="content">
-        <!-- El contenido Markdown se cargará aquí -->
+        <!-- El contenido HTML se cargará aquí -->
     </div>
     <div id="pdfViewerContainer">
       <!-- El visor de PDF se cargará aquí -->      
@@ -198,5 +193,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
   <script src="js/script-clases.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-cpp.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>
 </body>
 </html>
