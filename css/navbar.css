@@ -1,0 +1,23 @@
+:root {
+    --color-black: #363636; 
+    --color-font: #f7f8f8;
+    --color-font-over: #c6a64e;
+}
+nav {
+    background: var(--color-black);
+    display: flex;
+    gap: 16px;
+    padding: 12px;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+}
+nav a {
+    text-decoration: none;
+    color: var(--color-font);
+    font-weight: 500;
+    width: 100px;
+}
+nav a:hover {
+    text-decoration: underline;
+    color: var(--color-font-over);
+}

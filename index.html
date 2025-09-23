@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <title>Victor</title>
@@ -12,486 +13,248 @@
 
 <body>
     <header>
-        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light fixed-top" style="margin: 10px;">
-            <div class="container-fluid">
-                <button
-                    id="menuToggleButton"
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#principalMenu"
-                    aria-controls="principalMenu"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                    style="top: 3px;"
-                >
-                    <i class="fas fa-bars" style="color: #ffffff;"></i>
-                </button>
-            </div>
-        </nav>
-
-        <div id="language-selector">
-            <button class="image-button" onclick="changeLanguage('es')" >
-                <img src="Images/web/mex_48.png" alt="Imagen del botón">
-            </button>
-            <button class="image-button" onclick="changeLanguage('en')">
-                <img src="Images/web/usa_48.png" alt="Imagen del botón">
-            </button>
-        </div>
     </header>
 
-    <nav id="principalMenu" class="navbar navbar-collapse collapse">
-            <ul>
-                <li><a href="#about">Inicio</a></li>
-                <li><a href="#clase">Clases</a></li>
-                <li><a href="#horario">Horario</a></li>
-                <li><a href="#labrob">Laboratorio</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+    <nav>
+        <a href="#about">Inicio</a>
+        <a href="#clase">Clases</a>
+        <a href="#horario">Horario</a>
+        <a href="#labrob">Laboratorio</a>
+        <a href="#contacto">Contacto</a>
     </nav>
     
-    <section id="about" class="aboutme">
-        <div class="container information">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 photo">
-                    <div class="circle-container">
-                        <div class="circle">
-                            <img src="Images/web/vic.png" alt="Imagen en el círculo">
+    <main>
+        <section id="about" class="aboutme">
+            <div class="container information">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 photo">
+                        <div class="circle-container">
+                            <div class="circle">
+                                <img src="Images/web/vic.png" alt="Imagen en el círculo">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 info">
-                    <h2 class="text-center"> M en C. I. Victor M. Montaño Serrano</h2>
-                    <br>
-                    <h4 id="greeting" class="text-center"></h4>
-                    <p id="content" class="text-center"></p>
-                    <br>
-                    <p id="description" class="text-center"></p>
-                    <p id="work" class="text-center"></p>
-                    <p id="develop" class="text-center"></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="clase" class="clases">
-        <div class="container  clases_div">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="class-container">
-                        <div class="img-clase-robotica">
-                            <a href="robotica.html">
-                                <img src="Images/web/robotica.png" alt="Imagen en el círculo">
-                            </a>
-                        </div>
-                    </div>
-                    Robótica
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="class-container">
-                        <div class="img-clase">
-                            <a href="emergente.html">
-                                <img src="Images/web/tecemer.png" alt="Imagen en el círculo">
-                            </a>
-                        </div>
-                    </div>
-                    Tecnologias emergentes
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="class-container">
-                        <div class="img-clase">
-                            <a href="nolineal.html">
-                                <img src="Images/web/control.png" alt="Imagen en el círculo">
-                            </a>
-                        </div>
-                    </div>
-                    Control no Lineal
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="horario" class="scheduler">
-        <h2>Horario de Clase 2024-B</h2>
-        <h4>Facultad de Ingeniería UAEM</h4>
-        <div class="horario">
-            <div class="hora" style="color:#424242;">Hora</div>
-            <div class="hora" style="color:#424242;">Lunes</div>
-            <div class="hora" style="color:#424242;">Martes</div>
-            <div class="hora" style="color:#424242;">Miércoles</div>
-            <div class="hora" style="color:#424242;">Jueves</div>
-            <div class="hora" style="color:#424242;">Viernes</div>
-            <div class="bloque">7:00</div>
-            <div class="bloque"></div>
-            <div class="bloque combined">Clase</div>
-            <div class="bloque"></div>
-            <div class="bloque combined">Clase</div>
-            <div class="bloque"></div>
-
-            <div class="bloque">7:30</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">8:00</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">8:30</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">9:00</div>
-            <div class="bloque combined">Clase</div>
-            <div class="bloque combined_2">Reunión</div>
-            <div class="bloque combined">Clase</div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">9:30</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined_2" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">10:00</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">10:30</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">11:00</div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">11:30</div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque combined_2">Reunión</div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">12:00</div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque combined_2" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined_2">Reunión</div>
-
-            <div class="bloque">12:30</div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque combined_2" style="display: none;"> </div>
-
-            <div class="bloque">13:00</div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">13:30</div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">14:00</div>
-            <div class="bloque" style="background-color: #888888;"></div>
-            <div class="bloque" style="background-color: #888888;"></div>
-            <div class="bloque" style="background-color: #888888;"></div>
-            <div class="bloque" style="background-color: #888888;"></div>
-            <div class="bloque" style="background-color: #888888;"></div>
-
-            <div class="bloque">14:30</div>
-            <div class="bloque" style="background-color: #888888;"></div>
-            <div class="bloque" style="background-color: #888888;"></div>
-            <div class="bloque" style="background-color: #888888;"></div>
-            <div class="bloque" style="background-color: #888888;"></div>
-            <div class="bloque" style="background-color: #888888;"></div>
-
-            <div class="bloque">15:00</div>
-            <div class="bloque combined">Clase</div>
-            <div class="bloque"></div>
-            <div class="bloque combined">Clase</div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">15:30</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">16:00</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined_c">Proyecto</div>
-            <div class="bloque"></div>
-
-            <div class="bloque">16:30</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined_c" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">17:00</div>
-            <div class="bloque combined">Clase</div>
-            <div class="bloque combined_c">Proyecto</div>
-            <div class="bloque combined">Clase</div>
-            <div class="bloque combined_c" style="display: none;"> </div>
-            <div class="bloque"> </div>
-
-            <div class="bloque">17:30</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined_c" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined_c" style="display: none;"> </div>
-            <div class="bloque"> </div>
-
-            <div class="bloque">18:00</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined_c" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque"> </div>
-
-            <div class="bloque">18:30</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined_c" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-        </div>                 
-    </section>
-
-    <section id="labrob" class="schedulerRob">
-        <h2>Laboratorio de Robótica Horario 2024-B</h2>
-        <h4>Facultad de Ingeniería UAEM</h4>
-        <div class="horario">
-            <div class="hora" style="color:#424242;">Hora</div>
-            <div class="hora" style="color:#424242;">Lunes</div>
-            <div class="hora" style="color:#424242;">Martes</div>
-            <div class="hora" style="color:#424242;">Miércoles</div>
-            <div class="hora" style="color:#424242;">Jueves</div>
-            <div class="hora" style="color:#424242;">Viernes</div>
-            <div class="bloque">7:00</div>
-            <div class="bloque "> </div>
-            <div class="bloque combined">Tecnologias Emergentes (ICO)</div>
-            <div class="bloque"> </div>
-            <div class="bloque combined">Tecnologias Emergentes (ICO)</div>
-            <div class="bloque"></div>
-
-            <div class="bloque">7:30</div>
-            <div class="bloque"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">8:00</div>
-            <div class="bloque"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">8:30</div>
-            <div class="bloque"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">9:00</div>
-            <div class="bloque combined"> Robótica (ICO)</div>
-            <div class="bloque combined"> Probabilidad y Estadística (BIM)</div>
-            <div class="bloque combined"> Robótica (ICO)</div>
-            <div class="bloque combined"> Probabilidad y Estadística (BIM)</div>
-            <div class="bloque"></div>
-
-            <div class="bloque">9:30</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">10:00</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">10:30</div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">11:00</div>
-            <div class="bloque"></div>
-            <div class="bloque combined"> Análisis de Imágenes (BIM)</div> 
-            <div class="bloque"></div>
-            <div class="bloque combined"> Análisis de Imágenes (BIM)</div>
-            <div class="bloque combined"> Turbomaquinaria (BIM)</div>
-
-            <div class="bloque">11:30</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-
-            <div class="bloque">12:00</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-
-            <div class="bloque">12:30</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-
-            <div class="bloque">13:00</div>
-            <div class="bloque"></div>
-            <div class="bloque combined"> Análisis de Imágenes (BIM)</div>
-            <div class="bloque"></div>
-            <div class="bloque combined"> Análisis de Imágenes (BIM)</div>
-            <div class="bloque"></div>
-
-            <div class="bloque">13:30</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">14:00</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">14:30</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">15:00</div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">15:30</div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-            <div class="bloque"></div>
-
-            <div class="bloque">16:00</div>
-            <div class="bloque"></div>
-            <div class="bloque combined"> Análisis de Imágenes (BIM)</div>
-            <div class="bloque"></div>
-            <div class="bloque combined"> Análisis de Imágenes (BIM)</div>
-            <div class="bloque"></div>
-
-            <div class="bloque">16:30</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">17:00</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"></div>
-
-            <div class="bloque">17:30</div>
-            <div class="bloque"></div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"> </div>
-            <div class="bloque combined" style="display: none;"> </div>
-            <div class="bloque"> </div>
-        </div>                 
-    </section>
-
-    <section id="contacto" class="contact-info">
-        <div class="container cont-det">
-            <div class="row">
-                <div class="col-md-6 d-flex justify-content-center">
-                    <div class="contact-details">
-                        <h2>Información de Contacto</h2>
-                        <br><br>
-                        <p><strong>Dirección:</strong> Facultad de Ingenieria UAEM</p>
-                        <p>   Cerro de Coatepec S/N, Cuidad Universitaria.</p>
-                        <p>   CP. 50100. Toluca, Estado de México</p>
-                        <p><strong>Teléfono:</strong> +52 (722) 214 08 55 y (722) 214 07 95 Ext. 1128</p>
-                        <p><strong>Horario de Atención:</strong> Lunes a Viernes de 9:00 a.m. a 5:00 p.m.</p>
-                        <br><br><br><br>
-                        <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/victor-manuel-montaño-serrano-6aa33336/" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></i></a>
-                            <a href="https://www.researchgate.net/profile/Victor-Montano-Serrano" target="_blank" class="social-icon"><i class="fa-brands fa-researchgate fa-2xl" style="color: #ffffff;"></i></a>
-                            <a href="https://orcid.org/0000-0002-3228-2773" target="_blank" class="social-icon"><i class="fa-brands fa-orcid fa-2xl" style="color: #ffffff;"></i></a>
-                            <a href="https://scholar.google.es/citations?user=fruxil8AAAAJ&hl=es&oi=ao" target="_blank" class="social-icon"><i class="fa-solid fa-user-graduate fa-2xl" style="color: #ffffff;"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 d-flex justify-content-center">
-                    <div class="location-map">
-                        <h2>Ubicación</h2>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 info">
+                        <h2 class="text-center"> M en C. I. Victor M. Montaño Serrano</h2>
                         <br>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8712.110141323565!2d-99.68433685256814!3d19.28364800694182!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd89b49a715133%3A0xcf0d4f83c3bdf267!2sFacultad%20de%20Ingenier%C3%ADa!5e0!3m2!1sen!2sus!4v1690905921164!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <h4 id="greeting" class="text-center"></h4>
+                        <p id="content" class="text-center"></p>
+                        <br>
+                        <p id="description" class="text-center"></p>
+                        <p id="work" class="text-center"></p>
+                        <p id="develop" class="text-center"></p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- <footer>
-        <p>Todos los derechos reservados &copy; 2023 Mi Empresa</p>
-    </footer> -->
+        <section id="clase" class="clases">
+            
+             <div class="container clases_div">
+                <h2>Recursos de clases</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="class-container">
+                            <div class="img-clase-robotica">
+                                <a href="robotica.html">
+                                    <img src="Images/web/robotica.png" alt="Imagen en el círculo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="class_name"> 
+                            Robótica
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="class-container">
+                            <div class="img-clase">
+                                <a href="emergente.html">
+                                    <img src="Images/web/tecemer.png" alt="Imagen en el círculo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="class_name"> 
+                            Tecnologias emergentes
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="class-container">
+                            <div class="img-clase">
+                                <a href="nolineal.html">
+                                    <img src="Images/web/control.png" alt="Imagen en el círculo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="class_name"> 
+                            Automatización
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="horario" class="scheduler">
+            <h2>Horario de Clase 2025-B</h2>
+            <h4>Facultad de Ingeniería UAEMéx</h4>
+            <div class="horario">
+                <!-- Headers -->
+                <div class="header" style="grid-column:1; grid-row:1;">Hora</div>
+                <div class="header" style="grid-column:2; grid-row:1;">Lunes</div>
+                <div class="header" style="grid-column:3; grid-row:1;">Martes</div>
+                <div class="header" style="grid-column:4; grid-row:1;">Miércoles</div>
+                <div class="header" style="grid-column:5; grid-row:1;">Jueves</div>
+                <div class="header" style="grid-column:6; grid-row:1;">Viernes</div>
+
+                <!-- Horas -->
+                <div class="hora" style="grid-column:1; grid-row:2;">7:00</div>
+                <div class="hora" style="grid-column:1; grid-row:3;">7:30</div>
+                <div class="hora" style="grid-column:1; grid-row:4;">8:00</div>
+                <div class="hora" style="grid-column:1; grid-row:5;">8:30</div>
+                <div class="hora" style="grid-column:1; grid-row:6;">9:00</div>
+                <div class="hora" style="grid-column:1; grid-row:7;">9:30</div>
+                <div class="hora" style="grid-column:1; grid-row:8;">10:00</div>
+                <div class="hora" style="grid-column:1; grid-row:9;">10:30</div>
+                <div class="hora" style="grid-column:1; grid-row:10;">11:00</div>
+                <div class="hora" style="grid-column:1; grid-row:11;">11:30</div>
+                <div class="hora" style="grid-column:1; grid-row:12;">12:00</div>
+                <div class="hora" style="grid-column:1; grid-row:13;">12:30</div>
+                <div class="hora" style="grid-column:1; grid-row:14;">13:00</div>
+                <div class="hora" style="grid-column:1; grid-row:15;">13:30</div>
+                <div class="hora" style="grid-column:1; grid-row:16;">14:00</div>
+                <div class="hora" style="grid-column:1; grid-row:17;">14:30</div>
+                <div class="hora" style="grid-column:1; grid-row:18;">15:00</div>
+                <div class="hora" style="grid-column:1; grid-row:19;">15:30</div>
+                <div class="hora" style="grid-column:1; grid-row:20;">16:00</div>
+                <div class="hora" style="grid-column:1; grid-row:21;">16:30</div>
+                <div class="hora" style="grid-column:1; grid-row:22;">17:00</div>
+                <div class="hora" style="grid-column:1; grid-row:23;">17:30</div>
+                <div class="hora" style="grid-column:1; grid-row:24;">18:00</div>
+                <div class="hora" style="grid-column:1; grid-row:25;">18:30</div>
+                <div class="hora" style="grid-column:1; grid-row:26;">19:00</div>
+                <div class="hora" style="grid-column:1; grid-row:27;">19:30</div>
+
+                <!-- Clases -->
+                <div class="clase" style="grid-column:2; grid-row:2 / span 4;">Robótica <br> Laboratorio de Robótica</div>
+                <div class="proyectos" style="grid-column:2; grid-row:20 / span 2;">Asesorias de <br>Robótica</div> 
+                <div class="clase" style="grid-column:2; grid-row:22 / span 4;">Automatización Avanzada <br> Ingeniería</div> 
+
+                <div class="clase" style="grid-column:3; grid-row:2 / span 4;">Tecnologias Emergentes <br> Laboratorio de Robótica</div> 
+                <div class="reunion" style="grid-column:3; grid-row:6 / span 6;">Robótica FLL<br> Sec. 4</div> 
+                <div class="clase" style="grid-column:3; grid-row:20 / span 4;">Robótica Medica <br> Medicina</div> 
+
+                <div class="clase" style="grid-column:4; grid-row:2 / span 4;">Robótica<br> Laboratorio de Robótica</div>
+                <div class="proyectos" style="grid-column:4; grid-row:6 / span 2;">3D Slicer Desarrolladores</div> 
+                <div class="proyectos" style="grid-column:4; grid-row:10 / span 2;">KRC<br> Krismar</div> 
+                <div class="clase" style="grid-column:4; grid-row:22 / span 4;">Automatización Avanzada<br> Ingeniería </div> 
+
+                <div class="clase" style="grid-column:5; grid-row:2 / span 4;">Tecnologias Emergentes <br> Laboratorio de Robótica</div> 
+                <div class="proyectos" style="grid-column:5; grid-row:4 / span 2;">3D Slicer</div> 
+                <div class="reunion" style="grid-column:5; grid-row:6 / span 6;">Robótica FLL<br> Sec. 4</div> 
+                <div class="clase" style="grid-column:5; grid-row:20 / span 4;">Robótica Medica <br> Medicina</div> 
+
+                <div class="receso" style="grid-column: 2 / 7; grid-row:18 / span 2;">Receso</div>
+                
+            </div>
+        </section>
+
+        <section id="labrob" class="schedulerRob">
+            <h2>Laboratorio de Robótica Horario 2025-B</h2>
+            <h4>Facultad de Ingeniería UAEM</h4>
+            <div class="horario">
+                <!-- Headers -->
+                <div class="header" style="grid-column:1; grid-row:1;">Hora</div>
+                <div class="header" style="grid-column:2; grid-row:1;">Lunes</div>
+                <div class="header" style="grid-column:3; grid-row:1;">Martes</div>
+                <div class="header" style="grid-column:4; grid-row:1;">Miércoles</div>
+                <div class="header" style="grid-column:5; grid-row:1;">Jueves</div>
+                <div class="header" style="grid-column:6; grid-row:1;">Viernes</div>
+
+                <!-- Horas -->
+                <div class="hora" style="grid-column:1; grid-row:2;">7:00</div>
+                <div class="hora" style="grid-column:1; grid-row:3;">7:30</div>
+                <div class="hora" style="grid-column:1; grid-row:4;">8:00</div>
+                <div class="hora" style="grid-column:1; grid-row:5;">8:30</div>
+                <div class="hora" style="grid-column:1; grid-row:6;">9:00</div>
+                <div class="hora" style="grid-column:1; grid-row:7;">9:30</div>
+                <div class="hora" style="grid-column:1; grid-row:8;">10:00</div>
+                <div class="hora" style="grid-column:1; grid-row:9;">10:30</div>
+                <div class="hora" style="grid-column:1; grid-row:10;">11:00</div>
+                <div class="hora" style="grid-column:1; grid-row:11;">11:30</div>
+                <div class="hora" style="grid-column:1; grid-row:12;">12:00</div>
+                <div class="hora" style="grid-column:1; grid-row:13;">12:30</div>
+                <div class="hora" style="grid-column:1; grid-row:14;">13:00</div>
+                <div class="hora" style="grid-column:1; grid-row:15;">13:30</div>
+                <div class="hora" style="grid-column:1; grid-row:16;">14:00</div>
+                <div class="hora" style="grid-column:1; grid-row:17;">14:30</div>
+                <div class="hora" style="grid-column:1; grid-row:18;">15:00</div>
+                <div class="hora" style="grid-column:1; grid-row:19;">15:30</div>
+                <div class="hora" style="grid-column:1; grid-row:20;">16:00</div>
+                <div class="hora" style="grid-column:1; grid-row:21;">16:30</div>
+                <div class="hora" style="grid-column:1; grid-row:22;">17:00</div>
+                <div class="hora" style="grid-column:1; grid-row:23;">17:30</div>
+                <div class="hora" style="grid-column:1; grid-row:24;">18:00</div>
+                <div class="hora" style="grid-column:1; grid-row:25;">18:30</div>
+                <div class="hora" style="grid-column:1; grid-row:26;">19:00</div>
+                <div class="hora" style="grid-column:1; grid-row:27;">19:30</div>
+
+                <!-- Clases -->
+                <div class="ICO" style="grid-column:2; grid-row:2 / span 4;">Robótica <br> Mtr. Victor M. Montaño <br> ICO</div> 
+                <div class="BIM" style="grid-column:2; grid-row:6 / span 4;">Análisis de Imágenes Medicas <br> Dra. Vianney <br> BIM</div>
+                <div class="IME" style="grid-column:2; grid-row:22 / span 4;">Automatización Avanzada <br> Mtr. Victor M. Montaño <br> IME</div> 
+
+                <div class="ICO" style="grid-column:3; grid-row:2 / span 4;">Tecnologias Emergentes <br> Mtr. Victor M. Montaño <br> ICO</div> 
+                <div class="BIM" style="grid-column:3; grid-row:10 / span 4;">Análisis de Imágenes Medicas <br> Dra. Adriana H. Vilchis <br> BIM</div> 
+                <div class="BIM" style="grid-column:3; grid-row:14 / span 4;">Robótica Medica <br> Dr. Adriana H. Vilchis <br> BIM</div> 
+                <div class="BIM" style="grid-column:3; grid-row:20 / span 4;">Robótica Medica <br> Medicina <br> Mtr. Victor M. Montaño <br> ICO</div> 
+
+                <div class="ICO" style="grid-column:4; grid-row:2 / span 4;">Robótica <br> Mtr. Victor M. Montaño <br> ICO</div> 
+                <div class="BIM" style="grid-column:4; grid-row:6 / span 4;">Análisis de Imágenes Medicas <br> Dra. Vianney <br> BIM</div>
+                <div class="IME" style="grid-column:4; grid-row:22 / span 4;">Automatización Avanzada <br> Mtr. Victor M. Montaño <br> IME </div> 
+
+                <div class="ICO" style="grid-column:5; grid-row:2 / span 4;">Tecnologias Emergentes <br> Mtr. Victor M. Montaño <br> ICO</div> 
+                <div class="BIM" style="grid-column:5; grid-row:10 / span 4;">Análisis de Imágenes Medicas <br> Dr. Adriana H. Vilchis <br> BIM</div> 
+                <div class="BIM" style="grid-column:5; grid-row:14 / span 4;">Robótica Medica <br> Dr. Adriana H. Vilchis <br> BIM</div> 
+                <div class="BIM" style="grid-column:5; grid-row:20 / span 4;">Robótica Medica <br> Medicina <br> Mtr. Victor M. Montaño <br> ICO</div> 
+                
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-info">
+            <div class="container cont-det">
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-center">
+                        <div class="contact-details">
+                            <h2>Información de Contacto</h2>
+                            <br><br>
+                            <p><strong>Dirección:</strong> Facultad de Ingenieria UAEM</p>
+                            <p>   Cerro de Coatepec S/N, Cuidad Universitaria.</p>
+                            <p>   CP. 50100. Toluca, Estado de México</p>
+                            <p><strong>Teléfono:</strong> +52 (722) 214 08 55 y (722) 214 07 95 Ext. 1128</p>
+                            <p><strong>Horario de Atención:</strong> Lunes a Viernes de 9:00 a.m. a 5:00 p.m.</p>
+                            <br><br><br><br>
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/victor-manuel-montaño-serrano-6aa33336/" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></i></a>
+                                <a href="https://www.researchgate.net/profile/Victor-Montano-Serrano" target="_blank" class="social-icon"><i class="fa-brands fa-researchgate fa-2xl" style="color: #ffffff;"></i></a>
+                                <a href="https://orcid.org/0000-0002-3228-2773" target="_blank" class="social-icon"><i class="fa-brands fa-orcid fa-2xl" style="color: #ffffff;"></i></a>
+                                <a href="https://scholar.google.es/citations?user=fruxil8AAAAJ&hl=es&oi=ao" target="_blank" class="social-icon"><i class="fa-solid fa-user-graduate fa-2xl" style="color: #ffffff;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center">
+                        <div class="location-map">
+                            <h2>Ubicación</h2>
+                            <br>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8712.110141323565!2d-99.68433685256814!3d19.28364800694182!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd89b49a715133%3A0xcf0d4f83c3bdf267!2sFacultad%20de%20Ingenier%C3%ADa!5e0!3m2!1sen!2sus!4v1690905921164!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main> 
+
+    <footer>
+        <p>Todos los derechos reservados a Victor Manuel Montaño Serrano</p>
+    </footer> 
 
   <script src="js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
