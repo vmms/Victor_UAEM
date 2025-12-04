@@ -67,3 +67,10 @@ changeLanguage("es");
 //     smoothScroll(target, 40, 1000); // Desplazamiento de 40 píxeles hacia abajo y 1000 ms de duración
 //   });
 // });
+
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});

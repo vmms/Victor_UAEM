@@ -113,21 +113,34 @@ linksInMenu.forEach((link) => {
 // ------------
 
 function goToHome() {
-  console.log('Home')
-  // Aquí puedes agregar el código para redirigir a la página de inicio
-  // Por ejemplo, si quieres redirigir a index.html, puedes usar:
-  window.location.href = "index.html";
+  //console.log('Home')
+  window.location.href = "../index.html";
 }
 
+function copyCode() {
+  // Obtiene el texto del bloque con id "codigo"
+  const code = document.getElementById("codigo").innerText;
 
+  // Copia el texto al portapapeles
+  navigator.clipboard.writeText(code)
+    .then(() => {
+      alert("Código copiado al portapapeles");
+    })
+    .catch(err => {
+      console.error("Error al copiar: ", err);
+    });
+}
+
+document.getElementById("downloadButton").addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.href = "ruta/del/archivo.pdf";
+  link.download = "archivo.pdf";
+  link.click();
+});
 
 // Función para cargar y renderizar el archivo Markdown
 let markdownLoaded = false; // Variable para controlar si se cargó el Markdown
 
-function goToHome() {
-  // Redirige a tu archivo index.html
-  window.location.href = "index.html";
-}
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
 
@@ -243,7 +256,19 @@ function loadPDF(pdfUrl) {
   prevPageButton.addEventListener('click', goToPreviousPage);
   nextPageButton.addEventListener('click', goToNextPage);
   homeButton.addEventListener('click', goToHomePage);
-  downloadButton.href = pdfUrl; // Establecer la URL del PDF en el enlace de descarga
+      downloadButton.addEventListener('click', () => {
+      // Extraer el nombre del archivo desde la URL
+      const fileName = pdfUrl.split('/').pop().split('?')[0];
+
+      // Crear un enlace temporal para forzar la descarga
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = fileName; // Usa el nombre original del archivo
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
   }).catch(error => {
     console.error('Error al cargar el PDF:', error);
   });

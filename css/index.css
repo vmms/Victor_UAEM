@@ -1,6 +1,6 @@
 :root {
     --gap: 0px;
-    --header-h: 40px;
+    --header-h: 70px;
     --color-bg: #e5e5e5;
     --color-main: #f7f8f8;
     --color-black: #363636;
@@ -18,11 +18,13 @@ body {
 
 header {
     background: var(--color-black);
-    color: #fff;
+    color: var(--color-font);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: var(--header-h);
+    width: 100%;
+    position: relative;
 }
 
 main {

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles-clases.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+        }
+    });
+  </script>
+  <title>Victor</title>
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light fixed-top" style="margin: 5px 0px 0px 20px;">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          id="menuToggleButton"
+          class="navbar-toggler d-lg-none collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          style="top: 3px;"
+        >
+          <i class="fas fa-bars" style="color: #ffffff;"></i>
+        </button>  
+      </div>
+    </nav>
+    <!-- Navbar -->
+    
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4 custom-margin">
+            <!-- Collapse 1 -->
+            <a
+              class="list-group-item list-group-item-action py-2 ripple"
+              aria-current="true"
+              data-mdb-toggle="collapse"
+              href="#collapseExample1"
+              aria-expanded="true"
+              aria-controls="collapseExample1"
+              id="collapsePracticas"
+              >
+              <i class="fas fa-code fa-fw me-3" style="color: #444444;"></i><span>Programas de ejemplo</span>
+              <i class="fas fa-chevron-down" style="color: #444444; float: right;"></i>
+            </a>
+            <!-- Collapsed content -->
+            <ul id="collapseExample1" class="collapse list-group list-group-flush">
+              <li class="list-group-item py-1">
+                <a
+                  class="list-group-item list-group-item-action py-2 ripple"
+                  aria-current="true"
+                  data-mdb-toggle="collapse"
+                  href="#collapseMatlab" 
+                  aria-expanded="true"
+                  aria-controls="collapseMatlab"
+                  id="collapsePMatlab"
+                  >
+                  <!-- Cambiar el color del ícono de Matlab a rojo -->
+                  <i class="fas fa-laptop fa-fw me-3" style="color: #444444;"></i><span>Matlab</span>                  
+                  <i class="fas fa-chevron-down" style="color: #444444; float: right;"></i>
+                </a>
+                <!-- Submenú "Matlab" -->
+                <ul id="collapseMatlab" class="collapse list-group list-group-flush">
+                  <li class="list-group-item py-1">
+                    <a href="#" class="text-reset" onclick="loadMarkdown('Programas/Control/Python/Pendulo_atractores.md')">Archivo 1</a>
+                  </li>
+                  <li class="list-group-item py-1">
+                    <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Matlab/Archivo2.md')">Archivo 2</a>
+                  </li>
+                  <!-- Agrega más elementos de menú para "Matlab" según sea necesario -->
+                </ul>
+              </li>
+              <li class="list-group-item py-1">
+                <a
+                  class="list-group-item list-group-item-action py-2 ripple"
+                  aria-current="true"
+                  data-mdb-toggle="collapse"
+                  href="#collapsePython" 
+                  aria-expanded="true"
+                  aria-controls="collapsePython"
+                  id="collapsePPython"
+                >
+                  <i class="fab fa-python fa-fw me-3" style="color: #444444;"></i><span>Python</span>
+                  <i class="fas fa-chevron-down" style="color: #444444; float: right;"></i>
+                </a>
+                <!-- Submenú "Python" -->
+                <ul id="collapsePython" class="collapse list-group list-group-flush">
+                  <!-- Agrega elementos de menú para "Python" aquí, si es necesario -->
+                  <li class="list-group-item py-1">
+                    <a href="#" class="text-reset" onclick="loadMarkdown('Programas/Control/Python/Pendulo_atractores.md')">Atractor pendulo invertido</a>
+                  </li>
+                  <li class="list-group-item py-1">
+                    <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Python/Archivo2.md')">Archivo 2</a>
+                  </li>
+                </ul>
+              </li>            
+            <!-- Resto de elementos existentes -->
+            </ul>
+            <!-- Collapse 1 -->
+
+
+            <!-- Collapse 2 -->
+            <a
+              class="list-group-item list-group-item-action py-2 ripple"
+              aria-current="true"
+              data-mdb-toggle="collapse"
+              href="#collapseExample2"
+              aria-expanded="true"
+              aria-controls="collapseExample2"
+              id="collapseLink"
+            > 
+            <i class="fas fa-regular fa-clipboard fa-fw me-3" style="color: #444444;"></i><span>Ejercicios</span>
+            <i class="fas fa-chevron-down" style="color: #444444; float: right;"></i>
+            </a>
+            
+            <ul id="collapseExample2" class="collapse list-group list-group-flush">
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset">Robot 2DOF</a>
+              </li>
+            </ul>
+            <!-- Collapse 2 -->
+
+            <!-- Collapse 3 -->
+            <a
+              class="list-group-item list-group-item-action py-2 ripple"
+              aria-current="true"
+              data-mdb-toggle="collapse"
+              href="#collapseExample3"
+              aria-expanded="true"
+              aria-controls="collapseExample3"
+              id="collapseSlicer"
+            > 
+            <i class="fab fa-slideshare fa-fw me-3" style="color: #444444;"></i><span>Diapositivas</span>
+            <i class="fas fa-chevron-down" style="color: #444444; float: right;"></i>
+            </a>
+            <!-- Collapsed content -->
+            <ul id="collapseExample3" class="collapse list-group list-group-flush">
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadPDF('Press/ContNLineal/Presentacion.pdf')">Presentación de cursp</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadPDF('Press/ContNLineal/Introduccion.pdf')">Introducción</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadPDF('Press/ContNLineal/AnalisisCuantitativo.pdf')">Análisis Cuantitativo</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="#" class="text-reset" onclick="loadPDF('Press/ContNLineal/Linealizacion.pdf')">Linealización</a>
+              </li>
+            </ul>
+            <!-- Collapse 3 -->
+
+          </div>
+        </div>
+      </nav>
+      <!-- Sidebar -->
+  </header>
+
+  <div class="container-fluid d-flex justify-content-end mt-4 mb-4 custom-button-container">
+    <button class="btn btn-sm btn-link text-white custom-button" onclick="goToHome()" style="font-size: 22px; margin-top: 10px;">
+      <i class="fas fa-home me-2"></i>
+    </button>
+  </div>
+  
+  <!-- Main layout -->
+  <main style="margin-top: 50px">
+    <div class="container pt-4 markdown-body" id="content">
+        <!-- El contenido Markdown se cargará aquí -->
+    </div>
+    <div id="pdfViewerContainer">
+      <!-- El visor de PDF se cargará aquí -->      
+    </div>
+    <div id="pdfControls" style="display: none;">
+      <button id="homeButton"><i class="fas fa-home"></i> Inicio</button>
+      <button id="prevPageButton"><i class="fas fa-chevron-left"></i> Anterior</button>
+      <button id="nextPageButton">Siguiente <i class="fas fa-chevron-right"></i></button>
+      <a id="downloadButton" href="#" download><i class="fas fa-download"></i> Descargar</a>
+    </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/3.0.7/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/nolineal.js"></script>
+</body>
+</html>

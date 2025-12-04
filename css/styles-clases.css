@@ -1,3 +1,13 @@
+:root {
+    --gap: 0px;
+    --header-h: 40px;
+    --color-bg: #e5e5e5;
+    --color-main: #f7f8f8;
+    --color-black: #363636;
+    --color-blue: #262f3f;
+    --color-gold: #c6a64e;
+}
+
 body {
     background-color: #ffffff;
 }
@@ -11,7 +21,7 @@ header {
     align-items: center;
     top: 0;
     left: 0;
-    height: 40px;
+    height: 60px;
     background-color: #424242;
     z-index:99; 
   }
@@ -33,7 +43,7 @@ header {
     bottom: 0;
     left: 0;
     padding: 0; /* Height of navbar */
-    margin: 40px 0 0 0;
+    margin: 60px 0 0 0;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
     width: 250px;
     z-index: 600;
@@ -55,16 +65,16 @@ header {
 
 .custom-button-container {
     position: relative; /* Asegura que el z-index funcione */
-  }
+}
   
-  .custom-button {
+.custom-button {
     position: absolute;
     top: -55px;
     right: 90px;
     margin: 0;
     padding: 0;
     z-index: 999; /* Asegura que el botón esté por encima de otros elementos */
-  }
+}
   
 .sidebar-sticky {
     position: relative;
@@ -135,7 +145,7 @@ main #content img {
 .pdf-viewer canvas {
     display: block;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 90%;
 }
 
 #pdfControls {
@@ -146,15 +156,20 @@ main #content img {
 
 #pdfControls button,
 #pdfControls a {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
     margin: 0 5px;
     padding: 5px 10px;
     font-size: 16px;
     border: none;
-    border-radius: 4px;
-    background-color: #424242;
+    border-radius: 5px;
+    background-color: var(--color-blue);
     color: white;
     cursor: pointer;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 #pdfControls button:hover,

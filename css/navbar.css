@@ -3,21 +3,75 @@
     --color-font: #f7f8f8;
     --color-font-over: #c6a64e;
 }
-nav {
-    background: var(--color-black);
+
+/* Contenedor principal */
+.nav-container {
     display: flex;
-    gap: 16px;
-    padding: 12px;
-    justify-content: center;
-    border-bottom: 1px solid #ddd;
+    align-items: center;
+    justify-content: center; /* nav-links centrado */
+    width: 100%;
+    max-width: 1200px;
+    position: relative; /* importante para el toggle absoluto */
 }
-nav a {
+
+/* Menú centrado */
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+/* Enlaces */
+.nav-links a {
     text-decoration: none;
     color: var(--color-font);
     font-weight: 500;
-    width: 100px;
 }
-nav a:hover {
-    text-decoration: underline;
+
+.nav-links a:hover {
     color: var(--color-font-over);
+}
+
+/* Toggle siempre a la derecha de la pantalla */
+.nav-toggle {
+    position: fixed; /* fijo respecto a la pantalla */
+    top: calc(var(--header-h)/2 - 12px); /* centra vertical según la altura del header */
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: var(--color-font);
+    cursor: pointer;
+    display: none; /* desktop por defecto */
+}
+
+/* Responsive móvil */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed; /* igual que el toggle para alinearse */
+        top: calc(var(--header-h)); /* 5px debajo del header */
+        right: 5px; /* alineado con el toggle */
+        width: 200px;
+        flex-direction: column;
+        display: none;
+        background: var(--color-black);
+        border-radius: 0px;
+        padding: 0px 0;
+        gap: 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 100;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px 16px;
+        width: 100%;
+        text-align: left;
+    }
 }
