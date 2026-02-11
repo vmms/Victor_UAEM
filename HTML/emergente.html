@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles-clases.css">
+  <link rel="stylesheet" href="../css/styles-clases.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
   <title>Victor</title>
 </head>
 
@@ -79,12 +80,6 @@
               <li class="list-group-item py-1">
                 <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Bluetooth.md')">Bluetooth</a>
               </li> -->
-              <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Servo.md')">Servomotores</a>
-              </li>
-              <!-- <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadMarkdown('Practicas/Steper.md')">Motores a pasos</a>
-              </li> -->
             </ul>
             <!-- Collapse 1 -->
 
@@ -125,19 +120,19 @@
             <!-- Collapsed content -->
             <ul id="collapseExample3" class="collapse list-group list-group-flush">
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadPDF('Press/TecEmergentes/Introduccion.pdf')">Fundamentos</a>
+                <a href="#" class="text-reset" onclick="loadPDF('../Press/TecEmergentes/Introduccion.pdf')">Fundamentos</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadPDF('Press/TecEmergentes/Bioinformatica.pdf')">Biotecnología</a>
+                <a href="#" class="text-reset" onclick="loadPDF('../Press/TecEmergentes/Bioinformatica.pdf')">Biotecnología</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadPDF('Press/TecEmergentes/SoftwareEmergente.pdf')">Software Emergente</a>
+                <a href="#" class="text-reset" onclick="loadPDF('../Press/TecEmergentes/SoftwareEmergente.pdf')">Software Emergente</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadPDF('Press/TecEmergentes/DispositivosInteligentes.pdf')">Software Emergente</a>
+                <a href="#" class="text-reset" onclick="loadPDF('../Press/TecEmergentes/DispositivosInteligentes.pdf')">Dispositivos Inteligentes</a>
               </li>
               <li class="list-group-item py-1">
-                <a href="#" class="text-reset" onclick="loadPDF('Press/TecEmergentes/Interaccion.pdf')">Software Emergente</a>
+                <a href="#" class="text-reset" onclick="loadPDF('../Press/TecEmergentes/Interaccion.pdf')">Software Emergente</a>
               </li>
             </ul>
             <!-- Collapse 3 -->
@@ -149,15 +144,15 @@
   </header>
 
   <div class="container-fluid d-flex justify-content-end mt-4 mb-4 custom-button-container">
-    <button class="btn btn-sm btn-link text-white custom-button" onclick="goToHome()" style="font-size: 22px; margin-top: 10px;">
+    <button class="btn btn-sm btn-link text-white custom-button" onclick="goToHome()" style="font-size: 22px; margin-top: 40px;">
       <i class="fas fa-home me-2"></i>
     </button>
   </div>
-  
+
   <!-- Main layout -->
   <main style="margin-top: 50px">
     <div class="container pt-4" id="content">
-        <!-- El contenido Markdown se cargará aquí -->
+        <!-- El contenido HTML se cargará aquí -->
     </div>
     <div id="pdfViewerContainer">
       <!-- El visor de PDF se cargará aquí -->      
@@ -166,8 +161,7 @@
       <button id="homeButton"><i class="fas fa-home"></i> Inicio</button>
       <button id="prevPageButton"><i class="fas fa-chevron-left"></i> Anterior</button>
       <button id="nextPageButton">Siguiente <i class="fas fa-chevron-right"></i></button>
-      <a id="downloadButton" href="#" download><i class="fas fa-download"></i> Descargar</a>
-    </div>
+      <button id="downloadButton"><i class="fas fa-download"></i> Descargar</button>
     </div>
   </main>
 
@@ -178,7 +172,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/script-clases.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/script-clases.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-cpp.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>
 </body>
 </html>
