@@ -1,0 +1,205 @@
+/* =============================================================
+   RECURSOS
+============================================================= */
+body {
+    background: var(--color-page-background);
+}
+
+.resources-page__container {
+    width: min(calc(100% - clamp(1.5rem, 3vw, 3rem)), 96rem);
+    margin-inline: auto;
+}
+
+/* =============================================================
+   NAVBAR
+============================================================= */
+.resources-page__navbar {
+    color: var(--color-white);
+    background: linear-gradient(120deg, var(--color-navy-dark), var(--color-navy));
+}
+
+/* =============================================================
+   ENCABEZADO
+============================================================= */
+.resources-page__heading {
+    width: 100%;
+    background: var(--color-white);
+}
+
+.resources-page__heading .resources-page__container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.resources-page__heading .page-heading {
+    width: 100%;
+    max-width: none;
+    min-height: 22rem;
+    gap: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.resources-page__heading .page-heading::before,
+.resources-page__heading .page-heading::after {
+    display: none;
+}
+
+.resources-page__heading .page-heading__content {
+    flex: 0 0 46%;
+    max-width: none;
+    padding: var(--space-10) clamp(2rem, 6vw, 8rem);
+}
+
+.resources-page__heading .page-heading__circuits {
+    flex: 1 1 auto;
+    align-self: stretch;
+    display: block;
+    width: 54%;
+    max-width: none;
+    height: 22rem;
+    object-fit: cover;
+    object-position: center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 16%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 16%, black 100%);
+}
+
+/* =============================================================
+   SECCIONES
+============================================================= */
+.resources-page__section {
+    width: 100%;
+    padding-block: var(--space-8);
+}
+
+.resources-page__section--alternate {
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-12);
+}
+
+.resources-page__section-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.resources-page__section-icon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    color: var(--color-yellow);
+    background: color-mix(in srgb, var(--color-yellow) 15%, white);
+    border-radius: 50%;
+}
+
+.resources-page__section-icon .material-symbols-outlined {
+    font-size: 1.75rem;
+}
+
+.resources-page__section-header h2 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+}
+
+.resources-page__section-header p {
+    margin: var(--space-1) 0 0;
+    color: var(--color-text-secondary);
+}
+
+/* =============================================================
+   SOFTWARE
+============================================================= */
+.resources-page__software-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-flow: row;
+    align-items: stretch;
+    width: 100%;
+    max-width: none;
+    gap: var(--space-5);
+}
+
+.resources-page__software-grid>.software-card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: 100%;
+}
+
+/* =============================================================
+   ENLACES
+============================================================= */
+.resources-page__links {
+    display: grid;
+    width: 100%;
+    gap: var(--space-3);
+}
+
+/* =============================================================
+   FOOTER
+============================================================= */
+.resources-page__footer {
+    padding-block: var(--space-6);
+    background: linear-gradient(120deg, var(--color-navy-dark), var(--color-navy));
+}
+
+.resources-page__footer .footer-preview {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+@media(max-width:1100px) {
+    .resources-page__software-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media(max-width:800px) {
+    .resources-page__heading .page-heading {
+        min-height: auto;
+        flex-direction: column;
+    }
+
+    .resources-page__heading .page-heading__content {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: var(--space-8) var(--space-6);
+    }
+
+    .resources-page__heading .page-heading__circuits {
+        width: 100%;
+        height: 18rem;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 100%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 100%);
+    }
+
+    .resources-page__software-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width:560px) {
+    .resources-page__section {
+        padding-block: var(--space-6);
+    }
+
+    .resources-page__section-header {
+        align-items: flex-start;
+    }
+
+    .resources-page__software-grid {
+        grid-template-columns: 1fr;
+    }
+}
