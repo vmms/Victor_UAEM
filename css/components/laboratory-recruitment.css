@@ -186,9 +186,10 @@
 .laboratory-recruitment__detail ul {
     display: grid;
     gap: var(--space-2);
-    margin: 0;
-    padding-left: 1.2rem;
+    margin: var(--space-3) 0 0;
+    padding-left: 1.4rem;
     color: var(--color-text-secondary);
+    list-style: disc;
 }
 
 .laboratory-recruitment__detail li::marker {
