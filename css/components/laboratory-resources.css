@@ -1,0 +1,313 @@
+/* =============================================================
+   LABORATORY RESOURCES
+   Equipamiento y servicios desplegables del laboratorio
+============================================================= */
+
+.laboratory-resources {
+    width: 100%;
+    padding: var(--space-6);
+
+    background: var(--color-white);
+
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =============================================================
+   ENCABEZADO
+============================================================= */
+
+.laboratory-resources__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+
+    margin-bottom: var(--space-5);
+}
+
+
+.laboratory-resources__header-icon {
+    flex: 0 0 auto;
+
+    display: grid;
+    place-items: center;
+
+    width: 3.25rem;
+    height: 3.25rem;
+
+    color: #E4AA35;
+
+    background: color-mix(in srgb,
+            #E4AA35 15%,
+            white);
+
+    border-radius: 50%;
+}
+
+
+.laboratory-resources__header-icon .material-symbols-outlined {
+    font-size: 1.75rem;
+}
+
+
+.laboratory-resources__header-content {
+    min-width: 0;
+}
+
+
+.laboratory-resources__title {
+    margin: 0;
+
+    font-size: var(--font-size-xl);
+    color: var(--color-text);
+}
+
+
+.laboratory-resources__description {
+    margin: var(--space-1) 0 0;
+
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+
+/* =============================================================
+   LISTA
+============================================================= */
+
+.laboratory-resources__list {
+    display: grid;
+    gap: var(--space-3);
+}
+
+
+/* =============================================================
+   ELEMENTO
+============================================================= */
+
+.laboratory-resource {
+    overflow: hidden;
+
+    background: var(--color-white);
+
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+
+.laboratory-resource:hover {
+    border-color: #E4AA35;
+}
+
+
+.laboratory-resource.is-open {
+    border-color: #E4AA35;
+
+    box-shadow:
+        0 0 0 1px color-mix(in srgb,
+            #E4AA35 20%,
+            transparent);
+}
+
+
+/* =============================================================
+   BOTÓN DEL ELEMENTO
+============================================================= */
+
+.laboratory-resource__toggle {
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: var(--space-4);
+
+    width: 100%;
+
+    padding: var(--space-4);
+
+    font: inherit;
+    text-align: left;
+
+    color: inherit;
+    background: transparent;
+
+    border: 0;
+
+    cursor: pointer;
+}
+
+
+/* =============================================================
+   ICONO
+============================================================= */
+
+.laboratory-resource__icon {
+    display: grid;
+    place-items: center;
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    color: #E4AA35;
+
+    background: color-mix(in srgb,
+            #E4AA35 12%,
+            white);
+
+    border-radius: var(--radius-md);
+}
+
+
+.laboratory-resource__icon .material-symbols-outlined {
+    font-size: 1.55rem;
+}
+
+
+/* =============================================================
+   TEXTO
+============================================================= */
+
+.laboratory-resource__summary {
+    display: grid;
+    gap: var(--space-1);
+
+    min-width: 0;
+}
+
+
+.laboratory-resource__title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+
+    color: var(--color-text);
+}
+
+
+.laboratory-resource__description {
+    font-size: var(--font-size-sm);
+
+    color: var(--color-text-secondary);
+}
+
+
+/* =============================================================
+   FLECHA
+============================================================= */
+
+.laboratory-resource__arrow {
+    color: var(--color-text-secondary);
+
+    transition:
+        transform var(--transition-fast),
+        color var(--transition-fast);
+}
+
+
+.laboratory-resource.is-open .laboratory-resource__arrow {
+    color: #E4AA35;
+
+    transform: rotate(180deg);
+}
+
+
+/* =============================================================
+   CONTENIDO DESPLEGABLE
+============================================================= */
+
+.laboratory-resource__content {
+    padding:
+        0 var(--space-5) var(--space-5) calc(2.75rem + var(--space-8));
+}
+
+
+.laboratory-resource__content[hidden] {
+    display: none;
+}
+
+
+.laboratory-resource__content-inner {
+    padding-top: var(--space-4);
+
+    border-top:
+        var(--border-width) solid var(--color-border);
+}
+
+
+.laboratory-resource__content h4 {
+    margin:
+        0 0 var(--space-3);
+
+    font-size: var(--font-size-base);
+
+    color: var(--color-text);
+}
+
+
+.laboratory-resource__content p {
+    margin:
+        0 0 var(--space-4);
+
+    color: var(--color-text-secondary);
+
+    line-height: 1.65;
+}
+
+
+.laboratory-resource__content ul {
+    display: grid;
+    gap: var(--space-2);
+
+    margin: 0;
+    padding-left: 1.25rem;
+
+    color: var(--color-text-secondary);
+}
+
+
+.laboratory-resource__content li::marker {
+    color: #E4AA35;
+}
+
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width: 600px) {
+
+    .laboratory-resources {
+        padding: var(--space-5);
+    }
+
+
+    .laboratory-resource__toggle {
+        grid-template-columns:
+            auto minmax(0, 1fr) auto;
+
+        gap: var(--space-3);
+
+        padding: var(--space-3);
+    }
+
+
+    .laboratory-resource__description {
+        display: none;
+    }
+
+
+    .laboratory-resource__content {
+        padding:
+            0 var(--space-4) var(--space-4);
+    }
+
+}

@@ -1,0 +1,84 @@
+/* ==========================================================
+   RESET
+   Elimina estilos por defecto del navegador
+========================================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
+}
+
+img,
+picture,
+svg,
+video,
+canvas{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+input,
+button,
+textarea,
+select{
+
+    font:inherit;
+
+}
+
+button{
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+table{
+
+    border-collapse:collapse;
+
+    border-spacing:0;
+
+}

@@ -1,0 +1,128 @@
+/* =============================================================
+   COURSE PRACTICE ITEM
+============================================================= */
+
+.course-practice-item {
+    display: grid;
+    grid-template-columns: 3.25rem 3rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--space-4);
+    width: 100%;
+    padding: var(--space-4) var(--space-5);
+    color: var(--color-text);
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.course-practice-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+}
+
+/* =============================================================
+   NÚMERO
+============================================================= */
+
+.course-practice-item__number {
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    background: var(--color-primary);
+    border-radius: 50%;
+}
+
+/* =============================================================
+   ICONO
+============================================================= */
+
+.course-practice-item__icon {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-soft-blue) 55%, var(--color-white));
+    border-radius: var(--radius-md);
+}
+
+.course-practice-item__icon .material-symbols-outlined {
+    font-size: 1.65rem;
+}
+
+/* =============================================================
+   CONTENIDO
+============================================================= */
+
+.course-practice-item__content {
+    min-width: 0;
+}
+
+.course-practice-item__title {
+    display: block;
+    margin: 0;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+}
+
+.course-practice-item__description {
+    display: block;
+    margin-top: var(--space-1);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-secondary);
+}
+
+/* =============================================================
+   FLECHA
+============================================================= */
+
+.course-practice-item__arrow {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--color-primary);
+    border-radius: 50%;
+    transition: color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.course-practice-item:hover .course-practice-item__arrow {
+    color: var(--color-white);
+    background: var(--color-primary);
+    transform: translateX(.2rem);
+}
+
+.course-practice-item__arrow.material-symbols-outlined {
+    font-size: 1.5rem;
+}
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width:560px) {
+    .course-practice-item {
+        grid-template-columns: 2.75rem minmax(0, 1fr) auto;
+        gap: var(--space-3);
+        padding: var(--space-4);
+    }
+
+    .course-practice-item__number {
+        width: 2.75rem;
+        height: 2.75rem;
+        font-size: var(--font-size-md);
+    }
+
+    .course-practice-item__icon {
+        display: none;
+    }
+}

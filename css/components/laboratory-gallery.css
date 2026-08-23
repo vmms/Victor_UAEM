@@ -1,0 +1,199 @@
+/* =============================================================
+   LABORATORY GALLERY
+============================================================= */
+.laboratory-gallery {
+    width: 100%;
+    padding: var(--space-6);
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.laboratory-gallery__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
+}
+
+.laboratory-gallery__header-icon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    color: #E4AA35;
+    background: color-mix(in srgb, #E4AA35 15%, white);
+    border-radius: 50%;
+}
+
+.laboratory-gallery__header-icon .material-symbols-outlined {
+    font-size: 1.75rem;
+}
+
+.laboratory-gallery__title {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    color: var(--color-text);
+}
+
+.laboratory-gallery__description {
+    margin: var(--space-1) 0 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+/* =============================================================
+   CARRUSEL
+============================================================= */
+.laboratory-gallery__carousel {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3.5rem minmax(0, 1fr) 3.5rem;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.laboratory-gallery__viewport {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.laboratory-gallery__track {
+    display: flex;
+    transition: transform .35s ease;
+}
+
+.laboratory-gallery__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+.laboratory-gallery__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: var(--color-background);
+    border-radius: var(--radius-lg);
+}
+
+.laboratory-gallery__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.laboratory-gallery__caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: var(--space-5);
+    color: var(--color-white);
+    background: linear-gradient(to top, rgba(0, 0, 0, .7), transparent);
+}
+
+.laboratory-gallery__caption strong {
+    display: block;
+    font-size: var(--font-size-lg);
+}
+
+.laboratory-gallery__caption span {
+    display: block;
+    margin-top: var(--space-1);
+    font-size: var(--font-size-sm);
+}
+
+/* =============================================================
+   FLECHAS
+============================================================= */
+.laboratory-gallery__control {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0;
+    color: var(--color-text);
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.laboratory-gallery__control:hover {
+    color: var(--color-white);
+    background: #E4AA35;
+    border-color: #E4AA35;
+}
+
+.laboratory-gallery__control .material-symbols-outlined {
+    font-size: 1.8rem;
+}
+
+/* =============================================================
+   INDICADORES
+============================================================= */
+.laboratory-gallery__indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+}
+
+.laboratory-gallery__indicator {
+    width: .65rem;
+    height: .65rem;
+    padding: 0;
+    background: var(--color-border);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: width var(--transition-fast), background-color var(--transition-fast);
+}
+
+.laboratory-gallery__indicator.is-active {
+    width: 1.75rem;
+    background: #E4AA35;
+    border-radius: 999px;
+}
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+@media(max-width:700px) {
+    .laboratory-gallery {
+        padding: var(--space-5);
+    }
+
+    .laboratory-gallery__carousel {
+        grid-template-columns: 1fr;
+    }
+
+    .laboratory-gallery__control {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2.8rem;
+        height: 2.8rem;
+        background: rgba(255, 255, 255, .92);
+    }
+
+    .laboratory-gallery__control--previous {
+        left: var(--space-3);
+    }
+
+    .laboratory-gallery__control--next {
+        right: var(--space-3);
+    }
+
+    .laboratory-gallery__image {
+        aspect-ratio: 4/3;
+    }
+}

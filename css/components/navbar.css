@@ -1,0 +1,296 @@
+/* ============================================================
+   COMPONENT
+   NAVBAR
+============================================================ */
+
+
+/* ============================================================
+   CONTENEDOR PRINCIPAL
+============================================================ */
+
+.navbar-preview {
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: stretch;
+
+    justify-content: space-between;
+
+    gap: var(--space-8);
+
+    padding-inline: var(--space-6);
+
+    color: var(--color-white);
+
+}
+
+
+/* ============================================================
+   LOGO
+============================================================ */
+
+.navbar-preview__brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    min-width: 180px;
+
+}
+
+.navbar-preview__brand strong {
+
+    font-size: var(--font-size-2xl);
+
+    font-weight: var(--font-weight-extrabold);
+
+    line-height: 1;
+
+    letter-spacing: -0.08em;
+
+}
+
+.navbar-preview__brand small {
+
+    margin-top: 4px;
+
+    font-size: .62rem;
+
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    color: var(--color-soft-blue);
+
+}
+
+
+/* ============================================================
+   LINKS
+============================================================ */
+
+.navbar-preview__links {
+
+    display: flex;
+
+    align-items: stretch;
+
+}
+
+
+/* ============================================================
+   LINK
+============================================================ */
+
+.navbar-preview__link {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: .55rem;
+
+    padding-inline: var(--space-4);
+
+    font-size: .92rem;
+
+    font-weight: var(--font-weight-semibold);
+
+    color: rgba(255,255,255,.88);
+
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast);
+
+}
+
+
+/* ============================================================
+   ICONOS
+============================================================ */
+
+.navbar-preview__link .material-symbols-outlined {
+
+    font-size: 1.20rem;
+
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 350,
+        'GRAD' 0,
+        'opsz' 24;
+
+}
+
+
+/* ============================================================
+   INDICADOR INFERIOR
+============================================================ */
+
+.navbar-preview__link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 16px;
+
+    right: 16px;
+
+    bottom: 0;
+
+    height: 3px;
+
+    border-radius: var(--radius-pill);
+
+    background: var(--color-soft-blue);
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition: transform var(--transition-fast);
+
+}
+
+
+/* ============================================================
+   HOVER
+============================================================ */
+
+.navbar-preview__link:hover {
+
+    color: var(--color-soft-blue);
+
+    background: rgba(255,255,255,.04);
+
+}
+
+.navbar-preview__link:hover::after {
+
+    transform: scaleX(1);
+
+}
+
+
+/* ============================================================
+   LINK ACTIVO
+============================================================ */
+
+.navbar-preview__link--active {
+
+    color: var(--color-soft-blue);
+
+    background: rgba(255,255,255,.05);
+
+}
+
+.navbar-preview__link--active::after {
+
+    transform: scaleX(1);
+
+}
+
+.navbar-preview__link--active .material-symbols-outlined{
+
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 500,
+        'GRAD' 0,
+        'opsz' 24;
+
+}
+
+
+/* ============================================================
+   FOCUS
+============================================================ */
+
+.navbar-preview__link:focus-visible{
+
+    outline: none;
+
+    background: rgba(255,255,255,.06);
+
+    border-radius: 6px;
+
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width:1100px){
+
+    .navbar-preview{
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding-block: var(--space-4);
+
+    }
+
+    .navbar-preview__links{
+
+        overflow-x:auto;
+
+        scrollbar-width:none;
+
+    }
+
+    .navbar-preview__links::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+    .navbar-preview__link{
+
+        flex-shrink:0;
+
+        min-height:48px;
+
+    }
+
+}
+
+@media (max-width:640px){
+
+    .navbar-preview{
+
+        gap: var(--space-4);
+
+    }
+
+    .navbar-preview__links{
+
+        flex-direction:column;
+
+    }
+
+    .navbar-preview__link{
+
+        min-height:52px;
+
+    }
+
+    .navbar-preview__link::after{
+
+        display:none;
+
+    }
+
+}

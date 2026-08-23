@@ -1,0 +1,116 @@
+/* =============================================================
+   COURSE NAVIGATION
+============================================================= */
+
+.course-navigation {
+    overflow: hidden;
+
+    background: var(--color-white);
+
+    border: var(--border-width) solid var(--color-border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =============================================================
+   ELEMENTOS
+============================================================= */
+
+.course-navigation__item {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    gap: var(--space-3);
+
+    padding: var(--space-4) var(--space-5);
+
+    text-align: left;
+
+    font: inherit;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+
+    color: var(--color-text-secondary);
+
+    background: transparent;
+
+    border: 0;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+.course-navigation__item+.course-navigation__item {
+    border-top: var(--border-width) solid var(--color-border);
+}
+
+.course-navigation__item .material-symbols-outlined {
+    flex: 0 0 auto;
+
+    font-size: 1.4rem;
+
+    color: var(--color-primary);
+}
+
+
+/* =============================================================
+   ESTADOS
+============================================================= */
+
+.course-navigation__item:hover {
+    color: var(--color-text);
+
+    background:
+        color-mix(in srgb,
+            var(--color-soft-blue) 22%,
+            var(--color-white));
+}
+
+.course-navigation__item--active {
+    color: var(--color-white);
+
+    background: var(--color-primary);
+}
+
+.course-navigation__item--active .material-symbols-outlined {
+    color: var(--color-white);
+}
+
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width:800px) {
+
+    .course-navigation {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .course-navigation__item+.course-navigation__item {
+        border-top: 0;
+    }
+
+}
+
+
+@media (max-width:560px) {
+
+    .course-navigation {
+        grid-template-columns: 1fr;
+    }
+
+    .course-navigation__item+.course-navigation__item {
+        border-top: var(--border-width) solid var(--color-border);
+    }
+
+}

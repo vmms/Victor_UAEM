@@ -1,0 +1,131 @@
+/* =============================================================
+   LABORATORIO
+============================================================= */
+body {
+    background: var(--color-page-background);
+}
+
+.laboratory-page__container {
+    width: min(calc(100% - clamp(1.5rem, 3vw, 3rem)), 96rem);
+    margin-inline: auto;
+}
+
+/* =============================================================
+   NAVBAR
+============================================================= */
+.laboratory-page__navbar {
+    color: var(--color-white);
+    background: linear-gradient(120deg, var(--color-navy-dark), var(--color-navy));
+}
+
+/* =============================================================
+   ENCABEZADO
+============================================================= */
+.laboratory-page__heading {
+    width: 100%;
+    background: var(--color-white);
+}
+
+.laboratory-page__heading .laboratory-page__container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.laboratory-page__heading .page-heading {
+    width: 100%;
+    max-width: none;
+    min-height: 22rem;
+    gap: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.laboratory-page__heading .page-heading::before,
+.laboratory-page__heading .page-heading::after {
+    display: none;
+}
+
+.laboratory-page__heading .page-heading__content {
+    flex: 0 0 46%;
+    max-width: none;
+    padding: var(--space-10) clamp(2rem, 6vw, 8rem);
+}
+
+.laboratory-page__heading .page-heading__circuits {
+    flex: 1 1 auto;
+    align-self: stretch;
+    display: block;
+    width: 54%;
+    max-width: none;
+    height: 22rem;
+    object-fit: cover;
+    object-position: center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 16%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 16%, black 100%);
+}
+
+/* =============================================================
+   SECCIONES
+============================================================= */
+.laboratory-page__section {
+    padding-block: var(--space-6);
+}
+
+.laboratory-page__section--schedule {
+    padding-top: var(--space-8);
+}
+
+.laboratory-page__section--gallery {
+    padding-bottom: var(--space-12);
+}
+
+/* =============================================================
+   FOOTER
+============================================================= */
+.laboratory-page__footer {
+    padding-block: var(--space-6);
+    background: linear-gradient(120deg, var(--color-navy-dark), var(--color-navy));
+}
+
+.laboratory-page__footer .footer-preview {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+@media(max-width:800px) {
+    .laboratory-page__heading .page-heading {
+        min-height: auto;
+        flex-direction: column;
+    }
+
+    .laboratory-page__heading .page-heading__content {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: var(--space-8) var(--space-6);
+    }
+
+    .laboratory-page__heading .page-heading__circuits {
+        width: 100%;
+        height: 18rem;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 100%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 100%);
+    }
+}
+
+@media(max-width:560px) {
+    .laboratory-page__section {
+        padding-block: var(--space-4);
+    }
+
+    .laboratory-page__section--gallery {
+        padding-bottom: var(--space-8);
+    }
+}

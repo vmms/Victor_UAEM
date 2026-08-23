@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Materia de Tecnologías Emergentes. Material académico, diapositivas, ejercicios y recursos.">
+    <title>Tecnologías Emergentes | Víctor Manuel Montaño Serrano</title>
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..600,0..1,-50..200">
+
+    <!-- Variables y base -->
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/base.css">
+
+    <!-- Componentes existentes -->
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/page-heading.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+
+    <!-- Componentes de materias -->
+    <link rel="stylesheet" href="../../css/components/course-navigation.css">
+    <link rel="stylesheet" href="../../css/components/course-info.css">
+    <link rel="stylesheet" href="../../css/components/course-syllabus.css">
+    <link rel="stylesheet" href="../../css/components/course-practice-item.css">
+    <link rel="stylesheet" href="../../css/components/course-practice-view.css">
+    <link rel="stylesheet" href="../../css/components/course-slide-view.css">
+
+    <!-- Página -->
+    <link rel="stylesheet" href="../../css/pages/course.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================== -->
+
+    <header class="course-page__navbar">
+        <div class="course-page__container">
+            <nav class="navbar-preview" aria-label="Navegación principal">
+
+                <a class="navbar-preview__brand" href="../../index.html" aria-label="Ir al inicio">
+                    <strong>VM</strong>
+                    <small>Víctor M. Montaño</small>
+                </a>
+
+                <div class="navbar-preview__links">
+
+                    <a class="navbar-preview__link" href="../../index.html">
+                        <span class="material-symbols-outlined">home</span>
+                        Inicio
+                    </a>
+
+                    <a class="navbar-preview__link navbar-preview__link--active" href="../docencia.html">
+                        <span class="material-symbols-outlined">school</span>
+                        Docencia
+                    </a>
+
+                    <a class="navbar-preview__link" href="../investigacion.html">
+                        <span class="material-symbols-outlined">biotech</span>
+                        Investigación
+                    </a>
+
+                    <a class="navbar-preview__link" href="../proyectos.html">
+                        <span class="material-symbols-outlined">deployed_code</span>
+                        Proyectos
+                    </a>
+
+                    <a class="navbar-preview__link" href="../laboratorio.html">
+                        <span class="material-symbols-outlined">science</span>
+                        Laboratorio
+                    </a>
+
+                    <a class="navbar-preview__link" href="../recursos.html">
+                        <span class="material-symbols-outlined">folder_open</span>
+                        Recursos
+                    </a>
+
+                    <a class="navbar-preview__link" href="../contacto.html">
+                        <span class="material-symbols-outlined">mail</span>
+                        Contacto
+                    </a>
+
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             ENCABEZADO
+        ====================================================== -->
+
+        <section class="course-page__heading">
+
+            <div class="course-page__container">
+
+                <div class="page-heading page-heading--course">
+
+                    <div class="page-heading__content">
+
+                        <h1 class="page-heading__title">
+                            Tecnologías Emergentes
+                        </h1>
+
+                        <p class="page-heading__lead">
+                            Innovación, bioinformática, inteligencia artificial y dispositivos inteligentes.
+                        </p>
+
+                        <p class="page-heading__description">
+                            Estudio de tecnologías emergentes y su aplicación en software, sistemas inteligentes,
+                            interacción, automatización y nuevas formas de cómputo.
+                        </p>
+
+                        <div class="page-heading__meta">
+                            <div class="page-heading__meta-item">
+                                <span class="material-symbols-outlined">person</span>
+                                <span>Docente: Dr. Victor M. Montaño Serrano</span>
+                            </div>
+
+                            <div class="page-heading__meta-separator"></div>
+
+                            <div class="page-heading__meta-item">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                                <span>Semestre: 2026-B</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <img class="page-heading__circuits" src="../../assets/docencia/emergentes.png"
+                        alt="Tecnologías emergentes y sistemas inteligentes">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTENIDO DE LA MATERIA
+        ====================================================== -->
+
+        <section class="course-page__main">
+
+            <div class="course-page__container">
+
+                <div class="course-page__layout">
+
+
+                    <!-- =========================================
+                         NAVEGACIÓN
+                    ========================================== -->
+
+                    <aside class="course-page__sidebar">
+
+                        <nav class="course-navigation" aria-label="Secciones de Tecnologías Emergentes">
+
+                            <button class="course-navigation__item course-navigation__item--active" type="button"
+                                data-course-section="informacion">
+                                <span class="material-symbols-outlined">
+                                    info
+                                </span>
+
+                                <span>
+                                    Información
+                                </span>
+                            </button>
+
+                            <button class="course-navigation__item" type="button" data-course-section="practicas">
+                                <span class="material-symbols-outlined">
+                                    science
+                                </span>
+
+                                <span>
+                                    Prácticas de laboratorio
+                                </span>
+                            </button>
+
+                            <button class="course-navigation__item" type="button" data-course-section="diapositivas">
+                                <span class="material-symbols-outlined">
+                                    slideshow
+                                </span>
+
+                                <span>
+                                    Diapositivas y material
+                                </span>
+                            </button>
+
+                            <button class="course-navigation__item" type="button" data-course-section="ejercicios">
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+
+                                <span>
+                                    Ejercicios y recursos
+                                </span>
+                            </button>
+
+                        </nav>
+
+                    </aside>
+
+
+                    <!-- =========================================
+                         CONTENIDO
+                    ========================================== -->
+
+                    <div class="course-page__content">
+
+
+                        <!-- =============================================
+                             VISTA: INFORMACIÓN
+                        ============================================== -->
+
+                        <div class="course-view" data-course-view="informacion">
+
+                            <article class="course-info" id="informacion">
+
+                                <header class="course-info__header">
+                                    <h2>Información de la materia</h2>
+
+                                    <p class="course-info__description">
+                                        En esta asignatura se estudian tecnologías emergentes y su impacto,
+                                        integrando bioinformática, inteligencia artificial, realidad extendida,
+                                        dispositivos inteligentes, cómputo avanzado e interacción.
+                                    </p>
+                                </header>
+
+                                <div class="course-info__stats">
+
+                                    <div class="course-info__stat">
+                                        <span class="course-info__stat-icon">
+                                            <span class="material-symbols-outlined">menu_book</span>
+                                        </span>
+                                        <div>
+                                            <strong>5</strong>
+                                            <span>Unidades temáticas</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-info__stat">
+                                        <span class="course-info__stat-icon">
+                                            <span class="material-symbols-outlined">science</span>
+                                        </span>
+                                        <div>
+                                            <strong>0</strong>
+                                            <span>Prácticas publicadas</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-info__stat">
+                                        <span class="course-info__stat-icon">
+                                            <span class="material-symbols-outlined">description</span>
+                                        </span>
+                                        <div>
+                                            <strong>5</strong>
+                                            <span>Temas de diapositivas</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="course-info__program">
+
+                                    <div class="course-info__program-content">
+
+                                        <span class="course-info__program-icon">
+                                            <span class="material-symbols-outlined">assignment</span>
+                                        </span>
+
+                                        <div>
+                                            <strong>Programa avalado</strong>
+                                            <p>
+                                                Programa de estudios aprobado por los H.H. Consejos Académico y de
+                                                Gobierno.
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                    <a class="button button--primary button--small" href="#" target="_blank"
+                                        rel="noopener noreferrer">
+                                        Descargar PDF
+                                        <span class="material-symbols-outlined">download</span>
+                                    </a>
+
+                                </div>
+
+                                <div class="course-info__schedule">
+
+                                    <span class="course-info__schedule-icon">
+                                        <span class="material-symbols-outlined">schedule</span>
+                                    </span>
+
+                                    <div>
+                                        <strong>Horario 2026-B</strong>
+                                        <span>Lunes - Miércoles</span>
+                                        <span>7:00 - 9:00</span>
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                            <section class="course-syllabus">
+
+                                <header class="course-syllabus__header">
+                                    <h2>Contenido del curso</h2>
+                                </header>
+
+                                <div class="course-syllabus__list">
+
+                                    <article class="course-syllabus__item">
+                                        <button class="course-syllabus__toggle" type="button" aria-expanded="false">
+                                            <span class="course-syllabus__number">01</span>
+                                            <span class="course-syllabus__title">Tecnologías emergentes</span>
+                                            <span
+                                                class="material-symbols-outlined course-syllabus__arrow">expand_more</span>
+                                        </button>
+
+                                        <div class="course-syllabus__content">
+                                            <h3>Objetivo</h3>
+                                            <p>
+                                                Discriminar las tecnologías emergentes, a través de su definición y su
+                                                uso
+                                                en la actualidad, para reconocer la innovación que las genera y poder
+                                                ser
+                                                investigadas, aplicadas y desarrolladas.
+                                            </p>
+
+                                            <h3>Temas</h3>
+                                            <ul class="course-syllabus__topics">
+                                                <li>1.1 Definición de tecnologías emergentes</li>
+                                                <li>1.2 Tipos de tecnologías emergentes</li>
+                                                <li>1.3 Disrupción y tipos de innovación</li>
+                                                <li>1.4 Aplicaciones contemporáneas de las tecnologías emergentes</li>
+                                                <li>1.4.1 Desarrollo de software</li>
+                                                <li>1.4.2 Ciberseguridad</li>
+                                                <li>1.4.3 Comunicaciones</li>
+                                                <li>1.5 Consecuencias de la aplicación y uso de las tecnologías
+                                                    emergentes</li>
+                                                <li>1.6 Uso ético de las tecnologías emergentes</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+
+                                    <article class="course-syllabus__item">
+                                        <button class="course-syllabus__toggle" type="button" aria-expanded="false">
+                                            <span class="course-syllabus__number">02</span>
+                                            <span class="course-syllabus__title">Bioinformática</span>
+                                            <span
+                                                class="material-symbols-outlined course-syllabus__arrow">expand_more</span>
+                                        </button>
+
+                                        <div class="course-syllabus__content">
+                                            <h3>Objetivo</h3>
+                                            <p>
+                                                Comparar herramientas informáticas y computacionales, por medio de la
+                                                administración y manipulación de sensores biométricos e interfaces, para
+                                                mejorar el manejo de datos biológicos y automatizar procesos y tareas.
+                                            </p>
+
+                                            <h3>Temas</h3>
+                                            <ul class="course-syllabus__topics">
+                                                <li>2.1 Contraseñas y seguridad</li>
+                                                <li>2.2 Sensores biométricos</li>
+                                                <li>2.3 Biotecnología y nanotecnología</li>
+                                                <li>2.4 Casas, edificios y ciudades inteligentes</li>
+                                                <li>2.5 Wearables (sensores vestibles)</li>
+                                                <li>2.6 Prótesis</li>
+                                                <li>2.7 Interfaz cerebro-máquina</li>
+                                                <li>2.7.1 Invasivo</li>
+                                                <li>2.7.2 No invasivo</li>
+                                                <li>2.8 Geolocalización</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+
+                                    <article class="course-syllabus__item">
+                                        <button class="course-syllabus__toggle" type="button" aria-expanded="false">
+                                            <span class="course-syllabus__number">03</span>
+                                            <span class="course-syllabus__title">Software emergente</span>
+                                            <span
+                                                class="material-symbols-outlined course-syllabus__arrow">expand_more</span>
+                                        </button>
+
+                                        <div class="course-syllabus__content">
+                                            <h3>Objetivo</h3>
+                                            <p>
+                                                Analizar las nuevas formas de software que acercan a las personas a los
+                                                entornos inteligentes, mediante el uso de la inteligencia artificial,
+                                                para
+                                                el desarrollo de aplicaciones inteligentes.
+                                            </p>
+
+                                            <h3>Temas</h3>
+                                            <ul class="course-syllabus__topics">
+                                                <li>3.1 Inteligencia Artificial</li>
+                                                <li>3.2 Realidad Virtual y Realidad Aumentada</li>
+                                                <li>3.3 Robotic Process Automation (RPA)</li>
+                                                <li>3.4 Blockchain</li>
+                                                <li>3.5 Metaverso</li>
+                                                <li>3.6 Redes de próxima generación</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+
+                                    <article class="course-syllabus__item">
+                                        <button class="course-syllabus__toggle" type="button" aria-expanded="false">
+                                            <span class="course-syllabus__number">04</span>
+                                            <span class="course-syllabus__title">
+                                                Dispositivos inteligentes, cómputo en la nube y cómputo cuántico
+                                            </span>
+                                            <span
+                                                class="material-symbols-outlined course-syllabus__arrow">expand_more</span>
+                                        </button>
+
+                                        <div class="course-syllabus__content">
+                                            <h3>Objetivo</h3>
+                                            <p>
+                                                Plantear nuevas estrategias en la elaboración de aplicaciones, mediante
+                                                conceptos que involucran comunicación entre dispositivos, para formar un
+                                                mundo conectado con las cosas que rodean a las personas.
+                                            </p>
+
+                                            <h3>Temas</h3>
+                                            <ul class="course-syllabus__topics">
+                                                <li>4.1 Dispositivos inteligentes</li>
+                                                <li>4.2 Cloud computing</li>
+                                                <li>4.3 Edge computing</li>
+                                                <li>4.4 Cómputo ubicuo</li>
+                                                <li>4.5 Dataficación</li>
+                                                <li>4.6 Digital Twins</li>
+                                                <li>4.7 Cómputo cuántico</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+
+                                    <article class="course-syllabus__item">
+                                        <button class="course-syllabus__toggle" type="button" aria-expanded="false">
+                                            <span class="course-syllabus__number">05</span>
+                                            <span class="course-syllabus__title">Interacción</span>
+                                            <span
+                                                class="material-symbols-outlined course-syllabus__arrow">expand_more</span>
+                                        </button>
+
+                                        <div class="course-syllabus__content">
+                                            <h3>Objetivo</h3>
+                                            <p>
+                                                Comparar los dispositivos adecuados en tareas de automatización,
+                                                mediante
+                                                tecnologías de nueva generación, para facilitar el desarrollo de
+                                                dispositivos y la interacción con las personas.
+                                            </p>
+
+                                            <h3>Temas</h3>
+                                            <ul class="course-syllabus__topics">
+                                                <li>5.1 Impresoras 3D</li>
+                                                <li>5.2 Asistentes dirigidos por voz</li>
+                                                <li>5.3 Automatización</li>
+                                                <li>5.4 Robótica médica</li>
+                                                <li>5.5 Robótica de servicio</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+
+                        <!-- =============================================
+                             VISTA: PRÁCTICAS DE LABORATORIO
+                        ============================================== -->
+
+                        <div class="course-view" data-course-view="practicas" hidden>
+
+                            <section class="course-practices">
+                                <header class="course-practices__header">
+                                    <h2>Prácticas de laboratorio</h2>
+                                </header>
+                            </section>
+
+                        </div>
+
+
+                        <!-- =============================================
+                             VISTA: DIAPOSITIVAS
+                        ============================================== -->
+
+                        <div class="course-view" data-course-view="diapositivas" hidden>
+
+                            <section class="course-slides">
+
+                                <header class="course-practices__header">
+                                    <h2>Diapositivas y material</h2>
+                                    <p>Consulta las presentaciones utilizadas durante el curso.</p>
+                                </header>
+
+                                <div class="course-practices__items">
+
+                                    <a class="course-practice-item" href="#" data-slide-number="01"
+                                        data-slide-title="Fundamentos"
+                                        data-slide-file="../../assets/docencia/TecnologiasEmergentes/Diapositivas/Introduccion.pdf">
+
+                                        <span class="course-practice-item__number">01</span>
+
+                                        <span class="course-practice-item__icon">
+                                            <span class="material-symbols-outlined">description</span>
+                                        </span>
+
+                                        <span class="course-practice-item__content">
+                                            <strong class="course-practice-item__title">Fundamentos</strong>
+                                        </span>
+
+                                        <span class="material-symbols-outlined course-practice-item__arrow">
+                                            chevron_right
+                                        </span>
+
+                                    </a>
+
+                                    <a class="course-practice-item" href="#" data-slide-number="02"
+                                        data-slide-title="Biotecnología"
+                                        data-slide-file="../../assets/docencia/TecnologiasEmergentes/Diapositivas/Bioinformatica.pdf">
+
+                                        <span class="course-practice-item__number">02</span>
+
+                                        <span class="course-practice-item__icon">
+                                            <span class="material-symbols-outlined">description</span>
+                                        </span>
+
+                                        <span class="course-practice-item__content">
+                                            <strong class="course-practice-item__title">Biotecnología</strong>
+                                        </span>
+
+                                        <span class="material-symbols-outlined course-practice-item__arrow">
+                                            chevron_right
+                                        </span>
+
+                                    </a>
+
+                                    <a class="course-practice-item" href="#" data-slide-number="03"
+                                        data-slide-title="Software Emergente"
+                                        data-slide-file="../../assets/docencia/TecnologiasEmergentes/Diapositivas/SoftwareEmergente.pdf">
+
+                                        <span class="course-practice-item__number">03</span>
+
+                                        <span class="course-practice-item__icon">
+                                            <span class="material-symbols-outlined">description</span>
+                                        </span>
+
+                                        <span class="course-practice-item__content">
+                                            <strong class="course-practice-item__title">Software Emergente</strong>
+                                        </span>
+
+                                        <span class="material-symbols-outlined course-practice-item__arrow">
+                                            chevron_right
+                                        </span>
+
+                                    </a>
+
+                                    <a class="course-practice-item" href="#" data-slide-number="04"
+                                        data-slide-title="Dispositivos Inteligentes"
+                                        data-slide-file="../../assets/docencia/TecnologiasEmergentes/Diapositivas/DispositivosInteligentes.pdf">
+
+                                        <span class="course-practice-item__number">04</span>
+
+                                        <span class="course-practice-item__icon">
+                                            <span class="material-symbols-outlined">description</span>
+                                        </span>
+
+                                        <span class="course-practice-item__content">
+                                            <strong class="course-practice-item__title">Dispositivos
+                                                Inteligentes</strong>
+                                        </span>
+
+                                        <span class="material-symbols-outlined course-practice-item__arrow">
+                                            chevron_right
+                                        </span>
+
+                                    </a>
+
+                                    <a class="course-practice-item" href="#" data-slide-number="05"
+                                        data-slide-title="Interacción"
+                                        data-slide-file="../../assets/docencia/TecnologiasEmergentes/Diapositivas/Interaccion.pdf">
+
+                                        <span class="course-practice-item__number">05</span>
+
+                                        <span class="course-practice-item__icon">
+                                            <span class="material-symbols-outlined">description</span>
+                                        </span>
+
+                                        <span class="course-practice-item__content">
+                                            <strong class="course-practice-item__title">Interacción</strong>
+                                        </span>
+
+                                        <span class="material-symbols-outlined course-practice-item__arrow">
+                                            chevron_right
+                                        </span>
+
+                                    </a>
+
+                                </div>
+
+                            </section>
+
+                            <section class="course-slide-view" hidden>
+
+                                <button class="course-slide-view__back" type="button">
+                                    <span class="material-symbols-outlined">arrow_back</span>
+                                    <span>Todas las diapositivas</span>
+                                </button>
+
+                                <header class="course-slide-view__header">
+                                    <span class="course-slide-view__number">01</span>
+                                    <h2 class="course-slide-view__title">Fundamentos</h2>
+                                </header>
+
+                                <div class="course-slide-view__viewer">
+                                    <div class="course-slide-view__page">
+                                        <canvas class="course-slide-view__canvas"></canvas>
+                                    </div>
+                                </div>
+
+                                <div class="course-slide-view__controls">
+
+                                    <button class="course-slide-view__control course-slide-view__home" type="button">
+                                        <span class="material-symbols-outlined">first_page</span>
+                                        Inicio
+                                    </button>
+
+                                    <button class="course-slide-view__control course-slide-view__previous"
+                                        type="button">
+                                        <span class="material-symbols-outlined">chevron_left</span>
+                                        Anterior
+                                    </button>
+
+                                    <button class="course-slide-view__control course-slide-view__next" type="button">
+                                        Siguiente
+                                        <span class="material-symbols-outlined">chevron_right</span>
+                                    </button>
+
+                                    <a class="course-slide-view__control course-slide-view__control--primary course-slide-view__download"
+                                        href="#" download>
+                                        <span class="material-symbols-outlined">download</span>
+                                        Descargar
+                                    </a>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+
+                        <!-- =============================================
+                             VISTA: EJERCICIOS
+                        ============================================== -->
+
+                        <div class="course-view" data-course-view="ejercicios" hidden></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="course-page__footer">
+
+        <div class="course-page__container">
+
+            <div class="footer-preview">
+
+                <p>
+                    © 2026 Victor Manuel Montaño Serrano.
+                    Todos los derechos reservados.
+                </p>
+
+                <div class="footer-preview__social">
+
+                    <a href="https://www.linkedin.com/in/victor-manuel-montaño-serrano-6aa33336/" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn">
+                        <span class="footer-preview__social-text">in</span>
+                    </a>
+
+                    <a href="https://www.researchgate.net/profile/Victor-Montano-Serrano" target="_blank"
+                        rel="noopener noreferrer" aria-label="ResearchGate">
+                        <span class="footer-preview__social-text">Rᵍ</span>
+                    </a>
+
+                    <a href="https://orcid.org/0000-0002-3228-2773" target="_blank" rel="noopener noreferrer"
+                        aria-label="ORCID">
+                        <span class="footer-preview__social-text">iD</span>
+                    </a>
+
+                    <a href="https://scholar.google.com/citations?hl=es&user=fruxil8AAAAJ" target="_blank"
+                        rel="noopener noreferrer" aria-label="Google Scholar">
+                        <span class="material-symbols-outlined">school</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+    <script src="../../js/components/course-syllabus.js"></script>
+    <script src="../../js/components/course-navigation.js"></script>
+    <script src="../../js/components/course-slide.js"></script>
+
+</body>
+
+</html>

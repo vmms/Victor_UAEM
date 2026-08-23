@@ -1,0 +1,364 @@
+/* =============================================================
+   DESIGN SYSTEM
+   Estilos exclusivos de la página design-system.html
+============================================================= */
+
+
+/* =============================================================
+   CONTENEDOR GENERAL
+============================================================= */
+
+.ds-container {
+    width: min(
+        calc(100% - (var(--container-padding) * 2)),
+        var(--container-width)
+    );
+    margin-inline: auto;
+}
+
+
+/* =============================================================
+   ENCABEZADO DEL DESIGN SYSTEM
+============================================================= */
+
+.ds-header {
+    padding-block: var(--space-12);
+    color: var(--color-white);
+    background:
+        linear-gradient(
+            120deg,
+            var(--color-navy-dark),
+            var(--color-navy)
+        );
+}
+
+.ds-header__content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-8);
+}
+
+.ds-header h1 {
+    margin: var(--space-2) 0 0;
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+    font-weight: var(--font-weight-extrabold);
+    line-height: var(--line-height-tight);
+    letter-spacing: -0.04em;
+}
+
+.ds-header p {
+    margin: var(--space-3) 0 0;
+    color: var(--color-soft-blue);
+}
+
+.ds-eyebrow {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-pink);
+}
+
+.ds-version {
+    flex-shrink: 0;
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-navy);
+    background: var(--color-soft-blue);
+    border-radius: var(--radius-pill);
+}
+
+
+/* =============================================================
+   SECCIONES DEL CATÁLOGO
+============================================================= */
+
+.ds-section {
+    padding-block: var(--space-16);
+}
+
+.ds-section--alternate {
+    background: var(--color-background);
+}
+
+.ds-section__header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+    margin-bottom: var(--space-10);
+}
+
+.ds-section__number {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-white);
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+}
+
+.ds-section__header h2 {
+    margin: 0;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.025em;
+}
+
+.ds-section__header p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-text-secondary);
+}
+
+
+/* =============================================================
+   MARCOS DE DEMOSTRACIÓN
+============================================================= */
+
+.component-frame {
+    overflow: hidden;
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.component-frame--dark {
+    background: var(--color-navy);
+}
+
+.component-frame--hero {
+    background:
+        linear-gradient(
+            120deg,
+            var(--color-white),
+            var(--color-background)
+        );
+}
+
+
+/* =============================================================
+   PALETA DE COLORES
+============================================================= */
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+}
+
+.color-card {
+    overflow: hidden;
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.color-card__sample {
+    height: 8rem;
+}
+
+.color-card__content {
+    display: grid;
+    gap: var(--space-1);
+    padding: var(--space-5);
+}
+
+.color-card__content strong {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+}
+
+.color-card__content span {
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-secondary);
+}
+
+.color-card__content small {
+    margin-top: var(--space-2);
+    color: var(--color-text-light);
+}
+
+.color-primary {
+    background: var(--color-primary);
+}
+
+.color-secondary {
+    background: var(--color-secondary);
+}
+
+.color-soft-blue {
+    background: var(--color-soft-blue);
+}
+
+.color-background {
+    background: var(--color-background);
+}
+
+.color-pink {
+    background: var(--color-pink);
+}
+
+.color-yellow {
+    background: var(--color-yellow);
+}
+
+
+/* =============================================================
+   MUESTRA TIPOGRÁFICA
+============================================================= */
+
+.typography-showcase {
+    overflow: hidden;
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.type-example {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-8);
+    padding: var(--space-6);
+    border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.type-example:last-child {
+    border-bottom: 0;
+}
+
+.type-example__label {
+    padding-top: var(--space-1);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-light);
+}
+
+.type-example p,
+.type-example h1,
+.type-example h2,
+.type-example h3 {
+    margin: 0;
+}
+
+.type-display {
+    font-size: clamp(2.5rem, 6vw, 4.75rem);
+    font-weight: var(--font-weight-extrabold);
+    line-height: var(--line-height-tight);
+    letter-spacing: -0.045em;
+}
+
+.type-h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.03em;
+}
+
+.type-h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.02em;
+}
+
+.type-h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+}
+
+.type-body {
+    max-width: 65ch;
+    color: var(--color-text-secondary);
+}
+
+.type-small {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+
+/* =============================================================
+   MUESTRA DE BOTONES
+============================================================= */
+
+.button-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width: 800px) {
+
+    .ds-header__content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .color-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .type-example {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .ds-section {
+        padding-block: var(--space-12);
+    }
+
+    .ds-section__header {
+        flex-direction: column;
+    }
+
+    .color-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .button-showcase {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .button-showcase .button {
+        width: 100%;
+    }
+
+    .button-showcase .icon-button {
+        align-self: flex-start;
+    }
+}
+
+/* buttons.css
+navbar.css
+hero.css
+quick-contact.css
+dashboard-card.css
+specialties.css
+footer.css */

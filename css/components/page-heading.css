@@ -1,0 +1,173 @@
+/* =============================================================
+   PAGE HEADING
+============================================================= */
+
+.page-heading {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-8);
+
+    padding: var(--space-8);
+
+    overflow: hidden;
+
+    background: var(--color-white);
+
+    border: var(--border-width) solid var(--color-border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =============================================================
+   CONTENIDO
+============================================================= */
+
+.page-heading__content {
+    position: relative;
+    z-index: 1;
+
+    max-width: 46rem;
+}
+
+.page-heading__title {
+    margin: 0;
+
+    font-size: clamp(2rem, 3vw, 3rem);
+
+    line-height: var(--line-height-tight);
+
+    letter-spacing: -.035em;
+
+    color: var(--color-text-primary);
+}
+
+.page-heading__description {
+    margin: var(--space-3) 0 0;
+
+    max-width: 40rem;
+
+    font-size: var(--font-size-md);
+
+    line-height: var(--line-height-relaxed);
+
+    color: var(--color-text-secondary);
+}
+
+
+/* =============================================================
+   ACENTO
+============================================================= */
+
+.page-heading__accent {
+    position: relative;
+    z-index: 1;
+
+    flex: 0 0 auto;
+
+    width: .4rem;
+    height: 4.5rem;
+
+    background: var(--color-primary);
+
+    border-radius: var(--radius-full);
+}
+
+
+/* =============================================================
+   DECORACIÓN
+============================================================= */
+
+.page-heading::before,
+.page-heading::after {
+    content: "";
+
+    position: absolute;
+
+    pointer-events: none;
+}
+
+.page-heading::before {
+    left: 0;
+    bottom: 0;
+
+    width: 13rem;
+    height: 4rem;
+
+    background:
+        linear-gradient(90deg,
+            color-mix(in srgb, var(--color-soft-blue) 70%, transparent),
+            transparent);
+
+    clip-path: polygon(0 65%,
+            34% 65%,
+            42% 35%,
+            72% 35%,
+            78% 0,
+            100% 0,
+            100% 10%,
+            82% 10%,
+            76% 45%,
+            46% 45%,
+            38% 75%,
+            0 75%);
+
+    opacity: .7;
+}
+
+.page-heading::after {
+    right: -2rem;
+    top: -3rem;
+
+    width: 12rem;
+    height: 12rem;
+
+    background: radial-gradient(circle,
+            color-mix(in srgb, var(--color-primary) 18%, transparent) 0%,
+            transparent 70%);
+}
+
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width:800px) {
+
+    .page-heading {
+        padding: var(--space-6);
+    }
+
+    .page-heading__accent {
+        height: 3.5rem;
+    }
+
+}
+
+
+@media (max-width:560px) {
+
+    .page-heading {
+        gap: var(--space-4);
+    }
+
+    .page-heading__title {
+        font-size: 2rem;
+    }
+
+    .page-heading__description {
+        font-size: var(--font-size-sm);
+    }
+
+    .page-heading__accent {
+        width: .3rem;
+        height: 3rem;
+    }
+
+}

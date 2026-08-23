@@ -1,0 +1,364 @@
+/* =============================================================
+   COURSE PRACTICE VIEW
+============================================================= */
+
+.course-practice-view {
+    min-width: 0;
+    max-width: 100%;
+    padding: var(--space-6);
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.course-practice-view[hidden] {
+    display: none;
+}
+
+/* =============================================================
+   REGRESAR A LA LISTA
+============================================================= */
+
+.course-practice-view__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0;
+    font: inherit;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.course-practice-view__back:hover {
+    text-decoration: underline;
+}
+
+.course-practice-view__back .material-symbols-outlined {
+    font-size: 1.3rem;
+}
+
+/* =============================================================
+   ENCABEZADO
+============================================================= */
+
+.course-practice-view__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+    padding-bottom: var(--space-5);
+    border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.course-practice-view__number {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 3.75rem;
+    height: 3.75rem;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    background: var(--color-primary);
+    border-radius: 50%;
+}
+
+.course-practice-view__title {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+}
+
+/* =============================================================
+   ESTADOS
+============================================================= */
+
+.course-practice-view__loading,
+.course-practice-view__error {
+    margin-top: var(--space-6);
+    padding: var(--space-4);
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-md);
+}
+
+.course-practice-view__loading {
+    color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-soft-blue) 35%, var(--color-white));
+}
+
+.course-practice-view__error {
+    color: var(--color-secondary);
+    background: color-mix(in srgb, var(--color-pink) 25%, var(--color-white));
+}
+
+/* =============================================================
+   CONTENIDO HTML DE LA PRÁCTICA
+============================================================= */
+
+.course-practice-view__markdown {
+    min-width: 0;
+    max-width: 100%;
+    margin-top: var(--space-6);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    overflow-wrap: anywhere;
+}
+
+.course-practice-view__markdown *,
+.course-practice-view__markdown *::before,
+.course-practice-view__markdown *::after {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.course-practice-view__markdown> :first-child {
+    margin-top: 0;
+}
+
+.course-practice-view__markdown h1 {
+    display: none;
+}
+
+.course-practice-view__markdown h2,
+.course-practice-view__markdown h3,
+.course-practice-view__markdown h4 {
+    color: var(--color-text);
+    line-height: var(--line-height-tight);
+}
+
+.course-practice-view__markdown h2 {
+    margin: var(--space-8) 0 var(--space-3);
+    padding-bottom: var(--space-2);
+    font-size: var(--font-size-xl);
+    border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.course-practice-view__markdown h3 {
+    margin: var(--space-6) 0 var(--space-3);
+    font-size: var(--font-size-lg);
+    color: var(--color-primary);
+}
+
+.course-practice-view__markdown p {
+    margin: 0 0 var(--space-4);
+}
+
+.course-practice-view__markdown ul,
+.course-practice-view__markdown ol {
+    margin: 0 0 var(--space-5);
+    padding-left: 1.5rem;
+}
+
+.course-practice-view__markdown li+li {
+    margin-top: var(--space-2);
+}
+
+/* =============================================================
+   IMÁGENES
+============================================================= */
+
+.course-practice-view__markdown img {
+    display: inline-block;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+}
+
+.course-practice-view__markdown>img {
+    display: block;
+    margin: var(--space-5) auto;
+}
+
+.course-practice-view__markdown div[style*="display: inline-block"] {
+    max-width: 100% !important;
+    vertical-align: middle;
+}
+
+/* =============================================================
+   ENLACES
+============================================================= */
+
+.course-practice-view__markdown a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* =============================================================
+   CÓDIGO
+============================================================= */
+
+.course-practice-view__markdown .code-container {
+    min-width: 0;
+    max-width: 100%;
+    margin: var(--space-5) 0;
+    overflow: hidden;
+}
+
+.course-practice-view__markdown pre {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 0;
+    padding: var(--space-5);
+    color: var(--color-white);
+    background: var(--color-navy-dark);
+    border-radius: var(--radius-md);
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+}
+
+.course-practice-view__markdown pre code {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+    max-width: none;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    white-space: pre;
+}
+
+.course-practice-view__markdown :not(pre)>code {
+    padding: .15rem .35rem;
+    color: var(--color-secondary);
+    background: var(--color-background);
+    border-radius: var(--radius-sm);
+    overflow-wrap: anywhere;
+}
+
+/* =============================================================
+   BOTÓN COPIAR
+============================================================= */
+
+.course-practice-view__markdown .copy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    float: none !important;
+    margin-top: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    font: inherit;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-primary);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.course-practice-view__markdown .copy-button:hover {
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+/* =============================================================
+   TABLAS
+============================================================= */
+
+.course-practice-view__markdown table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: var(--space-5) 0;
+    border-collapse: collapse;
+}
+
+.course-practice-view__markdown th,
+.course-practice-view__markdown td {
+    padding: var(--space-3);
+    text-align: left;
+    border: var(--border-width) solid var(--color-border);
+}
+
+.course-practice-view__markdown th {
+    color: var(--color-text);
+    background: var(--color-background);
+}
+
+/* =============================================================
+   NAVEGACIÓN ENTRE PRÁCTICAS
+============================================================= */
+
+.course-practice-view__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    padding-top: var(--space-5);
+    border-top: var(--border-width) solid var(--color-border);
+}
+
+.course-practice-view__previous,
+.course-practice-view__next {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 2.75rem;
+    padding: var(--space-3) var(--space-4);
+    font: inherit;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.course-practice-view__previous {
+    color: var(--color-primary);
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-primary);
+}
+
+.course-practice-view__next {
+    color: var(--color-white);
+    background: var(--color-primary);
+    border: var(--border-width) solid var(--color-primary);
+}
+
+.course-practice-view__previous:hover {
+    background: color-mix(in srgb, var(--color-soft-blue) 30%, var(--color-white));
+}
+
+.course-practice-view__next:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.course-practice-view__previous:disabled,
+.course-practice-view__next:disabled {
+    opacity: .4;
+    cursor: default;
+}
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width:560px) {
+    .course-practice-view {
+        padding: var(--space-5);
+    }
+
+    .course-practice-view__header {
+        align-items: flex-start;
+    }
+
+    .course-practice-view__navigation {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .course-practice-view__previous,
+    .course-practice-view__next {
+        justify-content: center;
+        width: 100%;
+    }
+}

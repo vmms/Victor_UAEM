@@ -1,0 +1,365 @@
+/* =============================================================
+   HERO
+============================================================= */
+
+.hero-preview{
+    --hero-pink-angle:15deg;
+    --hero-primary-angle:340deg;
+    --hero-pink-intensity:25%;
+    --hero-primary-intensity:90%;
+    --hero-pink-solid:5%;
+    --hero-pink-fade:20%;
+    --hero-primary-solid:25%;
+    --hero-primary-fade:40%;
+
+    --hero-arm-top:-10%;
+    --hero-arm-right:1%;
+    --hero-arm-size:36%;
+
+    --hero-pcb-top:17%;
+    --hero-pcb-right:20%;
+    --hero-pcb-size:40%;
+
+    --hero-robot-right:0%;
+    --hero-robot-bottom:-15%;
+    --hero-robot-size:45%;
+
+    position:relative;
+    min-height:43rem;
+    display:grid;
+    grid-template-columns:46% 54%;
+    align-items:stretch;
+    overflow:hidden;
+    isolation:isolate;
+    background:var(--color-white);
+}
+
+.hero-preview::before,
+.hero-preview::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+}
+
+.hero-preview::before{
+    background:linear-gradient(
+        var(--hero-pink-angle),
+        color-mix(
+            in srgb,
+            var(--color-pink) var(--hero-pink-intensity),
+            transparent
+        ) 0%,
+        color-mix(
+            in srgb,
+            var(--color-pink) var(--hero-pink-intensity),
+            transparent
+        ) var(--hero-pink-solid),
+        transparent var(--hero-pink-fade)
+    );
+}
+
+.hero-preview::after{
+    background:linear-gradient(
+        var(--hero-primary-angle),
+        color-mix(
+            in srgb,
+            var(--color-primary) var(--hero-primary-intensity),
+            transparent
+        ) 0%,
+        color-mix(
+            in srgb,
+            var(--color-primary) var(--hero-primary-intensity),
+            transparent
+        ) var(--hero-primary-solid),
+        transparent var(--hero-primary-fade)
+    );
+}
+
+.hero-preview__content{
+    position:relative;
+    z-index:4;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:var(--space-12) clamp(2rem,6vw,8rem);
+}
+
+.hero-preview__content h1,
+.hero-preview__content h2{
+    margin:0;
+    max-width:38rem;
+    font-size:clamp(3rem,4.7vw,5rem);
+    line-height:1.05;
+    letter-spacing:-.045em;
+}
+
+.hero-preview__roles{
+    margin:var(--space-5) 0 0;
+    font-size:clamp(1.25rem,1.8vw,1.65rem);
+    font-weight:var(--font-weight-bold);
+    color:var(--color-primary);
+}
+
+.hero-preview__description{
+    max-width:38rem;
+    margin:var(--space-6) 0 0;
+    font-size:clamp(1rem,1.15vw,1.2rem);
+    line-height:1.75;
+    color:var(--color-text-secondary);
+}
+
+.hero-preview__actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:var(--space-5);
+    margin-top:var(--space-8);
+}
+
+/* =============================================================
+   CIRCUITO INFERIOR
+============================================================= */
+
+.hero-preview__circuits{
+    position:absolute;
+    z-index:2;
+    left:0;
+    bottom:0;
+    width:54%;
+    height:auto;
+    max-height:9rem;
+    object-fit:contain;
+    object-position:left bottom;
+    opacity:.8;
+    pointer-events:none;
+}
+
+.hero-bg-circuit {
+    position: absolute;
+    inset: 0;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: .18;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* =============================================================
+   ZONA VISUAL
+============================================================= */
+
+.hero-preview__visual{
+    position:relative;
+    z-index:3;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    min-width:0;
+    overflow:visible;
+}
+
+/* =============================================================
+   FOTOGRAFÍA
+============================================================= */
+
+.hero-preview__photo{
+    position:absolute;
+    z-index:4;
+    right:8%;
+    bottom:0;
+    display:block;
+    width:auto;
+    height:96%;
+    max-width:none;
+    object-fit:contain;
+    object-position:center bottom;
+    filter:drop-shadow(0 20px 28px rgba(31,43,63,.14));
+}
+
+.hero-photo{
+    position:absolute;
+    bottom:0;
+    left:-10%;
+    transform:translateX(-6%);
+    height:110%;
+    width:auto;
+    z-index:4;
+    pointer-events:none;
+}
+
+/* =============================================================
+   CONTENEDORES TECNOLÓGICOS
+============================================================= */
+
+.hero-arm-wrapper,
+.hero-pcb-wrapper,
+.hero-robot-wrapper{
+    position:absolute;
+    isolation:isolate;
+    pointer-events:none;
+}
+
+.hero-arm-wrapper img,
+.hero-pcb-wrapper img,
+.hero-robot-wrapper img{
+    position:relative;
+    z-index:2;
+    display:block;
+    width:100%;
+    height:auto;
+    pointer-events:none;
+}
+
+/* =============================================================
+   BRAZO ROBÓTICO
+============================================================= */
+
+.hero-arm-wrapper{
+    top:var(--hero-arm-top);
+    right:var(--hero-arm-right);
+    width:var(--hero-arm-size);
+    z-index:1;
+}
+
+.hero-arm-wrapper::before{
+    content:"";
+    position:absolute;
+    z-index:0;
+    top:10%;
+    left:4%;
+    width:94%;
+    height:86%;
+    background:radial-gradient(
+        ellipse at center,
+        color-mix(in srgb,var(--color-soft-blue) 75%,transparent) 0%,
+        color-mix(in srgb,var(--color-primary) 35%,transparent) 45%,
+        transparent 76%
+    );
+    filter:blur(14px);
+    transform:scale(1.18);
+    pointer-events:none;
+}
+
+.hero-arm{
+    transform:rotate(2deg);
+    filter:
+        saturate(.88)
+        contrast(.96)
+        brightness(1.04)
+        drop-shadow(0 14px 14px rgba(31,43,63,.18))
+        drop-shadow(0 0 18px rgba(184,212,227,.55));
+}
+
+/* =============================================================
+   PCB
+============================================================= */
+
+.hero-pcb-wrapper{
+    top:var(--hero-pcb-top);
+    right:var(--hero-pcb-right);
+    width:var(--hero-pcb-size);
+    z-index:2;
+}
+
+.hero-pcb-wrapper::before{
+    content:"";
+    position:absolute;
+    z-index:0;
+    top:4%;
+    left:0;
+    width:100%;
+    height:94%;
+    background:radial-gradient(
+        ellipse at center,
+        rgba(255,255,255,.82) 0%,
+        color-mix(in srgb,var(--color-soft-blue) 55%,transparent) 48%,
+        transparent 78%
+    );
+    filter:blur(15px);
+    transform:scale(1.14);
+    pointer-events:none;
+}
+
+.hero-pcb-wrapper::after{
+    content:"";
+    position:absolute;
+    z-index:1;
+    left:12%;
+    right:6%;
+    bottom:-2%;
+    height:15%;
+    border-radius:50%;
+    background:color-mix(in srgb,var(--color-navy) 24%,transparent);
+    filter:blur(13px);
+    transform:rotate(-2deg);
+    pointer-events:none;
+}
+
+.hero-pcb{
+    opacity:.86;
+    transform:rotate(-1deg);
+    filter:
+        saturate(.78)
+        contrast(.92)
+        brightness(1.04)
+        drop-shadow(0 13px 13px rgba(31,43,63,.18))
+        drop-shadow(0 0 20px rgba(184,212,227,.5));
+}
+
+/* =============================================================
+   ROBOT MÓVIL
+============================================================= */
+
+.hero-robot-wrapper{
+    right:var(--hero-robot-right);
+    bottom:var(--hero-robot-bottom);
+    width:var(--hero-robot-size);
+    z-index:3;
+}
+
+.hero-robot-wrapper::before{
+    content:"";
+    position:absolute;
+    z-index:0;
+    top:4%;
+    left:2%;
+    width:98%;
+    height:92%;
+    background:radial-gradient(
+        ellipse at center,
+        color-mix(in srgb,var(--color-soft-blue) 68%,transparent) 0%,
+        color-mix(in srgb,var(--color-primary) 38%,transparent) 48%,
+        transparent 80%
+    );
+    filter:blur(14px);
+    transform:scale(1.14);
+    pointer-events:none;
+}
+
+.hero-robot-wrapper::after{
+    content:"";
+    position:absolute;
+    z-index:1;
+    left:10%;
+    right:2%;
+    bottom:3%;
+    height:14%;
+    border-radius:50%;
+    background:color-mix(in srgb,var(--color-navy) 34%,transparent);
+    filter:blur(12px);
+    transform:skewX(-8deg);
+    pointer-events:none;
+}
+
+.hero-robot{
+    transform:rotate(-1deg);
+    filter:
+        saturate(.9)
+        contrast(.97)
+        brightness(1.03)
+        drop-shadow(0 18px 14px rgba(31,43,63,.24))
+        drop-shadow(0 0 20px rgba(78,119,137,.42));
+}

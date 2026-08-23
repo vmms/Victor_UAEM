@@ -1,0 +1,186 @@
+/* =============================================================
+   COURSE SYLLABUS
+============================================================= */
+
+.course-syllabus {
+    padding: var(--space-6);
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =============================================================
+   ENCABEZADO
+============================================================= */
+
+.course-syllabus__header {
+    margin-bottom: var(--space-5);
+}
+
+.course-syllabus__header h3 {
+    margin: 0;
+
+    font-size: var(--font-size-xl);
+
+    color: var(--color-text);
+}
+
+
+/* =============================================================
+   UNIDADES
+============================================================= */
+
+.course-syllabus__list {
+    display: grid;
+
+    gap: 2px;
+}
+
+.course-syllabus__item {
+    overflow: hidden;
+
+    border: var(--border-width) solid var(--color-border);
+
+    border-radius: var(--radius-sm);
+}
+
+
+/* =============================================================
+   BOTÓN
+============================================================= */
+
+.course-syllabus__toggle {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+
+    width: 100%;
+
+    gap: var(--space-3);
+
+    padding: var(--space-3) var(--space-4);
+
+    text-align: left;
+
+    font: inherit;
+
+    color: var(--color-text);
+
+    background: var(--color-white);
+
+    border: 0;
+
+    cursor: pointer;
+
+    transition: background-color var(--transition-fast);
+}
+
+.course-syllabus__toggle:hover {
+    background:
+        color-mix(in srgb,
+            var(--color-soft-blue) 18%,
+            var(--color-white));
+}
+
+.course-syllabus__number {
+    display: grid;
+    place-items: center;
+
+    min-width: 2rem;
+    height: 2rem;
+
+    padding-inline: .4rem;
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+
+    color: var(--color-white);
+
+    background: var(--color-primary);
+
+    border-radius: var(--radius-sm);
+}
+
+.course-syllabus__title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+.course-syllabus__arrow {
+    color: var(--color-primary);
+
+    transition: transform var(--transition-fast);
+}
+
+
+/* =============================================================
+   CONTENIDO
+============================================================= */
+
+.course-syllabus__content {
+    display: none;
+
+    padding:
+        var(--space-2) var(--space-5) var(--space-5) calc(2rem + (var(--space-3) * 2));
+
+    border-top: var(--border-width) solid var(--color-border);
+}
+
+.course-syllabus__item--open .course-syllabus__content {
+    display: block;
+}
+
+.course-syllabus__item--open .course-syllabus__arrow {
+    transform: rotate(180deg);
+}
+
+.course-syllabus__content h4 {
+    margin: var(--space-4) 0 var(--space-2);
+
+    font-size: var(--font-size-md);
+
+    color: var(--color-primary);
+}
+
+.course-syllabus__content p {
+    margin: 0;
+
+    font-size: var(--font-size-sm);
+
+    line-height: var(--line-height-relaxed);
+
+    color: var(--color-text-secondary);
+}
+
+.course-syllabus__topics {
+    margin: var(--space-3) 0 0;
+
+    padding-left: 1.25rem;
+}
+
+.course-syllabus__topics li {
+    margin-block: var(--space-2);
+
+    font-size: var(--font-size-sm);
+
+    color: var(--color-text-secondary);
+}
+
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width:560px) {
+
+    .course-syllabus {
+        padding: var(--space-5);
+    }
+
+    .course-syllabus__content {
+        padding-inline: var(--space-4);
+    }
+
+}

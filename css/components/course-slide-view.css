@@ -1,0 +1,256 @@
+/* =============================================================
+   COURSE SLIDE VIEW
+============================================================= */
+
+.course-slide-view {
+    min-width: 0;
+    max-width: 100%;
+    padding: var(--space-6);
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.course-slide-view[hidden] {
+    display: none;
+}
+
+
+/* =============================================================
+   REGRESAR A LA LISTA
+============================================================= */
+
+.course-slide-view__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0;
+    font: inherit;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.course-slide-view__back:hover {
+    text-decoration: underline;
+}
+
+.course-slide-view__back .material-symbols-outlined {
+    font-size: 1.3rem;
+}
+
+
+/* =============================================================
+   ENCABEZADO
+============================================================= */
+
+.course-slide-view__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+    padding-bottom: var(--space-5);
+    border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.course-slide-view__number {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 3.75rem;
+    height: 3.75rem;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    background: var(--color-primary);
+    border-radius: 50%;
+}
+
+.course-slide-view__title {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+}
+
+
+/* =============================================================
+   VISOR PDF
+============================================================= */
+
+.course-slide-view__viewer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: var(--space-6);
+    padding: var(--space-5);
+    background: var(--color-navy-dark);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+
+/* =============================================================
+   CONTENEDOR DE LA DIAPOSITIVA
+   Formato panorámico
+============================================================= */
+
+.course-slide-view__page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 64rem);
+    aspect-ratio: 16 / 9;
+    background: var(--color-white);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+
+/* =============================================================
+   CANVAS PDF
+============================================================= */
+
+.course-slide-view__canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* =============================================================
+   PLACEHOLDER DESIGN SYSTEM
+============================================================= */
+
+.course-slide-view__page-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.course-slide-view__page-placeholder .material-symbols-outlined {
+    font-size: 3rem;
+    color: var(--color-primary);
+}
+
+.course-slide-view__page-placeholder strong {
+    color: var(--color-text);
+}
+
+.course-slide-view__page-placeholder span:last-child {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+
+/* =============================================================
+   CONTROLES
+============================================================= */
+
+.course-slide-view__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+}
+
+.course-slide-view__control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: 2.75rem;
+    padding: var(--space-3) var(--space-4);
+    font: inherit;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-primary);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.course-slide-view__control:hover {
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+.course-slide-view__control--primary {
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+.course-slide-view__control--primary:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.course-slide-view__control:disabled {
+    opacity: .4;
+    cursor: default;
+}
+
+.course-slide-view__control .material-symbols-outlined {
+    font-size: 1.25rem;
+}
+
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width:800px) {
+
+    .course-slide-view__viewer {
+        padding: var(--space-4);
+    }
+
+    .course-slide-view__page {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width:560px) {
+
+    .course-slide-view {
+        padding: var(--space-5);
+    }
+
+    .course-slide-view__header {
+        align-items: flex-start;
+    }
+
+    .course-slide-view__viewer {
+        padding: var(--space-3);
+    }
+
+    .course-slide-view__controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .course-slide-view__control {
+        width: 100%;
+    }
+
+}

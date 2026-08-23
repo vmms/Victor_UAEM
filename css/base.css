@@ -1,0 +1,116 @@
+/* ==========================================================
+   BASE
+   Estilos globales del sitio
+========================================================== */
+
+body{
+
+    font-family:var(--font-family-primary);
+
+    font-size:var(--font-size-base);
+
+    font-weight:var(--font-weight-regular);
+
+    line-height:var(--line-height-body);
+
+    color:var(--color-text);
+
+    background:var(--color-white);
+
+}
+
+
+/* ==========================================================
+   CONTENEDOR
+========================================================== */
+
+.container{
+
+    width:min(
+        calc(100% - (var(--container-padding) * 2)),
+        var(--container-width)
+    );
+
+    margin-inline:auto;
+
+}
+
+
+/* ==========================================================
+   TIPOGRAFÍA
+========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color:var(--color-text);
+    line-height:var(--line-height-heading);
+    font-weight:var(--font-weight-bold);
+    letter-spacing:-0.02em;
+}
+
+h1{
+    font-size:var(--font-size-4xl);
+}
+
+h2{
+    font-size:var(--font-size-3xl);
+}
+
+h3{
+    font-size:var(--font-size-2xl);
+}
+
+h4{
+    font-size:var(--font-size-xl);
+}
+
+p{
+    color:var(--color-text-secondary);
+}
+
+
+/* ==========================================================
+   ENLACES
+========================================================== */
+
+a{
+    transition:
+        color var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+a:hover{
+    color:var(--color-primary);
+}
+
+
+/* ==========================================================
+   ICONOS MATERIAL
+========================================================== */
+
+.material-symbols-outlined{
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 350,
+    'GRAD' 0,
+    'opsz' 24;
+
+    line-height:1;
+}
+
+
+/* ==========================================================
+   UTILIDADES
+========================================================== */
+
+.text-center{
+    text-align:center;
+}
+
+.hidden{
+    display:none !important;
+}

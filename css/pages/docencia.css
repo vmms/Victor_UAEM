@@ -1,0 +1,163 @@
+/* =============================================================
+   DOCENCIA
+============================================================= */
+
+body {
+    background: var(--color-page-background);
+}
+
+.docencia-container {
+    width: min(calc(100% - clamp(1.5rem, 3vw, 3rem)), 96rem);
+    margin-inline: auto;
+}
+
+/* =============================================================
+   NAVBAR
+============================================================= */
+
+.docencia-navbar {
+    color: var(--color-white);
+    background: linear-gradient(120deg, var(--color-navy-dark), var(--color-navy));
+}
+
+/* =============================================================
+   ENCABEZADO
+============================================================= */
+
+.docencia-heading {
+    width: 100%;
+    background: var(--color-white);
+}
+
+.docencia-heading .docencia-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.docencia-heading .page-heading {
+    width: 100%;
+    max-width: none;
+    min-height: 24rem;
+    gap: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.docencia-heading .page-heading::before,
+.docencia-heading .page-heading::after {
+    display: none;
+}
+
+.docencia-heading .page-heading__content {
+    flex: 0 0 46%;
+    max-width: none;
+    padding: var(--space-10) clamp(2rem, 6vw, 8rem);
+}
+
+.docencia-heading .page-heading__circuits {
+    flex: 1 1 auto;
+    align-self: stretch;
+    display: block;
+    width: 54%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    object-position: right center;
+}
+
+/* =============================================================
+   HORARIO
+============================================================= */
+
+.docencia-schedule {
+    padding-block: var(--space-6) var(--space-10);
+}
+
+/* =============================================================
+   MATERIAS
+============================================================= */
+
+.docencia-courses {
+    padding-bottom: var(--space-12);
+}
+
+.docencia-section-heading {
+    margin-bottom: var(--space-6);
+}
+
+.docencia-section-heading h2 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+}
+
+.docencia-section-heading p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-text-secondary);
+}
+
+/* =============================================================
+   FOOTER
+============================================================= */
+
+.docencia-footer {
+    padding-block: var(--space-6);
+    background: linear-gradient(120deg, var(--color-navy-dark), var(--color-navy));
+}
+
+.docencia-footer .footer-preview {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width:800px) {
+    .docencia-heading .page-heading {
+        min-height: 20rem;
+    }
+
+    .docencia-heading .page-heading__content {
+        flex-basis: 55%;
+        padding: var(--space-8);
+    }
+
+    .docencia-heading .page-heading__circuits {
+        width: 45%;
+    }
+}
+
+@media (max-width:560px) {
+    .docencia-heading .page-heading {
+        min-height: auto;
+    }
+
+    .docencia-heading .page-heading__content {
+        flex: 1 1 100%;
+        padding: var(--space-6);
+    }
+
+    .docencia-heading .page-heading__circuits {
+        position: absolute;
+        inset: 0 0 0 auto;
+        width: 70%;
+        height: 100%;
+        opacity: .25;
+        pointer-events: none;
+    }
+
+    .docencia-schedule {
+        padding-block: var(--space-4) var(--space-8);
+    }
+
+    .docencia-courses {
+        padding-bottom: var(--space-8);
+    }
+}

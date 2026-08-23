@@ -1,0 +1,126 @@
+/* =============================================================
+   HOME
+============================================================= */
+
+body{
+    background:var(--color-page-background);
+}
+
+.home-container {
+    width: min(calc(100% - clamp(2rem, 4vw, 4rem)),
+            95rem);
+    margin-inline: auto;
+}
+
+/* =============================================================
+   NAVBAR
+============================================================= */
+
+.home-navbar{
+    color:var(--color-white);
+    background:
+        linear-gradient(
+            120deg,
+            var(--color-navy-dark),
+            var(--color-navy)
+        );
+}
+
+/* =============================================================
+   HERO
+============================================================= */
+
+.home-hero{
+    background:
+        linear-gradient(
+            120deg,
+            var(--color-white),
+            var(--color-background)
+        );
+}
+
+.home-hero .home-container{
+    width:100%;
+    max-width:none;
+}
+
+/* El componente original usa h2 en el Design System. */
+.home-hero .hero-preview__content h1{
+    margin:0;
+    font-size:clamp(2.5rem, 5vw, 4.1rem);
+    line-height:var(--line-height-tight);
+    letter-spacing:-0.04em;
+}
+
+/* =============================================================
+   CONTACTO RÁPIDO
+============================================================= */
+
+.home-quick-contact{
+    position:relative;
+    z-index:5;
+    margin-top:-1rem;
+    padding-bottom:var(--space-8);
+}
+
+/* =============================================================
+   DASHBOARD
+============================================================= */
+
+.home-dashboard{
+    padding-block:var(--space-6) var(--space-12);
+}
+
+.home-dashboard .dashboard-card__header h2{
+    margin:0;
+    font-size:var(--font-size-xl);
+}
+
+/* =============================================================
+   ESPECIALIDADES
+============================================================= */
+
+.home-specialties{
+    padding-bottom:var(--space-12);
+}
+
+/* =============================================================
+   FOOTER
+============================================================= */
+
+.home-footer{
+    padding-block:var(--space-6);
+    background:
+        linear-gradient(
+            120deg,
+            var(--color-navy-dark),
+            var(--color-navy)
+        );
+}
+
+.home-footer .footer-preview{
+    padding:0;
+    background:transparent;
+    border-radius:0;
+}
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width:800px){
+    .home-quick-contact{
+        margin-top:0;
+        padding-top:var(--space-6);
+    }
+}
+
+@media (max-width:560px){
+    .home-dashboard{
+        padding-top:var(--space-4);
+    }
+
+    .home-specialties{
+        padding-bottom:var(--space-8);
+    }
+}

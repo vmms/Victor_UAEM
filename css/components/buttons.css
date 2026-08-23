@@ -1,0 +1,175 @@
+/* =============================================================
+   BUTTONS
+============================================================= */
+
+.button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:var(--space-2);
+    min-height:3rem;
+    padding:var(--space-3) var(--space-5);
+    font-size:var(--font-size-sm);
+    font-weight:var(--font-weight-bold);
+    line-height:1;
+    border:var(--border-width) solid transparent;
+    border-radius:var(--radius-sm);
+    cursor:pointer;
+    transition:
+        transform var(--transition-fast),
+        color var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.button:hover{
+    transform:translateY(-2px);
+}
+
+.button:active{
+    transform:translateY(0);
+}
+
+.button:focus-visible{
+    outline:3px solid rgba(184,212,227,.7);
+    outline-offset:3px;
+}
+
+.button .material-symbols-outlined{
+    font-size:1.2rem;
+}
+
+/* =============================================================
+   BOTÓN PRINCIPAL
+============================================================= */
+
+.button--primary{
+    color:var(--color-white);
+    background:var(--color-primary);
+    box-shadow:var(--shadow-sm);
+}
+
+.button--primary:hover{
+    color:var(--color-white);
+    background:var(--color-primary-dark);
+    box-shadow:var(--shadow-md);
+}
+
+/* =============================================================
+   BOTÓN OUTLINE
+============================================================= */
+
+.button--outline{
+    color:var(--color-navy);
+    background:transparent;
+    border-color:var(--color-gray-400);
+}
+
+.button--outline:hover{
+    color:var(--color-primary-dark);
+    background:var(--color-white);
+    border-color:var(--color-primary);
+}
+
+/* =============================================================
+   BOTÓN ROSA
+============================================================= */
+
+.button--pink{
+    color:var(--color-navy);
+    background:var(--color-pink);
+}
+
+.button--pink:hover{
+    color:var(--color-navy);
+    background:var(--color-pink-dark);
+}
+
+/* =============================================================
+   BOTÓN AMARILLO
+============================================================= */
+
+.button--yellow{
+    color:var(--color-navy);
+    background:var(--color-yellow);
+}
+
+.button--yellow:hover{
+    color:var(--color-navy);
+    background:var(--color-yellow-dark);
+}
+
+/* =============================================================
+   BOTÓN PEQUEÑO
+============================================================= */
+
+.button--small{
+    min-height:2.65rem;
+    padding-inline:var(--space-4);
+}
+
+/* =============================================================
+   BOTÓN SOLO ICONO
+============================================================= */
+
+.icon-button{
+    display:grid;
+    place-items:center;
+    width:3rem;
+    height:3rem;
+    color:var(--color-navy);
+    background:var(--color-white);
+    border:var(--border-width) solid var(--color-border);
+    border-radius:var(--radius-sm);
+    cursor:pointer;
+    transition:
+        transform var(--transition-fast),
+        color var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.icon-button:hover{
+    transform:translateY(-2px);
+    color:var(--color-primary-dark);
+    background:var(--color-background);
+    border-color:var(--color-primary);
+}
+
+.icon-button:active{
+    transform:translateY(0);
+}
+
+.icon-button:focus-visible{
+    outline:3px solid rgba(184,212,227,.7);
+    outline-offset:3px;
+}
+
+.icon-button .material-symbols-outlined{
+    font-size:1.35rem;
+}
+
+/* =============================================================
+   ESTADO DESHABILITADO
+============================================================= */
+
+.button:disabled,
+.button[aria-disabled="true"],
+.icon-button:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+    pointer-events:none;
+    box-shadow:none;
+    transform:none;
+}
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width:560px){
+    .button{
+        width:100%;
+    }
+}
