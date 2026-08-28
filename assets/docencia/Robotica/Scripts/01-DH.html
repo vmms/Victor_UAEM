@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Transformación de Denavit-Hartenberg</title>
+</head>
+
+<body>
+    <h1>Transformación de Denavit-Hartenberg</h1>
+    <p>Función de MATLAB para generar la matriz de transformación homogénea asociada a los parámetros de
+        Denavit-Hartenberg.</p>
+    <h2>Uso</h2>
+    <p>La función recibe los cuatro parámetros <code>theta</code>, <code>d</code>, <code>a</code> y <code>alpha</code>,
+        y devuelve la matriz homogénea <code>T</code>.</p>
+    <p>Puede utilizarse tanto con valores numéricos como con variables simbólicas. Cuando los parámetros son numéricos,
+        los ángulos se interpretan en grados.</p>
+    <h2>Sintaxis</h2>
+    <div class="code-viewer">
+        <header class="code-viewer__header">
+            <div class="code-viewer__file">
+                <span class="code-viewer__dots">
+                    <span class="code-viewer__dot"></span>
+                    <span class="code-viewer__dot"></span>
+                    <span class="code-viewer__dot"></span>
+                </span>
+                <span class="code-viewer__filename">DH.m</span>
+            </div>
+            <span class="code-viewer__language">MATLAB</span>
+        </header>
+        <div class="code-viewer__body">
+            <div class="code-viewer__code">
+                <div class="code-viewer__lines" aria-hidden="true"></div>
+                <pre><code class="language-matlab">function T = DH(theta, d, a, alpha)
+
+if isa(theta,'sym')
+    ct = cos(theta);
+    st = sin(theta);
+else
+    ct = cosd(theta);
+    st = sind(theta);
+end
+
+if isa(alpha,'sym')
+    ca = cos(alpha);
+    sa = sin(alpha);
+else
+    ca = cosd(alpha);
+    sa = sind(alpha);
+end
+
+T = [ct, -ca*st,  sa*st, a*ct;
+     st,  ca*ct, -sa*ct, a*st;
+     0,   sa,     ca,    d;
+     0,   0,      0,     1];
+
+end</code></pre>
+            </div>
+        </div>
+        <footer class="code-viewer__footer">
+            <span class="code-viewer__meta"></span>
+            <button class="code-viewer__copy" type="button">
+                <span class="material-symbols-outlined">content_copy</span>
+                <span class="code-viewer__copy-text">Copiar código</span>
+            </button>
+        </footer>
+    </div>
+</body>
+
+</html>

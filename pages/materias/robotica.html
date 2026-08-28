@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="../../css/reset.css">
     <link rel="stylesheet" href="../../css/base.css">
 
+    <!-- Visualización de código -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
     <!-- Componentes existentes -->
     <link rel="stylesheet" href="../../css/components/buttons.css">
     <link rel="stylesheet" href="../../css/components/navbar.css">
@@ -36,6 +39,7 @@
     <link rel="stylesheet" href="../../css/components/course-practice-item.css">
     <link rel="stylesheet" href="../../css/components/course-practice-view.css">
     <link rel="stylesheet" href="../../css/components/course-slide-view.css">
+    <link rel="stylesheet" href="../../css/components/code-viewer.css">
 
     <!-- Página -->
     <link rel="stylesheet" href="../../css/pages/course.css">
@@ -174,43 +178,28 @@
 
                             <button class="course-navigation__item course-navigation__item--active" type="button"
                                 data-course-section="informacion">
-                                <span class="material-symbols-outlined">
-                                    info
-                                </span>
-
-                                <span>
-                                    Información
-                                </span>
+                                <span class="material-symbols-outlined">info</span>
+                                <span>Información</span>
                             </button>
 
                             <button class="course-navigation__item" type="button" data-course-section="practicas">
-                                <span class="material-symbols-outlined">
-                                    science
-                                </span>
-
-                                <span>
-                                    Prácticas de laboratorio
-                                </span>
+                                <span class="material-symbols-outlined">memory</span>
+                                <span>Prácticas de laboratorio</span>
                             </button>
 
                             <button class="course-navigation__item" type="button" data-course-section="diapositivas">
-                                <span class="material-symbols-outlined">
-                                    slideshow
-                                </span>
+                                <span class="material-symbols-outlined">co_present</span>
+                                <span>Diapositivas y material</span>
+                            </button>
 
-                                <span>
-                                    Diapositivas y material
-                                </span>
+                            <button class="course-navigation__item" type="button" data-course-section="scripts">
+                                <span class="material-symbols-outlined">terminal</span>
+                                <span>Scripts</span>
                             </button>
 
                             <button class="course-navigation__item" type="button" data-course-section="ejercicios">
-                                <span class="material-symbols-outlined">
-                                    edit
-                                </span>
-
-                                <span>
-                                    Ejercicios y recursos
-                                </span>
+                                <span class="material-symbols-outlined">edit</span>
+                                <span>Ejercicios</span>
                             </button>
 
                         </nav>
@@ -233,7 +222,7 @@
 
                             <!-- =====================================
                              INFORMACIÓN DE LA MATERIA
-                        ====================================== -->
+                            ====================================== -->
 
                             <article class="course-info" id="informacion">
 
@@ -1237,6 +1226,58 @@
                         
                         </div>
 
+                        <!-- =============================================
+                             VISTA: SCRIPTS
+                        ============================================== -->
+                        <div class="course-view" data-course-view="scripts" hidden">
+                            <section class="course-practices course-scripts">
+                                <header class="course-practices__header">
+                                    <h2>Scripts</h2>
+                                    <p>Código de apoyo para ejercicios, simulaciones y desarrollo de modelos de robótica.</p>
+                                </header>
+                                <div class="course-practices__items">
+                                    <a class="course-practice-item" href="#" data-script-number="01"
+                                        data-script-title="Transformación de Denavit-Hartenberg"
+                                        data-script-file="../../assets/docencia/Robotica/Scripts/01-DH.html">
+                                        <span class="course-practice-item__number">01</span>
+                                        <span class="course-practice-item__icon">
+                                            <span class="material-symbols-outlined">function</span>
+                                        </span>
+                                        <span class="course-practice-item__content">
+                                            <strong class="course-practice-item__title">Transformación de Denavit-Hartenberg</strong>
+                                        </span>
+                                        <span class="material-symbols-outlined course-practice-item__arrow">chevron_right</span>
+                                    </a>>
+                                </div>
+                            </section>
+                            <article class="course-practice-view course-script-view" hidden>
+                                <button class="course-practice-view__back course-script-view__back" type="button">
+                                    <span class="material-symbols-outlined">arrow_back</span>
+                                    <span>Todos los scripts</span>
+                                </button>
+                                <header class="course-practice-view__header">
+                                    <span class="course-practice-view__number course-script-view__number">01</span>
+                                    <div>
+                                        <h2 class="course-practice-view__title course-script-view__title">Script</h2>
+                                    </div>
+                                </header>
+                                <div class="course-practice-view__loading course-script-view__loading" hidden>
+                                    Cargando script...
+                                </div>
+                                <div class="course-practice-view__error course-script-view__error" hidden></div>
+                                <article class="course-practice-view__markdown course-script-view__content"></article>
+                                <nav class="course-practice-view__navigation" aria-label="Navegación entre scripts">
+                                    <button class="course-practice-view__previous course-script-view__previous" type="button">
+                                        <span class="material-symbols-outlined">arrow_back</span>
+                                        <span>Script anterior</span>
+                                    </button>
+                                    <button class="course-practice-view__next course-script-view__next" type="button">
+                                        <span>Script siguiente</span>
+                                        <span class="material-symbols-outlined">arrow_forward</span>
+                                    </button>
+                                </nav>
+                            </article>
+                        </div>
 
                         <!-- =============================================
                              VISTA: EJERCICIOS
@@ -1310,6 +1351,13 @@
     <script src="../../js/components/course-navigation.js"></script>
     <script src="../../js/components/course-practice.js"></script>
     <script src="../../js/components/course-slide.js"></script>
+    <script src="../../js/components/course-script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-matlab.min.js"></script>
+    <script src="../../js/components/code-viewer.js"></script>
 
 </body>
 

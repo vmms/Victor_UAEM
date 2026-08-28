@@ -263,16 +263,12 @@ if (practiceList && practiceView && practiceItems.length) {
 
 
             /* =====================================================
-               PRISM
-               Solo si ya está disponible en la página
+            VISOR DE CÓDIGO
             ===================================================== */
-
-            if (window.Prism) {
-
-                Prism.highlightAllUnder(
-                    contentElement
-                );
-
+            if (window.initializeCodeViewers) {
+                window.initializeCodeViewers(contentElement);
+            } else if (window.Prism) {
+                Prism.highlightAllUnder(contentElement);
             }
 
         }
